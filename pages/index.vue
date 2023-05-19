@@ -4,7 +4,7 @@
       <div class="lg:flex items-stretch md:mt-12 mt-8">
         <div class="lg:w-1/2">
           <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
-            <NuxtLink :to="{ name: 'blog-slug', params: { slug: '2019-09-22-veggies' } }" class="sm:w-1/2 relative">
+            <NuxtLink :to="{ name: 'blog-slug', params: { slug: '' } }" class="sm:w-1/2 relative">
               <div class="rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden ">
                 <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
                 <div class="absolute bottom-0 left-0 p-6">

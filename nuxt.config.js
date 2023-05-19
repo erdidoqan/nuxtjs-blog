@@ -33,7 +33,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8", "@nuxt/image"],
+  buildModules: ["@nuxt/postcss8"],
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
@@ -44,7 +44,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxt/content", "@nuxtjs/svg", "@nuxt/image","@nuxtjs/axios", "@nuxtjs/markdownit"],
+  modules: ["@nuxt/content", "@nuxtjs/svg","@nuxtjs/axios", "@nuxtjs/markdownit"],
   svg: {
     vueSvgLoader: {
       // vue-svg-loader options
@@ -57,14 +57,6 @@ export default {
     },
   },
 
-  content: {
-    liveEdit: false,
-    markdown: {
-      prism: {
-        theme: "prism-themes/themes/prism-dracula.css",
-      },
-    },
-  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
