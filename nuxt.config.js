@@ -5,6 +5,7 @@ export default {
     myVariable: process.env.NUXT_ENV_MY_VAR,
     PRIVATE_TOKEN: process.env.PRIVATE_TOKEN,
     API_URL: process.env.API_URL,
+    GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -17,6 +18,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
+      { name: "google-site-verification", content: process.env.GOOGLE_SITE_VERIFICATION }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },

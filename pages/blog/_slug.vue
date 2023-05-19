@@ -35,7 +35,7 @@
           {{ article.readDuration }}
       </span>
     </p>
-    <p class="prose min-w-full p-10 mx-auto" v-html="$md.render(article.body)"></p>
+    <p class="prose min-w-full mx-auto" v-html="$md.render(article.body)"></p>
 
 
   </div>
