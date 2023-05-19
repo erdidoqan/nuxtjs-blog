@@ -20,7 +20,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
       { name: "google-site-verification", content: process.env.GOOGLE_SITE_VERIFICATION }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

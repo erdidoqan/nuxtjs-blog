@@ -4,7 +4,7 @@
       <div class="lg:flex items-stretch md:mt-12 mt-8">
         <div class="lg:w-1/2">
           <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
-            <NuxtLink :to="{ name: 'blog-slug', params: { slug: '' } }" class="sm:w-1/2 relative">
+            <div class="sm:w-1/2 relative">
               <div class="rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden ">
                 <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
                 <div class="absolute bottom-0 left-0 p-6">
@@ -19,7 +19,7 @@
                 </div>
                 <img src="https://i.ibb.co/DYxtCJq/img-1.png" class="w-full" alt="chair" />
               </div>
-            </NuxtLink>
+            </div>
             <div class="sm:w-1/2 sm:mt-0 mt-4 relative">
               <div>
                 <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
@@ -108,15 +108,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="max-w-screen-lg md:flex mx-auto dark:bg-gray-900">
-      <!-- component -->
-      <div class="md:w-1/3 p-2 md:flex md:justify-center">
-
-      </div>
-      <div class="md:w-2/3 px-8">
-
       </div>
     </div>
   </div>
