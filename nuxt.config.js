@@ -46,7 +46,17 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxt/content", "@nuxtjs/svg","@nuxtjs/axios", "@nuxtjs/markdownit"],
+  modules: ["@nuxt/content", "@nuxtjs/svg","@nuxtjs/axios", "@nuxtjs/markdownit","@nuxtjs/google-adsense"],
+  'google-adsense': {
+    onPageLoad: false,
+    pageLevelAds: false,
+  },
+  publicRuntimeConfig: {
+    'google-adsense': {
+      id: process.env.GOOGLE_ADSENSE_ID,
+      test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
+    },
+  },
   svg: {
     vueSvgLoader: {
       // vue-svg-loader options
