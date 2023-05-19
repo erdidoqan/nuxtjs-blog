@@ -116,8 +116,6 @@
 
       </div>
       <div class="md:w-2/3 px-8">
-        <AuthorIntro></AuthorIntro>
-
 
       </div>
     </div>

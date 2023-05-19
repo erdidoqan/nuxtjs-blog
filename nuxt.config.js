@@ -11,7 +11,7 @@ export default {
   head: {
     title: "nuxt-blog",
     htmlAttrs: {
-      lang: "en",
+      lang: "en"
     },
     meta: [
       { charset: "utf-8" },
@@ -42,20 +42,20 @@ export default {
     // experimentWarning: false // hide experimental warning message (disabled by default for tests)
     vue: {
       /* options for vite-plugin-vue2 */
-    },
+    }
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxt/content", "@nuxtjs/svg","@nuxtjs/axios", "@nuxtjs/markdownit","@nuxtjs/google-adsense"],
   'google-adsense': {
     onPageLoad: false,
-    pageLevelAds: false,
+    pageLevelAds: false
   },
   publicRuntimeConfig: {
     'google-adsense': {
       id: process.env.GOOGLE_ADSENSE_ID,
-      test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
-    },
+      test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true'
+    }
   },
   svg: {
     vueSvgLoader: {
@@ -66,16 +66,23 @@ export default {
     },
     fileLoader: {
       // file-loader options
-    },
+    }
   },
-
+  content: {
+    liveEdit: false,
+    markdown: {
+      prism: {
+        theme: "prism-themes/themes/prism-dracula.css"
+      }
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
       plugins: {
         tailwindcss: {},
-        autoprefixer: {},
-      },
-    },
-  },
+        autoprefixer: {}
+      }
+    }
+  }
 };
