@@ -65,7 +65,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.article)
+
   },
   head() {
     //console.log(this.article.title);
