@@ -1,7 +1,7 @@
 <template>
   <article class="p-4 md:w-1/3">
     <NuxtLink :to="{ name: 'blog-slug', params: { slug: postSlug } }">
-      <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
+      <div class="h-full rounded-xl bg-blue-50 overflow-hidden">
         <img :src="postImage" alt="" sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw" srcset="">
 
         <div class="p-6">
@@ -12,7 +12,7 @@
           <p class="text-gray-400 text-sm font-medium inline mt-1 mb-1">{{ postReadDuration }}</p>
           <p class="leading-relaxed mb-3">{{ postDescription }}</p>
           <div class="flex items-center flex-wrap ">
-            <button class="bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">
+            <button class="bg-cyan-400 hover:scale-105 drop-shadow-md px-4 py-1 rounded-lg">
               More Detail
             </button>
           </div>
