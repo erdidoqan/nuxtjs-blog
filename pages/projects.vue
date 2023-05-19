@@ -14,7 +14,7 @@
       <div class="">
         <div class="container py-12">
           <div class="flex flex-wrap -m-4">
-            <project-card
+<!--            <project-card
               v-for="item in projectsData"
               :key="item.title"
               :title="item.title"
@@ -24,7 +24,7 @@
               :tech1="item.tech1"
               :tech2="item.tech2"
               :tech3="item.tech3"
-            ></project-card>
+            ></project-card>-->
           </div>
         </div>
       </div>

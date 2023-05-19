@@ -15,8 +15,6 @@
     "@tailwindcss/typography": "^0.5.2",
     "clipboard": "^2.0.10",
     "core-js": "^3.19.3",
-    "devicon": "^2.15.1",
-    "laravel-vue-pagination": "^4.1.0",
     "nuxt": "^2.15.8",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.27.0",
