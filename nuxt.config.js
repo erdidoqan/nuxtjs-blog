@@ -46,7 +46,17 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxt/content", "@nuxtjs/svg","@nuxtjs/axios", "@nuxtjs/markdownit","@nuxtjs/google-adsense"],
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/svg",
+    "@nuxtjs/axios",
+    "@nuxtjs/markdownit",
+    "@nuxtjs/google-adsense",
+    "@nuxtjs/sitemap"
+  ],
+  sitemap: {
+    hostname: 'https://birthdaymessages.pages.dev'
+  },
   'google-adsense': {
     onPageLoad: false,
     pageLevelAds: false
