@@ -7,8 +7,8 @@
       {{ article.title }}
     </h1>
     <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
-      <nuxt-img
-        :src="siteMetadata.author_image"
+      <img
+        src="https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg"
         loading="lazy"
         alt=""
         class="mr-3 w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800"
@@ -35,9 +35,16 @@
           {{ article.readDuration }}
       </span>
     </p>
+    <div class="mt-5 flex-wrap inline-flex items-center">
+      <NuxtLink
+        v-for="tag in article.tags"
+        :key="tag.title"
+        class="rounded-xl bg-zinc-700 text-sm px-3 py-1 text-white transition-colors hover:bg-blue-500 mr-2 mb-2 last:mr-0"
+        :to="{ name: 'tags-slug', params: { slug: tag.slug } }">
+        {{ tag.title }}
+      </NuxtLink>
+    </div>
     <p class="prose min-w-full mx-auto" v-html="$md.render(article.body)"></p>
-
-
   </div>
 </template>
 <script>

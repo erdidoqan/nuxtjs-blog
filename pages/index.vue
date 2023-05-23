@@ -1,6 +1,6 @@
 <template>
   <div class="dark:bg-gray-900 mt-6">
-    <div class="max-w-screen-lg md:flex mx-auto dark:bg-gray-900">
+    <div class="max-w-screen-lg p-5 md:flex mx-auto dark:bg-gray-900">
       <div class="lg:flex items-stretch md:mt-12 mt-8">
         <div class="lg:w-1/2">
           <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
@@ -115,6 +115,7 @@
 
 <script>
 import siteMetaInfo from "@/data/sitemetainfo";
+
 export default {
   data() {
     return {

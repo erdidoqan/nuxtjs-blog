@@ -55,7 +55,12 @@ export default {
     "@nuxtjs/sitemap"
   ],
   sitemap: {
-    hostname: 'https://birthdaymessages.pages.dev'
+    hostname: 'https://birthdaymessages.pages.dev',
+    exclude: [
+      'projects/',
+      'blog/*',
+      '*.html'
+    ]
   },
   'google-adsense': {
     onPageLoad: false,
