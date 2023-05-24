@@ -5,7 +5,8 @@ export default {
     myVariable: process.env.NUXT_ENV_MY_VAR,
     PRIVATE_TOKEN: process.env.PRIVATE_TOKEN,
     API_URL: process.env.API_URL,
-    GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION
+    GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION,
+    SITE_TITLE: process.env.SITE_TITLE
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

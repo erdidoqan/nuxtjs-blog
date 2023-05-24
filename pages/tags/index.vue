@@ -19,7 +19,7 @@
       </div>
 
       <p class="prose border-t-2 text-center mt-10">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut blanditiis cupiditate delectus doloremque earum eos exercitationem id impedit iste laboriosam, maxime nostrum numquam pariatur quas sapiente suscipit voluptatem voluptatibus.
+
       </p>
     </div>
   </div>
