@@ -4,12 +4,11 @@
       <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
 
         <div
-          v-for="(footertag, key) in users"
-          :key="key"
+
           class="px-5 py-2"
         >
           <a href="/quizzes" class="text-base hover:text-gray-400">
-            {{ footertag.title }}
+
           </a>
         </div>
 
