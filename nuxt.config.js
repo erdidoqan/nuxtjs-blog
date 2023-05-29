@@ -1,13 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
-  env: {
-    myVariable: process.env.NUXT_ENV_MY_VAR,
-    PRIVATE_TOKEN: process.env.PRIVATE_TOKEN,
-    API_URL: process.env.API_URL,
-    GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION,
-    SITE_TITLE: process.env.SITE_TITLE
-  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "nuxt-blog",
@@ -36,7 +29,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8"],
+  buildModules: ["@nuxt/postcss8", "@nuxtjs/dotenv"],
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
