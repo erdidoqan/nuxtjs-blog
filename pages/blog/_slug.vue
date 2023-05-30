@@ -44,7 +44,7 @@
         {{ tag.title }}
       </NuxtLink>
     </div>
-    <p class="prose min-w-full mx-auto" v-html="$md.render(article.body)"></p>
+    <p v-if="article.body" class="prose min-w-full mx-auto" v-html="$md.render(article.body)"></p>
   </div>
 </template>
 <script>
