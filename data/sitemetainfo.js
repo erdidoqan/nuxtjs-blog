@@ -1,13 +1,11 @@
 const siteMetaInfo = {
-  title: "Md Solaiaman | Software Developer",
+  title: process.env.SITE_TITLE,
   author: "Yapay Yazar",
   author_image: "/author.png",
-  position: "Full Stack Developer",
   location: "Dhaka, Bangladesh",
   headerTitle: "Md Rathik",
   slogan: "Let's start coding",
-  description:
-    "A tech enthusiast & self taught learner. Love to talk the way of tech.",
+  description: "A tech enthusiast & self taught learner. Love to talk the way of tech.",
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "https://rathik.dev",

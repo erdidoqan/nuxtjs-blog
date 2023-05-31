@@ -1,5 +1,7 @@
+import siteMetaInfo from "@/data/sitemetainfo";
+
 const siteMetadata = {
-  title: "Md Solaiaman | Software Developer",
+  title: env,
   author: "Md Solaiman",
   author_image: "/author.png",
   position: "Full Stack Developer",
@@ -25,4 +27,12 @@ const siteMetadata = {
   linkedin: "#",
 };
 
-export default siteMetadata;
+
+export default {
+  data() {
+    return {
+      siteMetadata: siteMetaInfo,
+      env: process.env.FOOTER_LINK1_TITLE
+    };
+  },
+};
