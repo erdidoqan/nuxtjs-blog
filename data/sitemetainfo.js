@@ -19,7 +19,7 @@ const siteMetaInfo = {
   twitter: "#",
   twitter_user: "YapayYazar",
   stackoverflow: "#",
-  youtube: "#",
+  youtube: "#s",
   linkedin: "#",
 };
 
