@@ -46,7 +46,18 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/markdownit",
     "@nuxtjs/google-adsense",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots"
+  ],
+  robots: [
+    {
+      UserAgent: 'Googlebot',
+      Disallow: ['/user', '/admin']
+    },
+    {
+      UserAgent: '*',
+      Disallow: '/admin'
+    }
   ],
   sitemap: {
     hostname: 'https://birthdaymessages.pages.dev',
