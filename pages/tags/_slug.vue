@@ -11,7 +11,7 @@
           :key="content.title"
         >
           <a :href="`/blog/`+content.slug" aria-label="Te nulla oportere reprimique his dolorum">
-            <img alt="" class="object-cover w-full h-52 bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?1">
+            <img alt="" class="object-cover w-full h-52 bg-gray-500 rounded-t-xl" :src="content.image">
           </a>
           <div class="flex flex-col flex-1 p-6">
             <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
@@ -45,7 +45,7 @@ export default {
   async asyncData({ $content, params, $axios}) {
     /*const article = await $content("articles", params.slug).fetch();*/
     const article = await $axios.$get(process.env.API_URL + '/accounts/tags/' + params.slug).finally()
-
+console.log(article)
     return {
       article: article.data,
     };

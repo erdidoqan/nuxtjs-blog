@@ -10,7 +10,7 @@
       <img
         src="https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg"
         loading="lazy"
-        alt=""
+        alt="auothor"
         class="mr-3 w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800"
       />
       <div>
@@ -79,11 +79,10 @@ export default {
     return {
       title: this.article.title,
       meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.article.description,
-        },
+        { hid: "description", name: "description", content: this.article.description},
+        { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
+        { hid: 'og:title', name: 'og:title', content: this.article.title },
+        { hid: 'og:image', name: 'og:image', content: this.article.image },
       ],
     };
   },
