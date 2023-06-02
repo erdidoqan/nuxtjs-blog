@@ -4,7 +4,7 @@
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-6 sm:col-span-3">
           <a aria-current="page" href="/dashboards/hobbies#" class="router-link-active router-link-exact-active group relative flex w-full flex-col overflow-hidden rounded-2xl">
-            <img class="h-80 w-full object-cover object-center" src="../static/img/black-ballon.svg" alt="Hobby cover">
+            <img class="h-80 w-full object-cover object-center" src="../static/img/hobby-1.svg" alt="Hobby cover">
             <div class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
             <div class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6">
               <div class="flex items-center justify-between">
@@ -20,7 +20,7 @@
         </div>
         <div class="col-span-6 sm:col-span-3">
           <a aria-current="page" href="/dashboards/hobbies#" class="router-link-active router-link-exact-active group relative flex w-full flex-col overflow-hidden rounded-2xl">
-            <img class="h-80 w-full object-cover object-center" src="../static/img/ballon.svg" alt="Hobby cover">
+            <img class="h-80 w-full object-cover object-center" src="../static/img/hobby-2.svg" alt="Hobby cover">
             <div class="bg-muted-900 absolute inset-0 z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-50"></div>
             <div class="absolute inset-0 z-20 flex h-full w-full flex-col justify-between p-6">
             <div class="flex items-center justify-between">
