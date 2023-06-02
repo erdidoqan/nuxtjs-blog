@@ -11,6 +11,7 @@
         src="https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg"
         loading="lazy"
         alt="auothor"
+        v-lazy-load
         class="mr-3 w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800"
       />
       <div>
@@ -29,6 +30,7 @@
     <img
       class="mx-auto w-4/5 my-10 rounded-md drop-shadow-sm"
       :src="article.image"
+      v-lazy-load
     />
     <p class="text-center font-bold my-5">
       <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">

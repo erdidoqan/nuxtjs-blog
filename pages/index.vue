@@ -134,7 +134,7 @@
 
             <div class="relative">
               <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-                <img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key">
+                <img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key" v-lazy-load>
               </NuxtLink>
               <span class="inline-block px-3 font-sans transition-shadow duration-300 py-1 text-[0.65rem] rounded-full bg-primary-100 text-primary-500 border-primary-100 dark:border-primary-500 dark:text-primary-500 border dark:bg-transparent absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Productivity</span>
             </div>

@@ -46,15 +46,37 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/markdownit",
     "@nuxtjs/google-adsense",
+    "nuxt-lazy-load",
     "@nuxtjs/sitemap"
   ],
-  sitemap: {
+    sitemap: {
     hostname: 'https://birthdaymessages.pages.dev',
     exclude: [
       'projects/',
       'blog/*',
       '*.html'
     ]
+  },
+  lazyLoad: {
+    // These are the default values
+    images: true,
+    videos: true,
+    audios: true,
+    iframes: true,
+    native: false,
+    directiveOnly: false,
+
+    // Default image must be in the public folder
+    defaultImage: '/default.gif',
+
+    // To remove class set value to false
+    loadingClass: 'isLoading',
+    loadedClass: 'isLoaded',
+    appendClass: 'lazyLoad',
+
+    observerConfig: {
+      // See IntersectionObserver documentation
+    }
   },
   'google-adsense': {
     onPageLoad: false,
