@@ -134,7 +134,7 @@
 
             <div class="relative">
               <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-                <img :src="article.image" class="h-40 w-full rounded-lg object-cover">
+                <img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key">
               </NuxtLink>
               <span class="inline-block px-3 font-sans transition-shadow duration-300 py-1 text-[0.65rem] rounded-full bg-primary-100 text-primary-500 border-primary-100 dark:border-primary-500 dark:text-primary-500 border dark:bg-transparent absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Productivity</span>
             </div>
@@ -149,7 +149,7 @@
               <div class="mt-auto flex items-center gap-2">
                 <div class="relative inline-flex shrink-0 items-center justify-center outline-none h-8 w-8 rounded-full bg-muted-500/20 text-muted-500">
                   <div class="flex h-full w-full items-center justify-center overflow-hidden text-center transition-all duration-300 rounded-full">
-                    <img src="../static/img/20.svg" class="max-h-full max-w-full object-cover shadow-sm dark:border-transparent h-8 w-8"><!---->
+                    <img src="../static/img/20.svg" class="max-h-full max-w-full object-cover shadow-sm dark:border-transparent h-8 w-8" alt="author">
                   </div>
                 </div>
                 <div class="leading-none">

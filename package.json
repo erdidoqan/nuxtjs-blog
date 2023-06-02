@@ -16,6 +16,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-adsense": "2.0.0",
     "@nuxtjs/markdownit": "^2.0.0",
+    "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "clipboard": "^2.0.10",
