@@ -99,11 +99,15 @@
 
 export default {
   async asyncData({ $content, params, $axios }) {
-    const articles = await $axios.$get(process.env.API_URL + '/contents')
+    try {
+      const articles = await $axios.$get(process.env.API_URL + '/contents')
 
-    return {
-      articles: articles.data
-    };
+      return {
+        articles: articles.data
+      };
+    } catch (error) {
+      console.error(error);
+    }
   },
   head: {
     title: "Md Solaiman | Blogs",

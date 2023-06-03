@@ -46,13 +46,12 @@ export default {
     /*const article = await $content("articles", params.slug).fetch();*/
     try {
       const article = await $axios.$get(process.env.API_URL + '/accounts/tags/' + params.slug).finally()
+      return {
+        article: article.data,
+      };
     } catch (error) {
       console.error(error);
     }
-
-    return {
-      article: article.data,
-    };
   },
   methods: {
     formatDate(date) {

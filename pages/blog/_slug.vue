@@ -62,13 +62,12 @@ export default {
   async asyncData({ $content, params, $axios}) {
     try {
       const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug).finally()
+      return {
+        article: article.data,
+      };
     } catch (error) {
       console.error(error);
     }
-
-    return {
-      article: article.data,
-    };
   },
   methods: {
     formatDate(date) {
