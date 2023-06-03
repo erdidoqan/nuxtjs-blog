@@ -60,8 +60,11 @@ export default {
     };
   },
   async asyncData({ $content, params, $axios}) {
-    /*const article = await $content("articles", params.slug).fetch();*/
-    const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug).finally()
+    try {
+      const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug).finally()
+    } catch (error) {
+      console.error(error);
+    }
 
     return {
       article: article.data,

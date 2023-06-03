@@ -44,8 +44,12 @@ export default {
   },
   async asyncData({ $content, params, $axios}) {
     /*const article = await $content("articles", params.slug).fetch();*/
-    const article = await $axios.$get(process.env.API_URL + '/accounts/tags/' + params.slug).finally()
-console.log(article)
+    try {
+      const article = await $axios.$get(process.env.API_URL + '/accounts/tags/' + params.slug).finally()
+    } catch (error) {
+      console.error(error);
+    }
+
     return {
       article: article.data,
     };
