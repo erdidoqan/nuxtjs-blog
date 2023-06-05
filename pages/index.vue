@@ -121,7 +121,7 @@
         </div>
       </div>
     </div>
-    <span>{{ siteTitle }}</span>
+
     <!--TODO: Makalelerin listesi-->
     <div class="max-w-screen-lg p-5 md:flex mx-auto dark:bg-gray-900">
       <div>
@@ -177,7 +177,6 @@ export default {
   data() {
     return {
       siteMetaInfo: siteMetaInfo,
-      siteTitle: process.env.SITE_TITLE
     };
   },
   async asyncData({$axios}) {
