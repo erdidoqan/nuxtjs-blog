@@ -2,8 +2,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
+  env: {
+    title: process.env.SITE_TITLE
+  },
   head: {
-    title: "nuxt-blog",
+    title: process.env.SITE_TITLE,
     htmlAttrs: {
       lang: "en"
     },
@@ -16,6 +19,7 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.css"],
