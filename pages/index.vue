@@ -191,7 +191,7 @@ export default {
     }
   },
   head: {
-    title: siteMetaInfo.title,
+    title: process.env.SITE_TITLE,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
