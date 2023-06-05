@@ -3,29 +3,24 @@
     <div class="px-4 py-24 mx-auto overflow-hidden mt-20 sm:px-6 lg:px-8 bg-gray-100 rounded-t-xl">
       <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
         <div class="px-5 py-2">
-          <a href="/about-us" class="text-base hover:text-gray-400">
+          <NuxtLink to="/about-us" class="text-base hover:text-gray-400">
             About Us
-          </a>
+          </NuxtLink>
         </div>
         <div class="px-5 py-2">
-          <a href="/terms-and-conditions" class="text-base hover:text-gray-400">
+          <NuxtLink to="/terms-and-conditions" class="text-base hover:text-gray-400">
             Terms and Conditions
-          </a>
+          </NuxtLink>
         </div>
         <div class="px-5 py-2">
-          <a href="/privacy-policy" class="text-base hover:text-gray-400">
+          <NuxtLink to="/privacy-policy" class="text-base hover:text-gray-400">
             Privacy Policy
-          </a>
+          </NuxtLink>
         </div>
         <div class="px-5 py-2">
-          <a href="/contact-us" class="text-base hover:text-gray-400">
+          <NuxtLink to="/contact-us" class="text-base hover:text-gray-400">
             Contact Us
-          </a>
-        </div>
-        <div class="px-5 py-2">
-          <a href="" class="text-base hover:text-gray-400" target="_blank">
-
-          </a>
+          </NuxtLink>
         </div>
 
       </nav>
