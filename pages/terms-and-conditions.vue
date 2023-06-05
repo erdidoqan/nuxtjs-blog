@@ -66,14 +66,14 @@ export default {
     };
   },
   head: {
-    title: "Md Solaiman | Projects",
+    title: "Terms and Conditions",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Some of Projects developed by Solaiman",
+        content: "Terms and Conditions",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],

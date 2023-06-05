@@ -43,14 +43,14 @@ export default {
     };
   },
   head: {
-    title: "Md Solaiman | Projects",
+    title: "Contact Us",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Some of Projects developed by Solaiman",
+        content: "",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
