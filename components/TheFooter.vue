@@ -3,45 +3,31 @@
     <div class="px-4 py-24 mx-auto overflow-hidden mt-20 sm:px-6 lg:px-8 bg-gray-100 rounded-t-xl">
       <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
         <div class="px-5 py-2">
-          <a :href="env" class="text-base hover:text-gray-400" target="_blank">
-            {{ env }}
-          </a>
-        </div>
-<!--        <div class="px-5 py-2">
-          <a :href="process.env.FOOTER_LINK2_URL" class="text-base hover:text-gray-400" target="_blank">
-            {{ process.env.FOOTER_LINK2_TITLE }}
+          <a href="/about-us" class="text-base hover:text-gray-400">
+            About Us
           </a>
         </div>
         <div class="px-5 py-2">
-          <a :href="process.env.FOOTER_LINK3_URL" class="text-base hover:text-gray-400" target="_blank">
-            {{ process.env.FOOTER_LINK3_TITLE }}
+          <a href="/terms-and-conditions" class="text-base hover:text-gray-400">
+            Terms and Conditions
           </a>
         </div>
         <div class="px-5 py-2">
-          <a :href="process.env.FOOTER_LINK4_URL" class="text-base hover:text-gray-400" target="_blank">
-            {{ process.env.FOOTER_LINK4_TITLE }}
+          <a href="/privacy-policy" class="text-base hover:text-gray-400">
+            Privacy Policy
           </a>
         </div>
         <div class="px-5 py-2">
-          <a :href="process.env.FOOTER_LINK5_URL" class="text-base hover:text-gray-400" target="_blank">
-            {{ process.env.FOOTER_LINK5_TITLE }}
+          <a href="/contact-us" class="text-base hover:text-gray-400">
+            Contact Us
           </a>
         </div>
         <div class="px-5 py-2">
-          <a :href="process.env.FOOTER_LINK6_URL" class="text-base hover:text-gray-400" target="_blank">
-            {{ process.env.FOOTER_LINK6_TITLE }}
+          <a href="" class="text-base hover:text-gray-400" target="_blank">
+
           </a>
         </div>
-        <div class="px-5 py-2">
-          <a :href="process.env.FOOTER_LINK7_URL" class="text-base hover:text-gray-400" target="_blank">
-            {{ process.env.FOOTER_LINK7_TITLE }}
-          </a>
-        </div>
-        <div class="px-5 py-2">
-          <a :href="process.env.FOOTER_LINK8_URL" class="text-base hover:text-gray-400" target="_blank">
-            {{ process.env.FOOTER_LINK8_TITLE }}
-          </a>
-        </div>-->
+
       </nav>
       <div class="flex justify-center mt-6 space-x-6">
         <a target="_blank" href="https://twitter.com/GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
@@ -71,7 +57,6 @@ export default {
   data() {
     return {
       siteMetadata: siteMetaInfo,
-      env: process.env.FOOTER_LINK1_TITLE
     };
   },
 };
