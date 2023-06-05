@@ -32,8 +32,12 @@ export default {
   data() {
     return {
       navLinks: menu,
-      title: process.env.SITE_TITLE,
     };
+  },
+  computed: {
+    title() {
+      return process.env.SITE_TITLE;
+    },
   },
 };
 </script>
