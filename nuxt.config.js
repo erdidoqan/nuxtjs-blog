@@ -33,7 +33,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8", "@nuxtjs/dotenv"],
+  buildModules: ["@nuxt/postcss8"],
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
@@ -51,7 +51,8 @@ export default {
     "@nuxtjs/markdownit",
     "@nuxtjs/google-adsense",
     "nuxt-lazy-load",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    "@nuxtjs/dotenv"
   ],
     sitemap: {
     hostname: 'https://birthdaymessages.pages.dev',
