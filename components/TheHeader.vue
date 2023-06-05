@@ -20,6 +20,7 @@
           >
         </li>
       </ul>
+      <span>{{ siteTitle }}</span>
     </div>
   </nav>
 </template>
