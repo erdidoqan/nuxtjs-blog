@@ -124,6 +124,7 @@ export default {
         tailwindcss: {},
         autoprefixer: {}
       }
-    }
+    },
+    extractCSS: true
   }
 };
