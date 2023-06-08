@@ -12,7 +12,7 @@
         >
 
           <NuxtLink
-            :to="{ name: 'blog-slug', params: { slug: content.slug } }">
+            :to="{ name: 'tags-blog-slug', params: { slug: content.slug } }">
             <img :alt="content.title" class="object-cover w-full h-52 bg-gray-500 rounded-t-xl" :src="content.image" v-lazy-load>
           </NuxtLink>
           <div class="flex flex-col flex-1 p-6">
