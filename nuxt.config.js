@@ -7,6 +7,9 @@ export default {
   env: {
     SITE_TITLE: process.env.SITE_TITLE
   },
+  router: {
+    trailingSlash: false
+  },
   head: {
     title: process.env.SITE_TITLE,
     htmlAttrs: {
