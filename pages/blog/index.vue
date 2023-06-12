@@ -30,7 +30,7 @@
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY-1</h2>
                   <h1 class="title-font text-lg font-medium text-gray-600 mb-3">The Catalyzer</h1>
                   <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                  <div class="flex items-center flex-wrap ">
+            <div class="f      lex items-center flex-wrap ">
                     <button class="bg-gradient-to-r from-orange-300 to-amber-400 hover:scale-105 drop-shadow-md shadow-cla-violate px-4 py-1 rounded-lg">Learn more</button>
 
                   </div>
