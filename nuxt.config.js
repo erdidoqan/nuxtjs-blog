@@ -7,6 +7,13 @@ export default {
   env: {
     SITE_TITLE: process.env.SITE_TITLE
   },
+  redirect: [
+    {
+      // eslint-disable-next-line no-useless-escape
+      from: '^.*(?<=\\/)$',
+      to: (from, req) => req.url.replace(/\/$/, '')
+    }
+  ],
   router: {
     trailingSlash: false
   },
