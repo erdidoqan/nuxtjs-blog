@@ -7,20 +7,9 @@ export default {
   env: {
     SITE_TITLE: process.env.SITE_TITLE
   },
-  redirect: [
-    {
-      // eslint-disable-next-line no-useless-escape
-      from: '(?!^\/$|^\/[?].*$)(.*\/[?](.*)$|.*\/$)',
-      to: (from, req) => {
-        const base = req._parsedUrl.pathname.replace(/\/$/, '');  // We take pathname instead of req.url because of the query parameters
-        const search = req._parsedUrl.search;
-        return base + (search != null ? search : '');
-      },
-      statusCode: 301
-    }
-  ],
+  serverMiddleware: [],
   router: {
-    trailingSlash: false
+    trailingSlash: true
   },
   head: {
     title: process.env.SITE_TITLE,
