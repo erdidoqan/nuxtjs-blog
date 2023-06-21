@@ -38,13 +38,13 @@
       </span>
     </p>
     <div class="mt-5 flex-wrap inline-flex items-center">
-      <NuxtLink
+<!--      <NuxtLink
         v-for="tag in article.tags"
         :key="tag.title"
         class="rounded-xl bg-zinc-700 text-sm px-3 py-1 text-white transition-colors hover:bg-blue-500 mr-2 mb-2 last:mr-0"
         :to="{ name: 'tags-slug', params: { slug: tag.slug } }">
         {{ tag.title }}
-      </NuxtLink>
+      </NuxtLink>-->
     </div>
     <p v-if="article.body" class="prose min-w-full mx-auto" v-html="$md.render(article.body)"></p>
   </div>
