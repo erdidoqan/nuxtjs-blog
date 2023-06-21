@@ -60,14 +60,18 @@ export default {
     };
   },
   async asyncData({ $content, params, $axios}) {
-    try {
-      const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug).finally()
-      return {
-        article: article.data,
-      };
+    const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug,{
+      timeout: 5000
+    })
+
+    return {
+      article: article.data,
+    };
+    /*try {
+
     } catch (error) {
       console.error(error);
-    }
+    }*/
   },
   methods: {
     formatDate(date) {
