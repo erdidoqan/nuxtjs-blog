@@ -43,15 +43,12 @@ export default {
     };
   },
   async asyncData({ $content, params, $axios}) {
-    /*const article = await $content("articles", params.slug).fetch();*/
-    try {
-      const article = await $axios.$get(process.env.API_URL + '/accounts/tags/' + params.slug).finally()
-      return {
-        article: article.data,
-      };
-    } catch (error) {
-      console.error(error);
-    }
+    const article = await $axios.$get(process.env.API_URL + '/accounts/tags/' + params.slug,{
+      timeout: 5000
+    })
+    return {
+      article: article.data,
+    };
   },
   methods: {
     formatDate(date) {

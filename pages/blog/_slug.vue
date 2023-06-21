@@ -67,11 +67,6 @@ export default {
     return {
       article: article.data,
     };
-    /*try {
-
-    } catch (error) {
-      console.error(error);
-    }*/
   },
   methods: {
     formatDate(date) {

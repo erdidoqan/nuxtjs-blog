@@ -58,15 +58,13 @@ export default {
     };
   },
   async asyncData({ $content, params, $axios}) {
-    try {
-      const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug).finally()
-      console.log(article)
-      return {
-        article: article.data,
-      };
-    } catch (error) {
-      console.error(error);
-    }
+    const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug,{
+      timeout: 5000
+    })
+
+    return {
+      article: article.data,
+    };
   },
   methods: {
     formatDate(date) {
