@@ -61,7 +61,7 @@ export default {
   },
   async asyncData({ $content, params, $axios}) {
     const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug,{
-      timeout: 5000
+      timeout: 60000
     })
 
     return {
