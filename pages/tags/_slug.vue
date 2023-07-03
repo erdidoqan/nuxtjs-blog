@@ -10,14 +10,14 @@
           v-for="content in article.contents"
           :key="content.title"
         >
-          <a :href="`/blog/`+content.slug" aria-label="Te nulla oportere reprimique his dolorum">
+          <a :href="`/`+content.category+`/`+content.slug" aria-label="Te nulla oportere reprimique his dolorum">
             <img :alt="content.title" class="object-cover w-full h-52 bg-gray-500 rounded-t-xl" :src="content.image" v-lazy-load>
           </a>
           <div class="flex flex-col flex-1 p-6">
             <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
             <a rel="noopener noreferrer" href="#" class="text-xs tracking-wider uppercase hover:underline text-violet-400">Convenire</a>
             <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
-              <NuxtLink :to="{ name: 'blog-slug', params: { slug: content.slug } }">
+              <NuxtLink :to="{ name: content.category+'-slug', params: { slug: content.slug } }">
                 {{ content.title }}
               </NuxtLink>
             </h3>
