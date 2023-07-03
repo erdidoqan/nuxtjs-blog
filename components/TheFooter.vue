@@ -42,10 +42,10 @@
         <a target="_blank" href="mailto:greetingbirdscom@gmail.com" class="text-gray-400 cursor-pointer hover:text-gray-700">
           <span class="sr-only">Email</span>
           <svg class="inline-block w-6 h-7 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"></path></svg> </a>
-        <a target="_blank" href="GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
+<!--        <a target="_blank" href="GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
           <span class="sr-only">Chrome</span>
           <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg>
-        </a>
+        </a>-->
       </div>
       <p class="mt-4 text-xs text-center text-gray-400">
         © 2023 GreetingBirds, All rights reserved
