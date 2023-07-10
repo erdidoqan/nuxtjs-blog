@@ -18,6 +18,16 @@ export default {
     TheHeader,
     TheFooter,
   },
+  head() {
+    return {
+      link: [
+        {
+          rel: 'canonical',
+          href: process.env.PUBLISH_URL + '/' + this.$route.path
+        }
+      ]
+    }
+  }
 };
 </script>
 

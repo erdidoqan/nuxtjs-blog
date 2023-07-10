@@ -5,7 +5,8 @@ export default {
   target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
   env: {
-    SITE_TITLE: process.env.SITE_TITLE
+    SITE_TITLE: process.env.SITE_TITLE,
+    PUBLISH_URL: process.env.PUBLISH_URL
   },
   head: {
     title: process.env.SITE_TITLE,
