@@ -23,7 +23,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: process.env.PUBLISH_URL + '/' + this.$route.path
+          href: 'https://' + process.env.PUBLISH_URL + this.$route.path
         }
       ]
     }
