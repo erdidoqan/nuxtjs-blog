@@ -166,7 +166,7 @@
         </div>
       </div>
     </div>
-    <hr>
+<!--    <hr>
     <h1 class="p-5 text-4xl tracking-tight text-slate-800 font-extrabold dark:text-slate-200">
       🛖 Category
     </h1>
@@ -180,7 +180,7 @@
           >
 
             <div class="relative">
-              <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+              <NuxtLink :to="{ name: 'categories-slug', params: { slug: article.slug } }">
                 <img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key" v-lazy-load>
               </NuxtLink>
               <span class="inline-block px-3 font-sans transition-shadow duration-300 py-1 text-[0.65rem] rounded-full bg-primary-100 text-primary-500 border-primary-100 dark:border-primary-500 dark:text-primary-500 border dark:bg-transparent absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Productivity</span>
@@ -188,7 +188,7 @@
             <div>
               <div class="mb-6 mt-3">
                 <p class="font-heading text-base font-medium leading-snug line-clamp-2 text-gray-800 dark:text-gray-100">
-                  <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+                  <NuxtLink :to="{ name: 'categories-slug', params: { slug: article.slug } }">
                     {{ article.title }}
                   </NuxtLink>
                 </p>
@@ -227,7 +227,7 @@
           >
 
             <div class="relative">
-              <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+              <NuxtLink :to="{ name: 'post-slug', params: { slug: article.slug } }">
                 <img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key" v-lazy-load>
               </NuxtLink>
               <span class="inline-block px-3 font-sans transition-shadow duration-300 py-1 text-[0.65rem] rounded-full bg-primary-100 text-primary-500 border-primary-100 dark:border-primary-500 dark:text-primary-500 border dark:bg-transparent absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Productivity</span>
@@ -235,7 +235,7 @@
             <div>
               <div class="mb-6 mt-3">
                 <p class="font-heading text-base font-medium leading-snug line-clamp-2 text-gray-800 dark:text-gray-100">
-                  <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+                  <NuxtLink :to="{ name: 'post-slug', params: { slug: article.slug } }">
                     {{ article.title }}
                   </NuxtLink>
                 </p>
@@ -259,7 +259,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     </div>
 </template>
