@@ -65,7 +65,7 @@ export default {
     "@nuxtjs/dotenv"
   ],
     sitemap: {
-    hostname: 'https://birthdaymessages.pages.dev',
+    hostname: 'https://' + process.env.PUBLISH_URL,
     exclude: [
       'projects/',
       'blog/*',
