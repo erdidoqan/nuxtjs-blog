@@ -75,10 +75,10 @@ export default {
       'post/*',
       'quote/*',
       'tags/*',
-      'about-us',
-      'contact-us',
-      'privacy-policy',
-      'terms-and-conditions',
+      'about-us/',
+      'contact-us/',
+      'privacy-policy/',
+      'terms-and-conditions/',
       '*.html'
     ]
   },
