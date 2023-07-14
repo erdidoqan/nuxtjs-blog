@@ -64,7 +64,24 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv"
   ],
-
+    sitemap: {
+    hostname: 'https://' + process.env.PUBLISH_URL,
+    exclude: [
+      'categories/',
+      'blog/*',
+      'detail/*',
+      'life/*',
+      'message/*',
+      'post/*',
+      'quote/*',
+      'tags/*',
+      'about-us/',
+      'contact-us/',
+      'privacy-policy/',
+      'terms-and-conditions/',
+      '*.html'
+    ]
+  },
   lazyLoad: {
     // These are the default values
     images: true,
