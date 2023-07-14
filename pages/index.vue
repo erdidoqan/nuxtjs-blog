@@ -166,7 +166,7 @@
         </div>
       </div>
     </div>
-<!--    <hr>
+    <hr>
     <h1 class="p-5 text-4xl tracking-tight text-slate-800 font-extrabold dark:text-slate-200">
       🛖 Category
     </h1>
@@ -259,7 +259,7 @@
           </div>
         </div>
       </div>
-    </div>-->
+    </div>
 
     </div>
 </template>
