@@ -9,14 +9,14 @@
         >
 
           <div class="relative">
-            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+            <NuxtLink :to="{ name: category + '-slug', params: { slug: article.slug } }">
               <img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key" v-lazy-load>
             </NuxtLink>
           </div>
           <div>
             <div class="mb-6 mt-3">
               <p class="font-heading text-base font-medium leading-snug line-clamp-4 text-gray-800 dark:text-gray-100">
-                <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+                <NuxtLink :to="{ name: category +'-slug', params: { slug: article.slug } }">
                   {{ article.title }}
                 </NuxtLink>
               </p>
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  props: ['articles'],
+  props: ['articles','category'],
   name: "Articles.vue"
 }
 </script>

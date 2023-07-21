@@ -48,7 +48,7 @@
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-2 mx-auto">
           <div class="flex flex-wrap -m-4">
-            <Articles :articles="articles" />
+            <Articles :category="'quote'" :articles="articles" />
           </div>
         </div>
       </section>
