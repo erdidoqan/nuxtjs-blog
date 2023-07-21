@@ -33,7 +33,7 @@
         </ol>
       </nav>
       <h1 class="mb-4 mt-5 text-center text-4xl tracking-tight text-slate-800 font-extrabold">
-        📺 Detail
+        📜 Blog
       </h1>
       <p class="max-w-3xl mx-auto text-lg text-slate-700 dark:text-slate-400 p-5">
         Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense
