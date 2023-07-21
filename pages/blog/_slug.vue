@@ -8,7 +8,7 @@
         </span>
       </p>
     </div>
-    <div class="px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0 mt-10">
+    <div class="px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 mt-10">
       <!-- component -->
       <nav aria-label="breadcrumbs" class="flex items-center justify-center bg-grey-light rounded font-sans w-full">
         <ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="list-reset flex text-grey-dark">
@@ -16,17 +16,17 @@
             <a itemprop="item" href="/" data-vars-ga-ux-element="Breadcrumbs"
                data-vars-ga-call-to-action="Home"
                data-vars-ga-outbound-link="/"
-               class="text-blue-800 font-bold underline">
+               class="text-gray-400 underline">
               <span itemprop="name">Home</span>
             </a>
             <meta itemprop="position" content="1">
           </li>
-          <li><span class="mx-2">/</span></li>
+          <li><span class="mx-2 text-gray-400">></span></li>
           <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" >
             <a itemprop="item" href="/blog" data-vars-ga-ux-element="Breadcrumbs"
                data-vars-ga-call-to-action="Blogs"
                data-vars-ga-outbound-link="/blog"
-               class="text-blue-800 font-bold underline">
+               class="text-gray-400 underline">
               <span itemprop="name">Blogs</span>
             </a>
             <meta itemprop="position" content="2">
@@ -45,7 +45,7 @@
         </ol>
       </nav>
 
-      <h1 class="text-4xl mt-5 text-gray-700 font-extrabold mb-10 text-center">
+      <h1 class="text-3xl mt-3 text-gray-700 font-extrabold mb-10 text-center">
         {{ article.title }}
       </h1>
       <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
@@ -60,22 +60,22 @@
           <div class="text-slate-900 dark:text-slate-200">
             By: <a href="/author"><u class="font-bold">{{ siteMetadata.author }}</u></a>
           </div>
-          <p class="text-center text-green-700">
+          <p class="text-center text-gray-400">
             Created: {{ article.createdAt }}
           </p>
         </div>
       </div>
-      <img
-        class="mx-auto w-4/5 my-10 rounded-md drop-shadow-sm"
-        :src="article.image"
-        v-lazy-load
-      />
-      <p class="text-center font-bold my-5">
+    </div>
+    <img
+      class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
+      :src="article.image"
+      v-lazy-load
+    />
+    <p class="text-center font-bold my-5">
         <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">
             {{ article.readDuration }}
         </span>
-      </p>
-    </div>
+    </p>
     <div class="px-4 mx-auto sm:px-6 xl:max-w-[95%] xl:px-0 mt-10">
       <div class="flex">
         <div class="xl:w-3/4 sm:w-full">
@@ -89,7 +89,7 @@
             </NuxtLink>
           </div>
 
-          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" v-html="$md.render(article.body)"></p>
+          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" v-html="$md.render('#'+article.body)"></p>
 
         </div>
         <div class="xl:w-1/4 hidden lg:block">
@@ -133,89 +133,87 @@ export default {
       return new Date(date).toLocaleDateString("en", options);
     },
     jsonld() {
-
-      return {
-        "@type": "NewsArticle",
-        "thumbnailUrl": this.article.thumbnailUrl,
-        "datePublished": this.article.datePublished,
-        "headline": this.article.title,
-        "wordCount": this.article.wordCount,
-        "inLanguage":"en-EN",
-        "articleSection": "Lifestyle",
-        "articleBody": this.article.cleanBody,
-        "image": [
-          {
-            "@type": "ImageObject",
-            "height": 1200,
-            "thumbnail": this.article.thumbnailUrl,
-            "url": this.article.image1200,
-            "width": 1200
-          },
-          {
-            "@type": "ImageObject",
-            "height": 900,
-            "thumbnail": this.article.thumbnailUrl,
-            "url": this.article.image900,
-            "width": 1200
-          },
-          {
-            "@type": "ImageObject",
-            "height": 675,
-            "thumbnail": this.article.thumbnailUrl,
-            "url": this.article.image675,
-            "width": 1200
-          }
-        ],
-        "mainEntityOfPage": {
-          "@id": this.$nuxt.$route.path,
-          "@type": "WebPage"
-        },
-        "publisher": {
-          "@type": "NewsMediaOrganization",
-          "name": process.env.SITE_TITLE,
-          "logo": {
-            "@type": "ImageObject",
-            "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
-            "width": 312,
-            "height": 60
-          },
-          "parentOrganization": {
-            "@type": "NewsMediaOrganization",
-            "name": "Greetingbirds"
-          }
-        },
-        "url": this.$nuxt.$route.path,
-        "isBasedOn": this.$nuxt.$route.path,
-        "dateModified": this.article.dateModified,
-        "author": {
-          "name": "Yapay Yazar",
-          "url": "/author/",
-          "@type": "Person",
-          "description": "<p>Yapay Yazar is a Greetingbirds analyst, which he evaluates based on 'Quotes' using specialized equipment and consumer tester data. Before starting Greetingbirds in 2022, she earned an MA in authoring and a BA in fiber science from Epoka University. While earning his Yazar degrees, he worked in smart and nanotechnology research laboratories.</p>",
-          "jobTitle": "Quotes Lab Product Analyst",
-          "image": "https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg",
-          "email": "greetingbirds@gmail.com",
-          "sameAs": []
-        },
-        "@context": "http://schema.org"
-      }
-    },
-    jsonLDitem(){
-      return {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "numberOfItems": this.relateds.length,
-        "itemListElement": [
-          this.relateds.map((related, index) => {
-            return {
-              "@type": "ListItem",
-              "position": index + 1,
-              "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + related.slug,
-              "name": related.title
+      return [
+        {
+          "@type": "NewsArticle",
+          "thumbnailUrl": this.article.thumbnailUrl,
+          "datePublished": this.article.datePublished,
+          "headline": this.article.title,
+          "wordCount": this.article.wordCount,
+          "inLanguage":"en-EN",
+          "articleSection": "Lifestyle",
+          "articleBody": this.article.cleanBody,
+          "image": [
+            {
+              "@type": "ImageObject",
+              "height": 1200,
+              "thumbnail": this.article.thumbnailUrl,
+              "url": this.article.image1200,
+              "width": 1200
+            },
+            {
+              "@type": "ImageObject",
+              "height": 900,
+              "thumbnail": this.article.thumbnailUrl,
+              "url": this.article.image900,
+              "width": 1200
+            },
+            {
+              "@type": "ImageObject",
+              "height": 675,
+              "thumbnail": this.article.thumbnailUrl,
+              "url": this.article.image675,
+              "width": 1200
             }
-          })
-        ]
-      }
+          ],
+          "mainEntityOfPage": {
+            "@id": this.$nuxt.$route.path,
+            "@type": "WebPage"
+          },
+          "publisher": {
+            "@type": "NewsMediaOrganization",
+            "name": process.env.SITE_TITLE,
+            "logo": {
+              "@type": "ImageObject",
+              "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+              "width": 312,
+              "height": 60
+            },
+            "parentOrganization": {
+              "@type": "NewsMediaOrganization",
+              "name": "Greetingbirds"
+            }
+          },
+          "url": this.$nuxt.$route.path,
+          "isBasedOn": this.$nuxt.$route.path,
+          "dateModified": this.article.dateModified,
+          "author": {
+            "name": "Yapay Yazar",
+            "url": "/author/",
+            "@type": "Person",
+            "description": "<p>Yapay Yazar is a Greetingbirds analyst, which he evaluates based on 'Quotes' using specialized equipment and consumer tester data. Before starting Greetingbirds in 2022, she earned an MA in authoring and a BA in fiber science from Epoka University. While earning his Yazar degrees, he worked in smart and nanotechnology research laboratories.</p>",
+            "jobTitle": "Quotes Lab Product Analyst",
+            "image": "https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg",
+            "email": "greetingbirds@gmail.com",
+            "sameAs": []
+          },
+          "@context": "http://schema.org"
+        },{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "numberOfItems": this.relateds.length,
+          "itemListElement": [
+            this.relateds.map((related, index) => {
+              return {
+                "@type": "ListItem",
+                "position": index + 1,
+                "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + related.slug,
+                "name": related.title
+              }
+            })
+          ]
+        }
+      ]
     }
   },
   mounted() {
@@ -233,7 +231,7 @@ export default {
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       script: [{
         type: 'application/ld+json',
-        innerHTML: JSON.stringify([this.jsonld(),this.jsonLDitem()])
+        innerHTML: JSON.stringify(this.jsonld())
       }],
       __dangerouslyDisableSanitizers: ['script'],
     };

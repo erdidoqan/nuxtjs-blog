@@ -32,10 +32,10 @@
           </li>
         </ol>
       </nav>
-      <h1 class="mb-4 mt-5 text-8xl sm:text-4xl tracking-tight text-slate-800 font-extrabold dark:text-slate-200">
-        📜 Blog
+      <h1 class="mb-4 mt-5 text-center text-4xl tracking-tight text-slate-800 font-extrabold">
+        📺 Detail
       </h1>
-      <p class="max-w-3xl mx-auto text-lg text-slate-700 dark:text-slate-400">
+      <p class="max-w-3xl mx-auto text-lg text-slate-700 dark:text-slate-400 p-5">
         Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense
         pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave
         you inspired, informed, and entertained. Our team of talented writers and experts has poured their passion and
@@ -141,5 +141,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
