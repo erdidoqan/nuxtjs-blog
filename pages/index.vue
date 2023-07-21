@@ -125,7 +125,7 @@
     <!--TODO: Makalelerin listesi-->
       <div class="p-5 md:flex mx-auto dark:bg-gray-900">
       <div>
-        <div class="ltablet:grid-cols-6 grid w-full gap-6 sm:grid-cols-3 lg:grid-cols-6">
+        <div class="ltablet:grid-cols-6 grid w-full gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           <div
             v-for="(article, key) in articles"
             :key="key"

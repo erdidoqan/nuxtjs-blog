@@ -1,11 +1,46 @@
 <template>
   <div>
-    <header class="pt-16 pb-9 sm:pb-16 sm:text-center">
-      <h1 class="mb-4 text-8xl sm:text-4xl tracking-tight text-slate-800 font-extrabold dark:text-slate-200">
+    <div class="bg-gray-200 text-black h-40 text-center w-full"></div>
+    <div class="w-full text-xs m-0 text-center normal-case border-b border-gray-200 p-2">
+      <p class="">
+        <span class="css-0 eidw0490">
+          For over long years, we have diligently conducted independent research and product testing. When you make a purchase through our links, we may earn a commission.
+        </span>
+      </p>
+    </div>
+    <header class="pt-10 pb-5 sm:pb-16 sm:text-center">
+      <nav aria-label="breadcrumbs" class="flex items-center justify-center bg-grey-light rounded font-sans w-full">
+        <ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="list-reset flex text-grey-dark">
+          <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" >
+            <a itemprop="item" href="/" data-vars-ga-ux-element="Breadcrumbs"
+               data-vars-ga-call-to-action="Home"
+               data-vars-ga-outbound-link="/"
+               class="text-blue-800 font-bold underline">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1">
+          </li>
+          <li><span class="mx-2">/</span></li>
+          <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="/blog" data-vars-ga-ux-element="Breadcrumbs"
+               data-vars-ga-call-to-action="Blogs"
+               data-vars-ga-outbound-link="/blog"
+               class="text-blue-800 font-bold underline">
+              <span itemprop="name">Blogs</span>
+            </a>
+            <meta itemprop="position" content="2">
+          </li>
+        </ol>
+      </nav>
+      <h1 class="mb-4 mt-5 text-8xl sm:text-4xl tracking-tight text-slate-800 font-extrabold dark:text-slate-200">
         📜 Blog
       </h1>
-      <p class="text-lg text-slate-700 dark:text-slate-400">
-        All the latest Tailwind CSS news, straight from the&nbsp;team.
+      <p class="max-w-3xl mx-auto text-lg text-slate-700 dark:text-slate-400">
+        Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense
+        pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave
+        you inspired, informed, and entertained. Our team of talented writers and experts has poured their passion and
+        expertise into each article, striving to create an unforgettable reading experience for our valued readers like
+        you.
       </p>
     </header>
     <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
@@ -13,43 +48,7 @@
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-2 mx-auto">
           <div class="flex flex-wrap -m-4">
-            <blog-item
-              v-for="article in articles"
-              :key="article.title"
-              :title="article.title"
-              :description="article.description"
-              :image="article.image"
-              :read_duration="article.read_duration"
-              :date="article.date"
-              :slug="article.slug"
-            ></blog-item>
-<!--            <div class="p-4 md:w-1/3">
-              <div class="h-full rounded-xl shadow-cla-violate bg-gradient-to-r from-pink-50 to-red-50 overflow-hidden">
-                <img class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="https://images.unsplash.com/photo-1624628639856-100bf817fd35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8M2QlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="blog">
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY-1</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-600 mb-3">The Catalyzer</h1>
-                  <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            <div class="f      lex items-center flex-wrap ">
-                    <button class="bg-gradient-to-r from-orange-300 to-amber-400 hover:scale-105 drop-shadow-md shadow-cla-violate px-4 py-1 rounded-lg">Learn more</button>
-
-                  </div>
-                </div>
-              </div>
-            </div>-->
-<!--            <div class="p-4 md:w-1/3">
-              <div class="h-full rounded-xl shadow-cla-pink bg-gradient-to-r from-fuchsia-50 to-pink-50 overflow-hidden">
-                <img class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="https://images.unsplash.com/photo-1631700611307-37dbcb89ef7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60" alt="blog">
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY-1</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-600 mb-3">The Catalyzer</h1>
-                  <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                  <div class="flex items-center flex-wrap ">
-                    <button class="bg-gradient-to-r from-fuchsia-300 to-pink-400 hover:scale-105  shadow-cla-blue px-4 py-1 rounded-lg">Learn more</button>
-                  </div>
-                </div>
-              </div>
-            </div>-->
+            <Articles :articles="articles" />
           </div>
         </div>
       </section>
@@ -71,18 +70,74 @@ export default {
       console.error(error);
     }
   },
-  head: {
-    title: "Blogs",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: " ",
-      },
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+  methods: {
+    jsonld() {
+      return {
+        "@context": "http://schema.org",
+        "@type": [
+          "ItemList",
+          "CollectionPage"
+        ],
+        "itemListElement": [
+          this.articles.map((article, index) => {
+            return {
+              "@type": "ListItem",
+              "position": index + 1,
+              "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + article.slug,
+              "name": article.title
+            }
+          })
+        ],
+        "numberOfItems": this.articles.length,
+        "mainEntityOfPage": {
+          "@type": [
+            "CollectionPage"
+          ],
+          "@id": 'https://' + process.env.PUBLISH_URL + '/blog/',
+          "name": "Blogs & Ratings From the " + process.env.SITE_TITLE,
+          "headline": "Blogs",
+          "datePublished": this.articles[0].datePublished,
+          "dateModified": this.articles[0].dateModified,
+          "description": process.env.SITE_TITLE + " Our team of talented writers and experts has poured their passion and expertise into each article, striving to create an unforgettable reading experience for our valued readers like you."
+        },
+        "publisher": {
+          "@type": "Organization",
+          "logo": {
+            "@type": "ImageObject",
+            "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+            "width": 312,
+            "height": 60
+          },
+          "name": process.env.SITE_TITLE,
+          "url": 'https://' + process.env.PUBLISH_URL,
+          "brand": {
+            "@type": "Thing",
+            "name": process.env.SITE_TITLE
+          }
+        },
+        "url": 'https://' + process.env.PUBLISH_URL + '/blog/'
+      }
+    },
+  },
+  head() {
+    return {
+      title: "Blogs",
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          hid: "description",
+          name: "description",
+          content: " ",
+        },
+      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      script: [{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.jsonld())
+      }],
+      __dangerouslyDisableSanitizers: ['script'],
+    }
   },
 };
 </script>
