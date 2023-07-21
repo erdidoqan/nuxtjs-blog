@@ -120,7 +120,7 @@ export default {
     const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug,{
       timeout: 60000
     })
-    const relateds = await $axios.$get(process.env.API_URL + '/contents')
+    const relateds = await $axios.$get(process.env.API_URL + '/category/category')
 
     return {
       relateds: relateds.data,
