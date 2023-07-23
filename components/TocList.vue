@@ -3,7 +3,7 @@
     <li v-for="item in items">
       <a
         class="font-semibold group-[.subheadings]:font-normal
-        hover:text-orange-500 hover:underline
+        hover:text-pink-700 hover:underline
         underline-offset-4"
         :href="`#${item.id}`">
         {{ item.content }}
