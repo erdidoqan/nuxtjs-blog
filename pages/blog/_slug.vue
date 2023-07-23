@@ -148,7 +148,7 @@ export default {
           "datePublished": this.article.datePublished,
           "headline": this.article.title,
           "wordCount": this.article.wordCount,
-          "inLanguage":"en-EN",
+          "inLanguage":"en-US",
           "articleSection": "Lifestyle",
           "articleBody": this.article.cleanBody,
           "image": [

@@ -10,8 +10,8 @@
         </NuxtLink>
       </div>
 
-      <ul class="flex overflow-x-auto w-full lg:w-9/12 items-center justify-center text-base">
-        <li v-for="item in navLinks" :key="item.path" class="text-center">
+      <ul itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu" class="flex overflow-x-auto w-full lg:w-9/12 items-center justify-center text-base">
+        <li itemprop="name" role="menuitem" v-for="item in navLinks" :key="item.path" class="text-center">
           <NuxtLink
             :to="item.path"
             class="block md:inline-block px-2 py-1 no-underline text-grey-darkest hover:text-grey-darker font-bold text-sm md:text-xl"
