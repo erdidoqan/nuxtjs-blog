@@ -143,18 +143,7 @@ export default {
     transpile: [
       '@sindresorhus/slugify',
       '@sindresorhus/transliterate',
-      "direction",
-      "comma-separated-tokens",
-      "bcp-47-match",
-      "unist-util-is",
-      "unist-util-visit",
-      "hast-util-is-element",
-      "hast-util-select",
-      "hast-util-has-property",
-      "hast-util-whitespace",
-      "space-separated-tokens",
-      "property-information",
-      "zwitch"
+      'hast-util-select'
     ]
   }
 };
