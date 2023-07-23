@@ -14,6 +14,7 @@
         <li itemprop="name" role="menuitem" v-for="item in navLinks" :key="item.path" class="text-center">
           <NuxtLink
             :to="item.path"
+            itemprop="url"
             class="block md:inline-block px-2 py-1 no-underline text-grey-darkest hover:text-grey-darker font-bold text-sm md:text-xl"
           >{{ item.name }}</NuxtLink
           >
