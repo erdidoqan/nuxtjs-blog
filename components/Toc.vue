@@ -7,11 +7,7 @@
     </h3>
 
     <div class="mt-5">
-      <ul>
-        <li>
-          asdqwe
-        </li>
-      </ul>
+      <TocList :items="groupedHeadings" />
     </div>
   </div>
 </template>
@@ -29,10 +25,19 @@ export default {
     };
   },
   methods: {
-
+    slugify(str) {
+        return String(str)
+          .normalize('NFKD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9 -]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+      }
   },
   computed: {
-    /*groupedHeadings(){
+    groupedHeadings(){
       if (this.titles){
         let items = [...this.titles]
 
@@ -51,18 +56,16 @@ export default {
 
         return items
       }
-    }*/
+    }
   },
   mounted() {
     const headings = ref([])
-    /*const slugify = slugifyWithCounter()*/
-    const slugify = require('@sindresorhus/slugify');
-console.log(slugify('I ♥ Dogs'))
-    /*window.document
+    window.document
       .querySelector('#content')
       ?.querySelectorAll("h1, h2, h3, h4, h5, h6")
       .forEach(el => {
-        let id = slugify(el.innerText)
+
+        let id = this.slugify(el.innerText)
         el.setAttribute("id",id)
 
         headings.value.push({
@@ -72,7 +75,7 @@ console.log(slugify('I ♥ Dogs'))
           subheadings: [],
         })
       })
-    this.titles = headings.value*/
+    this.titles = headings.value
   },
 }
 </script>
