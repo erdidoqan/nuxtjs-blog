@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import {ref} from 'vue'
-import {slugifyWithCounter} from '@sindresorhus/slugify'
+import ref from 'vue'
+import slugifyWithCounter from '@sindresorhus/slugify'
 
 export default {
   name: "Toc",
@@ -22,7 +22,7 @@ export default {
 
     return {
       title: 0,
-      basliklar: null
+      titles: null
     };
   },
   methods: {
@@ -30,8 +30,8 @@ export default {
   },
   computed: {
     groupedHeadings(){
-      if (this.basliklar){
-        let items = [...this.basliklar]
+      if (this.titles){
+        let items = [...this.titles]
 
         for (let i = items.length - 1; i >= 0; i--){
           const currentItem = items[i]
@@ -68,7 +68,7 @@ export default {
           subheadings: [],
         })
       })
-    this.basliklar = headings.value
+    this.titles = headings.value
   },
 }
 </script>
