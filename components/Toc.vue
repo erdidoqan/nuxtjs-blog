@@ -18,7 +18,7 @@
 
 <script>
 import { ref } from 'vue'
-import {slugifyWithCounter} from '@sindresorhus/slugify'
+/*import {slugifyWithCounter} from '@sindresorhus/slugify'*/
 
 export default {
   name: "Toc",
@@ -56,7 +56,7 @@ export default {
   },
   mounted() {
     const headings = ref([])
-    const slugify = slugifyWithCounter()
+    /*const slugify = slugifyWithCounter()*/
 console.log(headings)
     /*window.document
       .querySelector('#content')
