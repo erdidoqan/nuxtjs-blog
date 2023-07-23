@@ -116,7 +116,10 @@
 <script>
 
 import siteMetaInfo from "@/data/sitemetainfo";
+import Toc from "@/components/Toc";
+
 export default {
+  components: ['Toc'],
   data() {
     return {
       title: 0,

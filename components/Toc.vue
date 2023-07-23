@@ -15,9 +15,11 @@
 <script>
 import {ref} from 'vue'
 import {slugifyWithCounter} from '@sindresorhus/slugify'
+import TocList from "@/components/TocList";
 
 export default {
   name: "Toc",
+  components: ['TocList'],
   data() {
 
     return {
