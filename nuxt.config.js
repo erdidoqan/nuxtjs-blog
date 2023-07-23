@@ -139,11 +139,6 @@ export default {
         tailwindcss: {},
         autoprefixer: {}
       }
-    },
-    transpile: [
-      '@sindresorhus/slugify',
-      '@sindresorhus/transliterate',
-      'hast-util-select'
-    ]
+    }
   }
 };
