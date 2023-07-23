@@ -134,9 +134,6 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config) {
-      config.resolve.alias.vue = 'vue/dist/vue.common'
-    },
     postcss: {
       plugins: {
         tailwindcss: {},
@@ -146,7 +143,18 @@ export default {
     transpile: [
       '@sindresorhus/slugify',
       '@sindresorhus/transliterate',
-      'hast-util-select'
+      "direction",
+      "comma-separated-tokens",
+      "bcp-47-match",
+      "unist-util-is",
+      "unist-util-visit",
+      "hast-util-is-element",
+      "hast-util-select",
+      "hast-util-has-property",
+      "hast-util-whitespace",
+      "space-separated-tokens",
+      "property-information",
+      "zwitch"
     ]
   }
 };
