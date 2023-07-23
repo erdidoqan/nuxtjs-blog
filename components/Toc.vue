@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import {slugifyWithCounter} from '@sindresorhus/slugify'
+/*import { ref } from 'vue'
+import {slugifyWithCounter} from '@sindresorhus/slugify'*/
 
 export default {
   name: "Toc",
@@ -33,7 +33,7 @@ export default {
 
   },
   computed: {
-    groupedHeadings(){
+    /*groupedHeadings(){
       if (this.titles){
         let items = [...this.titles]
 
@@ -52,10 +52,10 @@ export default {
 
         return items
       }
-    }
+    }*/
   },
   mounted() {
-    const headings = ref([])
+    /*const headings = ref([])
     const slugify = slugifyWithCounter()
 
     window.document
@@ -72,7 +72,7 @@ export default {
           subheadings: [],
         })
       })
-    this.titles = headings.value
+    this.titles = headings.value*/
   },
 }
 </script>
