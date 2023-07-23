@@ -7,7 +7,11 @@
     </h3>
 
     <div class="mt-5">
-      <TocList :items="groupedHeadings" />
+      <ul>
+        <li>
+          asdqwe
+        </li>
+      </ul>
     </div>
   </div>
 </template>
