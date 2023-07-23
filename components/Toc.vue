@@ -18,7 +18,7 @@
 
 <script>
 import { ref } from 'vue'
-/*import {slugifyWithCounter} from '@sindresorhus/slugify'*/
+import slugify from '@sindresorhus/slugify'
 
 export default {
   name: "Toc",
@@ -57,7 +57,7 @@ export default {
   mounted() {
     const headings = ref([])
     /*const slugify = slugifyWithCounter()*/
-console.log(headings)
+console.log(slugify('I ♥ Dogs'))
     /*window.document
       .querySelector('#content')
       ?.querySelectorAll("h1, h2, h3, h4, h5, h6")
