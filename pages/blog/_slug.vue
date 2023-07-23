@@ -58,7 +58,10 @@
         />
         <div>
           <div class="text-slate-900 dark:text-slate-200">
-            By: <a href="/author"><u class="font-bold">{{ siteMetadata.author }}</u></a>
+            By:
+            <NuxtLink to="/author">
+              <u class="font-bold">{{ siteMetadata.author }}</u>
+            </NuxtLink>
           </div>
           <p class="text-center text-gray-400">
             Created: {{ article.createdAt }}
@@ -89,7 +92,11 @@
             </NuxtLink>
           </div>
 
-          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" v-html="$md.render('#'+article.body)"></p>
+          <div class="min-w-full p-2 mx-auto">
+            <Toc />
+          </div>
+
+          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" id="content" v-html="$md.render('#'+article.body)"></p>
 
         </div>
         <div class="xl:w-1/4 hidden lg:block">
