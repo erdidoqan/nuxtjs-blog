@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import ref from 'vue'
-import slugifyWithCounter from '@sindresorhus/slugify'
+import { ref } from 'vue'
+import {slugifyWithCounter} from '@sindresorhus/slugify'
 
 export default {
   name: "Toc",

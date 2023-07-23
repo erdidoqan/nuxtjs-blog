@@ -140,7 +140,6 @@ export default {
         autoprefixer: {}
       }
     },
-    standalone: true,
     transpile: [
       '@sindresorhus/slugify',
       '@sindresorhus/transliterate',
