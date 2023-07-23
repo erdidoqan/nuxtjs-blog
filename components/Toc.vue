@@ -17,8 +17,8 @@
 </template>
 
 <script>
-/*import { ref } from 'vue'
-import {slugifyWithCounter} from '@sindresorhus/slugify'*/
+import { ref } from 'vue'
+import {slugifyWithCounter} from '@sindresorhus/slugify'
 
 export default {
   name: "Toc",
@@ -55,10 +55,10 @@ export default {
     }*/
   },
   mounted() {
-    /*const headings = ref([])
+    const headings = ref([])
     const slugify = slugifyWithCounter()
-
-    window.document
+console.log(headings)
+    /*window.document
       .querySelector('#content')
       ?.querySelectorAll("h1, h2, h3, h4, h5, h6")
       .forEach(el => {
