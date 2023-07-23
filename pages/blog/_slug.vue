@@ -92,9 +92,7 @@
             </NuxtLink>
           </div>
 
-          <div class="min-w-full p-2 mx-auto">
-            <Toc />
-          </div>
+
 
           <p v-if="article.body" class="prose min-w-full p-2 mx-auto" id="content" v-html="$md.render('#'+article.body)"></p>
 
