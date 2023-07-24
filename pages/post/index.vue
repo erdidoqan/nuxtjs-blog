@@ -9,29 +9,7 @@
       </p>
     </div>
     <header class="pt-10 pb-5 sm:pb-16 sm:text-center">
-      <nav aria-label="breadcrumbs" class="flex items-center justify-center bg-grey-light rounded font-sans w-full">
-        <ol itemScope="" itemType="https://schema.org/BreadcrumbList" class="list-reset flex text-grey-dark">
-          <li itemProp="itemListElement" itemScope="" itemType="https://schema.org/ListItem">
-            <a itemProp="item" href="/" data-vars-ga-ux-element="Breadcrumbs"
-               data-vars-ga-call-to-action="Home"
-               data-vars-ga-outbound-link="/"
-               class="text-blue-800 font-bold underline">
-              <span itemProp="name">Home</span>
-            </a>
-            <meta itemProp="position" content="1">
-          </li>
-          <li><span class="mx-2">/</span></li>
-          <li itemProp="itemListElement" itemScope="" itemType="https://schema.org/ListItem">
-            <a itemProp="item" href="/post" data-vars-ga-ux-element="Breadcrumbs"
-               data-vars-ga-call-to-action="Posts"
-               data-vars-ga-outbound-link="/post"
-               class="text-blue-800 font-bold underline">
-              <span itemProp="name">Posts</span>
-            </a>
-            <meta itemProp="position" content="2">
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumbs :lists="breadcrumbs.lists" />
       <h1 class="mb-4 mt-5 text-center text-4xl tracking-tight text-slate-800 font-extrabold">
         📬 Post
       </h1>
@@ -68,6 +46,16 @@ export default {
       };
     } catch (error) {
       console.error(error);
+    }
+  },
+  computed: {
+    breadcrumbs() {
+      return {
+        lists: [
+          { name: "Home", url: "/", ok: true },
+          { name: "Post", url: "/post", ok: false },
+        ],
+      }
     }
   },
   methods: {

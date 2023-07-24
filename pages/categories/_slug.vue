@@ -10,40 +10,7 @@
     </div>
     <div class="px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 mt-10">
       <!-- component -->
-      <nav aria-label="breadcrumbs" class="flex items-center justify-center bg-grey-light rounded font-sans w-full">
-        <ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="list-reset flex text-grey-dark">
-          <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" >
-            <a itemprop="item" href="/" data-vars-ga-ux-element="Breadcrumbs"
-               data-vars-ga-call-to-action="Home"
-               data-vars-ga-outbound-link="/"
-               class="text-gray-400 underline">
-              <span itemprop="name">Home</span>
-            </a>
-            <meta itemprop="position" content="1">
-          </li>
-          <li><span class="mx-2 text-gray-400">></span></li>
-          <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" >
-            <a itemprop="item" href="/categories" data-vars-ga-ux-element="Breadcrumbs"
-               data-vars-ga-call-to-action="Category"
-               data-vars-ga-outbound-link="/categories"
-               class="text-gray-400 underline">
-              <span itemprop="name">Category</span>
-            </a>
-            <meta itemprop="position" content="2">
-          </li>
-
-          <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem" class="hidden">
-
-            <a itemprop="item" href="/categories/" data-vars-ga-ux-element="Breadcrumbs"
-               :data-vars-ga-call-to-action="article.title"
-               :data-vars-ga-outbound-link="'/'+article.slug"
-               class="e9l0kn00 css-10e6ywj e1c1bym14">
-              <span itemprop="name">{{ article.title }}</span>
-            </a>
-            <meta itemprop="position" content="3">
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumbs :lists="breadcrumbs.lists" />
 
       <h1 class="text-3xl mt-3 text-gray-700 font-extrabold mb-10 text-center">
         {{ article.title }}
@@ -89,7 +56,11 @@
             </NuxtLink>
           </div>
 
-          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" v-html="$md.render('#'+article.body)"></p>
+          <div class="min-w-full p-2 mx-auto">
+            <Toc />
+          </div>
+
+          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" id="content" v-html="$md.render('#'+article.body)"></p>
 
         </div>
         <div class="xl:w-1/4 hidden lg:block">
@@ -126,6 +97,17 @@ export default {
       relateds: relateds.data,
       article: article.data,
     };
+  },
+  computed: {
+    breadcrumbs() {
+      return {
+        lists: [
+          { name: "Home", url: "/", ok: true },
+          { name: "Categories", url: "/categories", ok: false },
+          { name: this.article.title, url: "/" + this.article.slug, ok: false, hidden: true}
+        ],
+      }
+    }
   },
   methods: {
     formatDate(date) {
