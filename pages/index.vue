@@ -268,11 +268,6 @@
 import siteMetaInfo from "@/data/sitemetainfo";
 
 export default {
-  data() {
-    return {
-      siteMetaInfo: siteMetaInfo,
-    };
-  },
   async asyncData({$axios}) {
     const articles = await $axios.$get(process.env.API_URL + '/accounts/homepage')
     const trendtags = await $axios.$get(process.env.API_URL + '/accounts/homepage/trending-tags')
@@ -288,18 +283,126 @@ export default {
       populartags: populartags.data
     }
   },
-  head: {
-    title: process.env.SITE_TITLE,
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: siteMetaInfo.description,
-      },
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+  methods: {
+    OrganizationJsonld(){
+      return {
+        "@context":"https://schema.org",
+        "@type": "Organization",
+        "name": process.env.SITE_TITLE,
+        "url": 'https://' + process.env.PUBLISH_URL,
+        "logo": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png'
+      }
+    },
+    websiteJsonld(){
+      return {
+        "@context":"https://schema.org",
+        "@type":"WebSite",
+        "name": process.env.SITE_TITLE,
+        "url": 'https://' + process.env.PUBLISH_URL,
+        "logo": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+        "potentialAction":[
+          {
+            "@type":"SearchAction",
+            "target":{
+              "@type":"EntryPoint",
+              "urlTemplate": 'https://' + process.env.PUBLISH_URL + "/search?q={search_term_string}"
+            },
+            "query-input":"required name=search_term_string"
+          }
+        ]
+      }
+    },
+    jsonld() {
+      return {
+        "@context": "https://schema.org",
+        "@type": [
+          "ItemList",
+          "CollectionPage"
+        ],
+        "itemListElement": [
+          this.articles.map((article, index) => {
+            return {
+              "@type": "ListItem",
+              "position": index + 1,
+              "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + article.slug,
+              "name": article.title
+            }
+          }),
+          this.categories.map((article, index) => {
+            index = this.articles.length + index
+            return {
+              "@type": "ListItem",
+              "position": index + 1,
+              "url": 'https://' + process.env.PUBLISH_URL + '/categories/' + article.slug,
+              "name": article.title
+            }
+          }),
+          this.posts.map((article, index) => {
+            index = this.articles.length + this.categories.length + index
+            return {
+              "@type": "ListItem",
+              "position": index + 1,
+              "url": 'https://' + process.env.PUBLISH_URL + '/post/' + article.slug,
+              "name": article.title
+            }
+          })
+        ],
+        "numberOfItems": this.articles.length + this.categories.length + this.posts.length,
+        "mainEntityOfPage": {
+          "@type": [
+            "CollectionPage"
+          ],
+          "@id": 'https://' + process.env.PUBLISH_URL + '/',
+          "name": "Blogs & Ratings From the " + process.env.SITE_TITLE,
+          "headline": "Blogs",
+          "datePublished": this.articles[0].datePublished,
+          "dateModified": this.articles[0].dateModified,
+          "description": process.env.SITE_TITLE + " Our team of talented writers and experts has poured their passion and expertise into each article, striving to create an unforgettable reading experience for our valued readers like you."
+        },
+        "publisher": {
+          "@type": "Organization",
+          "logo": {
+            "@type": "ImageObject",
+            "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+            "width": 312,
+            "height": 60
+          },
+          "name": process.env.SITE_TITLE,
+          "url": 'https://' + process.env.PUBLISH_URL,
+          "brand": {
+            "@type": "Thing",
+            "name": process.env.SITE_TITLE
+          }
+        },
+        "url": 'https://' + process.env.PUBLISH_URL + '/blog/'
+      }
+    },
+  },
+  head() {
+    return {
+      title: process.env.SITE_TITLE,
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          hid: "description",
+          name: "description",
+          content: siteMetaInfo.description,
+        },
+      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      script: [{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.websiteJsonld())
+      },{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.OrganizationJsonld())
+      },{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.jsonld())
+      }],
+      __dangerouslyDisableSanitizers: ['script'],
+    }
   },
 };
 </script>
