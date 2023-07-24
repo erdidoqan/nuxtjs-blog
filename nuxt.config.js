@@ -80,7 +80,6 @@ export default {
       '/contact-us/',
       '/privacy-policy/',
       '/terms-and-conditions/',
-      '*.html'
     ]
   },
   lazyLoad: {
