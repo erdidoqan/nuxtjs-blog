@@ -23,9 +23,6 @@
 export default {
   props: ['lists'],
   name: "Breadcrumbs",
-  mounted() {
-    console.log(this.lists)
-  }
 }
 </script>
 

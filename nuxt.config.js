@@ -1,4 +1,5 @@
 require('dotenv').config()
+const axios = require('axios')
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -67,18 +68,18 @@ export default {
     sitemap: {
     hostname: 'https://' + process.env.PUBLISH_URL,
     exclude: [
-      'categories/',
-      'blog/*',
-      'detail/*',
-      'life/*',
-      'message/*',
-      'post/*',
-      'quote/*',
-      'tags/*',
-      'about-us/',
-      'contact-us/',
-      'privacy-policy/',
-      'terms-and-conditions/',
+      '/categories/',
+      '/blog/*',
+      '/detail/*',
+      '/life/*',
+      '/message/*',
+      '/post/*',
+      '/quote/*',
+      '/tags/*',
+      '/about-us/',
+      '/contact-us/',
+      '/privacy-policy/',
+      '/terms-and-conditions/',
       '*.html'
     ]
   },

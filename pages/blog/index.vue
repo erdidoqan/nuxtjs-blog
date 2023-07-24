@@ -45,7 +45,7 @@ export default {
         articles: articles.data
       };
     } catch (error) {
-      console.error(error);
+      //console.error(error);
     }
   },
   computed: {
@@ -108,18 +108,25 @@ export default {
     },
   },
   head() {
+    const canonical = `${config.public.baseUrl}${route.path}`
     return {
       title: "Blogs - " + process.env.SITE_TITLE,
       meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        {
-          hid: "description",
-          name: "description",
-          content: " ",
-        },
+        { hid: 'description', name: 'description', content: content.description },
+        { hid: 'keywords', name: 'keywords', content: content.keywords.join(',')},
+        { hid: "twitter:title", name: "twitter:title", content: content.title},
+        { hid: "twitter:description", name: "twitter:description", content: content.description},
+        { hid: "twitter:card", name: "twitter:card", content: "summary_large_image"},
+        { hid: "twitter:image", name: "twitter:image", content: `${config.public.baseUrl}${content.cover}`},
+        { hid: "og:description", property: "og:description", content: content.description },
+        { hid: "og:image", property: "og:image", content: `${config.public.baseUrl}${content.cover}` },
+        { hid: "og:image:type", property: "og:image:type", content: "image/png" },
+        { hid: "og:type", property: "og:type", content: "website" }
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [
+        { hid: "canonical", rel: "canonical", href: canonical },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      ],
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.jsonld())
