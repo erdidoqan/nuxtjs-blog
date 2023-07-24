@@ -103,7 +103,7 @@ export default {
         lists: [
           { name: "Home", url: "/", ok: true },
           { name: "Detail", url: "/detail", ok: false },
-          { name: this.article.title, url: "/" + this.article.slug, ok: false, hidden: true}
+          { name: this.article.title, url: "/detail/" + this.article.slug, ok: false, hidden: true}
         ],
       }
     }

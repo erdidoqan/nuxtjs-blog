@@ -108,7 +108,7 @@ export default {
         lists: [
           { name: "Home", url: "/", ok: true },
           { name: "Blog", url: "/blog", ok: false },
-          { name: this.article.title, url: "/" + this.article.slug, ok: false, hidden: true}
+          { name: this.article.title, url: "/blog/" + this.article.slug, ok: false, hidden: true}
         ],
       }
     }
