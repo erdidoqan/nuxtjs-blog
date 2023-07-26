@@ -63,8 +63,18 @@ export default {
     "@nuxtjs/google-adsense",
     "nuxt-lazy-load",
     "@nuxtjs/sitemap",
-    "@nuxtjs/dotenv"
+    "@nuxtjs/dotenv",
+    "nuxt-purgecss",
+    "nuxt-compress"
   ],
+  'nuxt-compress': {
+    gzip: {
+      threshold: 8192
+    },
+    brotli: {
+      threshold: 8192
+    }
+  },
     sitemap: {
     hostname: 'https://' + process.env.PUBLISH_URL,
     exclude: [
