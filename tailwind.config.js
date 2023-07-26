@@ -11,6 +11,8 @@ module.exports = {
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
+    "./pages/**/*.{html,js}",
+    "./components/**/*.{html,js}",
   ],
   options: {
     whitelist: [

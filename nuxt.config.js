@@ -64,7 +64,6 @@ export default {
     "nuxt-lazy-load",
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
-    'nuxt-purgecss',
     "nuxt-compress"
   ],
   'nuxt-compress': {
