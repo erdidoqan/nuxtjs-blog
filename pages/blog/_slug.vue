@@ -43,7 +43,7 @@
       v-lazy-load
     />
     <nuxt-picture
-      src="/images/"mountains.jpg
+      src="/images/mountains.jpg"
       width="3750"
       height="2500"
       sizes="xs:200px md:500px lg:1024"
