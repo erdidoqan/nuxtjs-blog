@@ -44,7 +44,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8"],
+  buildModules: ["@nuxt/postcss8","@nuxt/image"],
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
@@ -64,8 +64,12 @@ export default {
     "nuxt-lazy-load",
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
+    "@nuxt/image",
     "nuxt-compress"
   ],
+  image: {
+    domains: ['https://images.unsplash.com', 'https://source.unsplash.com']
+  },
   'nuxt-compress': {
     gzip: {
       threshold: 8192

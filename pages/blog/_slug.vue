@@ -37,11 +37,21 @@
       </div>
     </div>
     <img
-      preload
+      rel="preload"
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
       v-lazy-load
     />
+    <nuxt-picture
+      src="/images/"mountains.jpg
+      width="3750"
+      height="2500"
+      sizes="xs:200px md:500px lg:1024"
+    />
+    <figcaption class="text-center text-gray-600 text-xs mt-3">
+      Photo by <a href="https://unsplash.com/@kydroon" target="_blank" class="underline">Kurt Cotoaga</a> on <a href="https://unsplash.com/s/photos/mountain" target="_blank" class="underline">Unsplash</a>
+    </figcaption>
+
     <p class="text-center font-bold my-5">
         <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">
             {{ article.readDuration }}
