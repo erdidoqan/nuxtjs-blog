@@ -80,7 +80,14 @@ export default {
       '/contact-us/',
       '/privacy-policy/',
       '/terms-and-conditions/',
-    ]
+      '*.html'
+    ],
+      /*routes: async () => {
+        const headers = { Authorization: `Bearer ${process.env.PRIVATE_TOKEN}` }
+        const { blogs } = await axios.get(process.env.API_URL + '/contents',{ headers: headers })
+
+        return blogs.data.map((blog) => `/blog/${blog.slug}`)
+      }*/
   },
   lazyLoad: {
     // These are the default values
@@ -139,6 +146,18 @@ export default {
         tailwindcss: {},
         autoprefixer: {}
       }
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'async'
+      }
+    },
+    splitChunks: {
+      pages: false,
+      vendor: false,
+      commons: false,
+      runtime: false,
+      layouts: false
     }
   }
 };
