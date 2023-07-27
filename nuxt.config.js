@@ -21,14 +21,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
       { name: "google-site-verification", content: process.env.GOOGLE_SITE_VERIFICATION }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: [
-      {
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-        'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
-        async: true
-      }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   router: {
