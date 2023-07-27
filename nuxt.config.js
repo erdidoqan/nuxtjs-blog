@@ -31,7 +31,9 @@ export default {
     ]
   },
 
-
+  router: {
+    linkExactActiveClass: 'text-pink-700'
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.css"],
 
@@ -61,14 +63,13 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/markdownit",
     "@nuxtjs/google-adsense",
-    "nuxt-lazy-load",
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
     "nuxt-compress"
   ],
   image: {
-    domains: ['https://images.unsplash.com', 'https://source.unsplash.com']
+    domains: ['https://icerikplanla.com/img', 'https://icerikplanla.com']
   },
   'nuxt-compress': {
     gzip: {
@@ -101,27 +102,6 @@ export default {
 
         return blogs.data.map((blog) => `/blog/${blog.slug}`)
       }*/
-  },
-  lazyLoad: {
-    // These are the default values
-    images: true,
-    videos: true,
-    audios: true,
-    iframes: true,
-    native: false,
-    directiveOnly: false,
-
-    // Default image must be in the public folder
-    defaultImage: '/default.gif',
-
-    // To remove class set value to false
-    loadingClass: 'isLoading',
-    loadedClass: 'isLoaded',
-    appendClass: 'lazyLoad',
-
-    observerConfig: {
-      // See IntersectionObserver documentation
-    }
   },
   'google-adsense': {
     onPageLoad: true,

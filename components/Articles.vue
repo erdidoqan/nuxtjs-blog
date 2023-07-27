@@ -10,7 +10,7 @@
 
           <div class="relative">
             <NuxtLink :to="{ name: category + '-slug', params: { slug: article.slug } }">
-              <img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key" v-lazy-load>
+              <nuxt-img :src="article.image" class="h-40 w-full rounded-lg object-cover" :alt="article.title +' '+ key" />
             </NuxtLink>
           </div>
           <div>

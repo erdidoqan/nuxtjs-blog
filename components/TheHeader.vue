@@ -5,19 +5,19 @@
         class="navbar"
         :class="{ 'navbar--hidden': !showNavbar }">
         <NuxtLink to="/" class="flex items-center mb-2 font-medium text-gray-900 title-font md:mb-0">
-          <img src="../static/kalp-logo.svg" alt="logo" width="35">
+          <nuxt-img src="/kalp-logo.svg" alt="logo" width="35" />
           <span class="h-8 text-pink-700 pl-2 text-2xl">{{ siteTitle }}</span>
         </NuxtLink>
       </div>
 
-      <ul itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu" class="flex overflow-x-auto w-full lg:w-9/12 items-center justify-center text-base">
+      <ul itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu" class="flex overflow-x-auto w-full lg:w-9/12 items-center justify-center lg:justify-end text-base">
         <li itemprop="name" role="menuitem" v-for="item in navLinks" :key="item.path" class="text-center">
           <NuxtLink
             :to="item.path"
             itemprop="url"
-            class="block md:inline-block px-2 py-1 no-underline text-grey-darkest hover:text-grey-darker font-bold text-sm md:text-xl"
-          >{{ item.name }}</NuxtLink
-          >
+            class="block md:inline-block px-2 py-1 hover:text-pink-700 hover:underline"
+          >{{ item.name }}
+          </NuxtLink>
         </li>
       </ul>
     </div>

@@ -16,11 +16,9 @@
         {{ article.title }}
       </h1>
       <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
-        <img
-          src="https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg"
-          loading="lazy"
-          alt="auothor"
-          v-lazy-load
+        <nuxt-img
+          src="/images/author.jpeg"
+          alt="author"
           class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
         />
         <div>
@@ -36,16 +34,11 @@
         </div>
       </div>
     </div>
-    <img
-      rel="preload"
+    <nuxt-img
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
-      v-lazy-load
-    />
-    <nuxt-picture
-      src="/images/mountains.jpg"
-      width="3750"
-      height="2500"
+      width="850"
+      height="620"
       sizes="xs:200px md:500px lg:1024"
     />
     <figcaption class="text-center text-gray-600 text-xs mt-3">
