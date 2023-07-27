@@ -5,7 +5,14 @@
         class="navbar"
         :class="{ 'navbar--hidden': !showNavbar }">
         <NuxtLink to="/" class="flex items-center mb-2 font-medium text-gray-900 title-font md:mb-0">
-          <nuxt-img src="/kalp-logo.svg" alt="logo" width="35" />
+          <nuxt-img
+            src="/kalp-logo.svg"
+            alt="logo"
+            preload
+            loading="lazy"
+            width="35"
+            height="35"
+          />
           <span class="h-8 text-pink-700 pl-2 text-2xl">{{ siteTitle }}</span>
         </NuxtLink>
       </div>
