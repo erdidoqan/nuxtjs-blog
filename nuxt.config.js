@@ -27,6 +27,7 @@ export default {
         rel: 'preconnect',
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
+        defer: true,
         async: true
       }
     ]
