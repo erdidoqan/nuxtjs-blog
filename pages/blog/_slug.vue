@@ -19,6 +19,8 @@
         <nuxt-img
           src="/images/author.jpeg"
           alt="author"
+          preload
+          loading="lazy"
           class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
         />
         <div>
@@ -37,6 +39,8 @@
     <nuxt-img
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
+      preload
+      loading="lazy"
       width="850"
       height="620"
       sizes="xs:200px md:500px lg:1024"
