@@ -14,6 +14,7 @@
                 :src="article.image"
                 preload
                 loading="lazy"
+                sizes="sm:100vw md:50vw lg:400px"
                 class="h-40 w-full rounded-lg object-cover"
                 :alt="article.title +' '+ key"
               />
