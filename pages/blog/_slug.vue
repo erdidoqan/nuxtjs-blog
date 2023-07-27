@@ -21,6 +21,7 @@
           alt="author"
           preload
           loading="lazy"
+          sizes="sm:100vw md:50vw lg:400px"
           class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
         />
         <div>
