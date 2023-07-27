@@ -104,8 +104,8 @@ export default {
       }*/
   },
   'google-adsense': {
-    onPageLoad: true,
-    pageLevelAds: true
+    onPageLoad: false,
+    pageLevelAds: false
   },
   publicRuntimeConfig: {
     'google-adsense': {

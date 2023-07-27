@@ -44,6 +44,7 @@
       width="850"
       height="620"
       sizes="sm:100vw md:50vw lg:400px"
+      :alt="article.title"
     />
     <figcaption class="text-center text-gray-600 text-xs mt-3">
       Photo by <a href="https://unsplash.com/@kydroon" target="_blank" class="underline">Kurt Cotoaga</a> on <a href="https://unsplash.com/s/photos/mountain" target="_blank" class="underline">Unsplash</a>
