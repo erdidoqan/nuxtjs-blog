@@ -2,7 +2,7 @@
   <section class="py-6 sm:py-12 text-gray-100">
     <div class="container p-6 mx-auto space-y-8">
       <div class="space-y-2 text-center">
-        <h2 class="text-3xl font-bold text-gray-800">{{article.title}}</h2>
+        <h1 class="text-3xl font-bold text-gray-800">{{article.title}}</h1>
       </div>
       <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
         <article
@@ -11,7 +11,18 @@
           :key="content.title"
         >
           <a :href="`/`+content.category+`/`+content.slug" aria-label="Te nulla oportere reprimique his dolorum">
-            <img :alt="content.title" class="object-cover w-full h-52 bg-gray-500 rounded-t-xl" :src="content.image" v-lazy-load>
+
+            <nuxt-img
+              class="object-cover w-full h-52 bg-gray-500 rounded-t-xl"
+              :src="content.image"
+              preload
+              loading="lazy"
+              width="850"
+              height="620"
+              format="webp"
+              sizes="sm:100vw md:50vw lg:400px"
+              :alt="content.title"
+            />
           </a>
           <div class="flex flex-col flex-1 p-6">
             <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>

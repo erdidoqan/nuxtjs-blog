@@ -4,12 +4,16 @@
     <div class="mt-6">
       <header class="pt-10 pb-5 sm:pb-16 sm:text-center">
         <div class="flex items-center sm:mx-3 justify-center">
-          <img
-            src="https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg"
+          <nuxt-img
+            src="/images/author.jpeg"
+            alt="author"
+            preload
             loading="lazy"
-            alt="auothor"
-            v-lazy-load
-            class="mr-3 w-40 h-40 rounded-full bg-slate-50 dark:bg-slate-800"
+            width="48"
+            height="48"
+            sizes="sm:48px md:50vw lg:96px"
+            format="webp"
+            class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
           />
         </div>
         <h1 class="mb-4 mt-5 text-4xl sm:text-4xl tracking-tight text-slate-800 font-extrabold dark:text-slate-200">

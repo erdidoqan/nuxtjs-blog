@@ -133,11 +133,11 @@
     <div class="p-5 md:flex mx-auto dark:bg-gray-900">
       <HomeArticles :articles="categories" :category="'categories'" />
     </div>
-    <hr>
+<!--    <hr>
     <h1 class="p-5 text-4xl tracking-tight text-slate-800 font-extrabold dark:text-slate-200">
       📬 Post
     </h1>
-<!--    <div class="p-5 md:flex mx-auto dark:bg-gray-900">
+    <div class="p-5 md:flex mx-auto dark:bg-gray-900">
       <HomeArticles :articles="posts" :category="'post'" />
     </div>-->
 

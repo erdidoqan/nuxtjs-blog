@@ -108,23 +108,26 @@ export default {
     },
   },
   head() {
-    const canonical = `${config.public.baseUrl}${route.path}`
     return {
       title: "Blogs - " + process.env.SITE_TITLE,
       meta: [
-        { hid: 'description', name: 'description', content: content.description },
-        { hid: 'keywords', name: 'keywords', content: content.keywords.join(',')},
-        { hid: "twitter:title", name: "twitter:title", content: content.title},
-        { hid: "twitter:description", name: "twitter:description", content: content.description},
+        { hid: 'description', name: 'description', content: 'Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense\n' +
+            '        pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave\n' +
+            '        you inspired, informed, and entertained.' },
+        { hid: "twitter:title", name: "twitter:title", content: 'Blogs - ' + process.env.SITE_TITLE},
+        { hid: "twitter:description", name: "twitter:description", content: 'Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense\n' +
+            '        pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave\n' +
+            '        you inspired, informed, and entertained.'},
         { hid: "twitter:card", name: "twitter:card", content: "summary_large_image"},
-        { hid: "twitter:image", name: "twitter:image", content: `${config.public.baseUrl}${content.cover}`},
-        { hid: "og:description", property: "og:description", content: content.description },
-        { hid: "og:image", property: "og:image", content: `${config.public.baseUrl}${content.cover}` },
+        { hid: "twitter:image", name: "twitter:image", content: ''},
+        { hid: "og:description", property: "og:description", content: ' Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense\n' +
+            '        pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave\n' +
+            '        you inspired, informed, and entertained.' },
+        { hid: "og:image", property: "og:image", content: '' },
         { hid: "og:image:type", property: "og:image:type", content: "image/png" },
         { hid: "og:type", property: "og:type", content: "website" }
       ],
       link: [
-        { hid: "canonical", rel: "canonical", href: canonical },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
       ],
       script: [{

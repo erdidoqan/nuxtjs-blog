@@ -11,11 +11,14 @@
           <div class="relative">
             <NuxtLink :to="{ name: category+'-slug', params: { slug: article.slug } }">
               <nuxt-img
+                class="h-40 w-full rounded-lg object-cover"
                 :src="article.image"
                 preload
                 loading="lazy"
+                width="850"
+                height="620"
+                format="webp"
                 sizes="sm:100vw md:50vw lg:400px"
-                class="h-40 w-full rounded-lg object-cover"
                 :alt="article.title +' '+ key"
               />
             </NuxtLink>

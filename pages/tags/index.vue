@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex-1 pb-5 w-full mx-auto max-w-3xl px-6 pt-5">
-      <h1 class="text-center">Tags</h1>
+      <h1 class="text-3xl font-bold text-gray-800 text-center">Tags</h1>
 
       <div>
         <ul class="flex flex-wrap text-xl lg:text-2xl justify-center">
@@ -36,15 +36,11 @@ export default {
     };
   },
   head: {
-    title: process.env.SITE_TITLE + " | Tags",
+    title:  "Tags - " + process.env.SITE_TITLE,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: "Its Solaiman's Pen and Paper to write ",
-      },
+      { hid: "description", name: "description", content: 'Tags for ' + process.env.SITE_TITLE + '',},
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },

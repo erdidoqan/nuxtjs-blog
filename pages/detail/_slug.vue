@@ -15,28 +15,18 @@
       <h1 class="text-3xl mt-3 text-gray-700 font-extrabold mb-10 text-center">
         {{ article.title }}
       </h1>
-      <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
-        <img
-          src="https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg"
-          loading="lazy"
-          alt="auothor"
-          v-lazy-load
-          class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
-        />
-        <div>
-          <div class="text-slate-900 dark:text-slate-200">
-            By: <a href="/author"><u class="font-bold">{{ siteMetadata.author }}</u></a>
-          </div>
-          <p class="text-center text-gray-400">
-            Created: {{ article.createdAt }}
-          </p>
-        </div>
-      </div>
+      <Author :articleCreated="article.createdAt" />
     </div>
-    <img
+    <nuxt-img
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
-      v-lazy-load
+      preload
+      loading="lazy"
+      width="850"
+      height="620"
+      format="webp"
+      sizes="sm:100vw md:50vw lg:400px"
+      :alt="article.title"
     />
     <p class="text-center font-bold my-5">
         <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">
