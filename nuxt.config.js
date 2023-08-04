@@ -1,6 +1,7 @@
 require('dotenv').config()
 const axios = require('axios')
 
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -89,6 +90,11 @@ export default {
     }
   },
     sitemap: {
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    },
     hostname: 'https://' + process.env.PUBLISH_URL,
     exclude: [
       '/categories/',
@@ -105,11 +111,10 @@ export default {
       '/terms-and-conditions/',
       '*.html'
     ],
-      routes: async () => {
-        const headers = { Authorization: `Bearer ${process.env.PRIVATE_TOKEN}` }
-        const { blogs } = await axios.get(process.env.API_URL + '/contents',{ headers: headers })
-
-        return blogs.data.map((blog) => `/blog/${blog.slug}`)
+      routes:async () => {
+        axios.defaults.headers.common = { Authorization: `Bearer ${process.env.PRIVATE_TOKEN}` };
+        const { data } = await axios.get(process.env.API_URL + '/contents/sitemap')
+        return data.data.map((product) =>`${product.slug}`)
       }
   },
   svg: {
