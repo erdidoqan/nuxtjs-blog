@@ -23,13 +23,13 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
-      /*{
+      {
         rel: 'preconnect',
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
         defer: true,
         async: true
-      }*/
+      }
     ]
   },
 
@@ -64,12 +64,19 @@ export default {
     "@nuxtjs/svg",
     "@nuxtjs/axios",
     "@nuxtjs/markdownit",
-    "@nuxtjs/google-adsense",
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
+    "@nuxtjs/google-gtag",
     "nuxt-compress"
   ],
+  'google-gtag': {
+    id: 'GTM-55H83CSB', // required
+    config: {
+      anonymize_ip: true,
+      send_page_view: false
+    }
+  },
   image: {
     domains: ['https://icerikplanla.com/img', 'https://icerikplanla.com']
   },
@@ -98,22 +105,12 @@ export default {
       '/terms-and-conditions/',
       '*.html'
     ],
-      /*routes: async () => {
+      routes: async () => {
         const headers = { Authorization: `Bearer ${process.env.PRIVATE_TOKEN}` }
         const { blogs } = await axios.get(process.env.API_URL + '/contents',{ headers: headers })
 
         return blogs.data.map((blog) => `/blog/${blog.slug}`)
-      }*/
-  },
-  'google-adsense': {
-    onPageLoad: true,
-    pageLevelAds: true
-  },
-  publicRuntimeConfig: {
-    'google-adsense': {
-      id: process.env.GOOGLE_ADSENSE_ID,
-      test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true'
-    }
+      }
   },
   svg: {
     vueSvgLoader: {

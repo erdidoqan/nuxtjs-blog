@@ -1,10 +1,10 @@
 <template>
   <div class="bg-slate-100 p-6">
-    <h3
+    <span
       class="border-b-2 border-slate-300 inline-block uppercase font-bold tracking-wide text-slate-800"
     >
       Contents:
-    </h3>
+    </span>
 
     <div class="mt-5">
       <TocList :items="groupedHeadings" />
