@@ -25,11 +25,11 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
       {
-        rel: 'preconnect',
+        /*rel: 'preconnect',
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
         defer: true,
-        async: true
+        async: true*/
       }
     ]
   },
@@ -68,16 +68,8 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
-    "@nuxtjs/google-gtag",
     "nuxt-compress"
   ],
-  'google-gtag': {
-    id: 'GTM-55H83CSB', // required
-    config: {
-      anonymize_ip: true,
-      send_page_view: false
-    }
-  },
   image: {
     domains: ['https://icerikplanla.com/img', 'https://icerikplanla.com']
   },
