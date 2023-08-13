@@ -44,12 +44,7 @@
         </a>
         <a target="_blank" href="mailto:greetingbirdscom@gmail.com" class="text-gray-400 cursor-pointer hover:text-gray-700">
           <span class="sr-only">Email</span>
-          <svg class="inline-block w-6 h-7 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"></path></svg> </a>
-        <a target="_blank" href="https://greetingbirds.com/blog/taylor-swift-graduation-quotes-inspiring-words-for-your-big-day" class="text-gray-400 cursor-pointer hover:text-gray-700">
-          graduation day quotes
-        </a>
-        <a target="_blank" href="https://greetingbirds.com/blog/65-proud-daughter-and-mom-quotes-perfect-for-birthdays-and-special-occasions" class="text-gray-400 cursor-pointer hover:text-gray-700">
-          proud daughter quotes
+          <svg class="inline-block w-6 h-7 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
         </a>
       </div>
       <p class="mt-4 text-xs text-center text-gray-400">
