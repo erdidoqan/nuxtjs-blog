@@ -167,7 +167,8 @@ export default {
         { hid: "og:type", property: "og:type", content: "website" }
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: 'canonical', href: 'https://' + process.env.PUBLISH_URL + '/blog/' }
       ],
       script: [{
         type: 'application/ld+json',
