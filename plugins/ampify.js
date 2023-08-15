@@ -17,7 +17,7 @@ module.exports = (html) => {
   html = html.replace(/!important/gi, '')
 
   // Remove preload and prefetch tags
-  html = html.replace(/<link[^>]*rel="(?:preload|prefetch)?"[^>]*>/gi, '')
+  html = html.replace(/<link[^>]*rel="(?:preload|prefetch|modulepreload)?"[^>]*>/gi, '')
 
   // Remove amphtml tag
   html = html.replace(/<link[^>]*rel="(?:amphtml)?"[^>]*>/gi, '')
