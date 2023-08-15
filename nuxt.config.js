@@ -71,6 +71,9 @@ export default {
     "@nuxtjs/amp",
     "nuxt-compress"
   ],
+  amp: {
+    origin: process.env.PUBLISH_URL || 'http://localhost:3000'
+  },
   hooks: {
     'generate:page': (page) => {
       if (/^\/amp\//gi.test(page.route)) {

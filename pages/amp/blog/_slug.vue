@@ -204,7 +204,10 @@ export default {
         { hid: 'og:title', name: 'og:title', content: this.article.title },
         { hid: 'og:image', name: 'og:image', content: this.article.image },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: 'canonical', href: '/blog/' + this.article.slug }
+      ],
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.jsonld())
