@@ -206,7 +206,7 @@ export default {
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: 'canonical', href: '/blog/' + this.article.slug }
+        { rel: 'canonical', href: 'https://' + process.env.PUBLISH_URL + '/blog/' + this.article.slug }
       ],
       script: [{
         type: 'application/ld+json',
