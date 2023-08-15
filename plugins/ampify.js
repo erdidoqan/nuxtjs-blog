@@ -36,12 +36,12 @@ module.exports = (html) => {
   })
 
   // Add AMP script before </head>
-  //html = html.replace('</head>', ampScript + ampBoilerplate + '</head>')
+  html = html.replace('</head>', ampScript +'</head>')
 
   // Add AMP analytics
   html = html.replace('</body>',
     `
-    <amp-auto-ads type="adsense" data-ad-client="${process.env.ADS_CLIENT}"></amp-auto-ads>
+    <amp-auto-ads type="adsense" data-ad-client="${process.env.GOOGLE_ADSENSE_ID}"></amp-auto-ads>
 </body>`)
 
   return html
