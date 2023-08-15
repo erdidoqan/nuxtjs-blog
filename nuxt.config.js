@@ -71,10 +71,6 @@ export default {
     "@nuxtjs/amp",
     "nuxt-compress"
   ],
-  amp: {
-    css: '~/assets/styles/amp-custom.scss',
-    origin: 'http://localhost:3000'
-  },
   hooks: {
     /*'generate:page': (page) => {
       if (/^\/amp\//gi.test(page.route)) {

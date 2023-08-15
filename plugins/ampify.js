@@ -1,5 +1,6 @@
-const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script>'
-const ampBoilerplate = '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>\n';
+const ampScript = `<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>`
+const ampBoilerplate = '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>'
 
 module.exports = (html) => {
   // Add ⚡ to html tag
@@ -13,11 +14,19 @@ module.exports = (html) => {
   })
   html = html.replace('</head>', `<style amp-custom>${styleConcat}</style></head>`)
 
+  // Remove all !important in CSS
+  html = html.replace(/!important/gi, '')
+
   // Remove preload and prefetch tags
   html = html.replace(/<link[^>]*rel="(?:preload|prefetch)?"[^>]*>/gi, '')
 
   // Remove amphtml tag
   html = html.replace(/<link[^>]*rel="(?:amphtml)?"[^>]*>/gi, '')
+
+  // Replace img tags with amp-img
+  html = html.replace(/<img([^>]*)>/gi, (match, sub) => {
+    return `<amp-img ${sub} layout=responsive></amp-img>`
+  })
 
   // Remove data attributes from tags
   html = html.replace(/\s*data-(?:[^=>]*="[^"]*"|[^=>\s]*)/gi, '')
@@ -27,13 +36,14 @@ module.exports = (html) => {
     return (/application\/ld\+json/gi.test(match)) ? match : ''
   })
 
-  // Replace img tags with amp-img
-  html = html.replace(/<img([^>]*)>/gi, (match, sub) => {
-    return `<amp-img ${sub} layout=intrinsic></amp-img>`
-  })
-
   // Add AMP script before </head>
   html = html.replace('</head>', ampScript + ampBoilerplate + '</head>')
+
+  // Add AMP analytics
+  html = html.replace('</body>',
+    `
+    <amp-auto-ads type="adsense" data-ad-client="${process.env.ADS_CLIENT}"></amp-auto-ads>
+</body>`)
 
   return html
 }
