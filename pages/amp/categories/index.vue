@@ -11,10 +11,10 @@
     <header class="pt-10 pb-5 sm:pb-16 sm:text-center">
       <Breadcrumbs :lists="breadcrumbs.lists" />
       <h1 class="mb-4 mt-5 text-center text-4xl tracking-tight text-slate-800 font-extrabold">
-        📜 Blog
+        🛖 Category
       </h1>
       <p class="max-w-3xl mx-auto text-lg text-slate-700 dark:text-slate-400 p-5">
-        Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense
+        Welcome to our exceptional world of captivating categories, carefully curated just for you! We take immense
         pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave
         you inspired, informed, and entertained. Our team of talented writers and experts has poured their passion and
         expertise into each article, striving to create an unforgettable reading experience for our valued readers like
@@ -36,7 +36,7 @@
                   >
 
                     <div class="relative">
-                      <NuxtLink :to="`/amp/blog/${article.slug}/?utm_source=amp`">
+                      <NuxtLink :to="`/amp/categories/${article.slug}/?utm_source=home`">
 
                         <nuxt-img
                           v-if="article.image"
@@ -55,7 +55,7 @@
                     <div>
                       <div class="mb-6 mt-3">
                         <p class="font-heading text-base font-medium leading-snug line-clamp-4 text-gray-800 dark:text-gray-100">
-                          <NuxtLink :to="`/amp/blog/${article.slug}/?utm_source=amp`">
+                          <NuxtLink :to="`/amp/categories/${article.slug}/?utm_source=amp`">
                             {{ article.title }}
                           </NuxtLink>
                         </p>
@@ -78,13 +78,13 @@
 export default {
   async asyncData({ $content, params, $axios }) {
     try {
-      const articles = await $axios.$get(process.env.API_URL + '/contents')
+      const articles = await $axios.$get(process.env.API_URL + '/category/category')
 
       return {
         articles: articles.data
       };
     } catch (error) {
-      //console.error(error);
+      console.error(error);
     }
   },
   computed: {
@@ -92,7 +92,7 @@ export default {
       return {
         lists: [
           { name: "Home", url: "/", ok: true },
-          { name: "Blog", url: "/blog", ok: false },
+          { name: "Categories", url: "/categories", ok: false },
         ],
       }
     }
@@ -110,7 +110,7 @@ export default {
             return {
               "@type": "ListItem",
               "position": index + 1,
-              "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + article.slug,
+              "url": 'https://' + process.env.PUBLISH_URL + '/categories/' + article.slug,
               "name": article.title
             }
           })
@@ -120,8 +120,8 @@ export default {
           "@type": [
             "CollectionPage"
           ],
-          "@id": 'https://' + process.env.PUBLISH_URL + '/blog/',
-          "name": "Blogs & Ratings From the " + process.env.SITE_TITLE,
+          "@id": 'https://' + process.env.PUBLISH_URL + '/categories/',
+          "name": "Categories & Ratings From the " + process.env.SITE_TITLE,
           "headline": "Blogs",
           "datePublished": this.articles[0].datePublished,
           "dateModified": this.articles[0].dateModified,
@@ -142,33 +142,25 @@ export default {
             "name": process.env.SITE_TITLE
           }
         },
-        "url": 'https://' + process.env.PUBLISH_URL + '/blog/'
+        "url": 'https://' + process.env.PUBLISH_URL + '/categories/'
       }
     },
   },
   head() {
     return {
-      title: "Blogs - " + process.env.SITE_TITLE,
+      title: "Categories - " + process.env.SITE_TITLE,
       meta: [
-        { hid: 'description', name: 'description', content: 'Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense\n' +
-            '        pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave\n' +
-            '        you inspired, informed, and entertained.' },
-        { hid: "twitter:title", name: "twitter:title", content: 'Blogs - ' + process.env.SITE_TITLE},
-        { hid: "twitter:description", name: "twitter:description", content: 'Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense\n' +
-            '        pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave\n' +
-            '        you inspired, informed, and entertained.'},
-        { hid: "twitter:card", name: "twitter:card", content: "summary_large_image"},
-        { hid: "twitter:image", name: "twitter:image", content: ''},
-        { hid: "og:description", property: "og:description", content: ' Welcome to our exceptional world of captivating blog posts, carefully curated just for you! We take immense\n' +
-            '        pleasure in presenting a diverse and intriguing assortment of thought-provoking content that is sure to leave\n' +
-            '        you inspired, informed, and entertained.' },
-        { hid: "og:image", property: "og:image", content: '' },
-        { hid: "og:image:type", property: "og:image:type", content: "image/png" },
-        { hid: "og:type", property: "og:type", content: "website" }
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          hid: "description",
+          name: "description",
+          content: " ",
+        },
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: 'canonical', href: 'https://' + process.env.PUBLISH_URL + '/blog/' }
+        { rel: 'canonical', href: 'https://' + process.env.PUBLISH_URL + '/categories/' }
       ],
       script: [{
         type: 'application/ld+json',
