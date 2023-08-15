@@ -68,6 +68,7 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
+    "@nuxtjs/amp",
     "nuxt-compress"
   ],
   image: {
