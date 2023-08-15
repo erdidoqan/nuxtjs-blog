@@ -72,7 +72,7 @@ export default {
     "nuxt-compress"
   ],
   hooks: {
-    /*'generate:page': (page) => {
+    'generate:page': (page) => {
       if (/^\/amp\//gi.test(page.route)) {
         page.html = ampify(page.html)
       }
@@ -81,7 +81,7 @@ export default {
       if (/^\/amp\//gi.test(url)) {
         page.html = ampify(page.html)
       }
-    }*/
+    }
   },
   image: {
     domains: ['https://icerikplanla.com/img', 'https://icerikplanla.com']
