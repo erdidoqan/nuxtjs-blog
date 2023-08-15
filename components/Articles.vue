@@ -12,6 +12,7 @@
             <NuxtLink :to="{ name: category + '-slug', params: { slug: article.slug } }">
 
               <nuxt-img
+                v-if="article.image"
                 class="h-40 w-full rounded-lg object-cover"
                 :src="article.image"
                 preload

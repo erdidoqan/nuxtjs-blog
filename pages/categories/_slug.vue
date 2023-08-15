@@ -19,6 +19,7 @@
 
     </div>
     <nuxt-img
+      v-if="article.image"
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
       preload
@@ -52,6 +53,10 @@
           </div>
 
           <p v-if="article.body" class="prose min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></p>
+
+          <div v-if="article.faq">
+            <Faq :items="article.faq" />
+          </div>
 
         </div>
         <div class="xl:w-1/4 hidden lg:block">

@@ -54,6 +54,10 @@
 
           <p v-if="article.body" class="prose min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></p>
 
+          <div v-if="article.faq">
+            <Faq :items="article.faq" />
+          </div>
+
         </div>
         <div class="xl:w-1/4 hidden lg:block">
           <div class="p-2 relative sticky top-0">
