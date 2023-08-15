@@ -18,7 +18,7 @@ export default {
     TheHeader,
     TheFooter,
   },
-  head() {
+  /*head() {
     return {
       link: [
         {
@@ -27,7 +27,7 @@ export default {
         }
       ]
     }
-  }
+  }*/
 };
 </script>
 
