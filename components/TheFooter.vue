@@ -38,11 +38,11 @@
 
       </nav>
       <div class="flex justify-center mt-6 space-x-6">
-        <a target="_blank" href="https://twitter.com/GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
+        <a target="_blank" rel='noreferrer' href="https://twitter.com/GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
           <span class="sr-only">Twitter</span>
           <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
         </a>
-        <a target="_blank" href="mailto:greetingbirdscom@gmail.com" class="text-gray-400 cursor-pointer hover:text-gray-700">
+        <a target="_blank" rel='noreferrer' href="mailto:greetingbirdscom@gmail.com" class="text-gray-400 cursor-pointer hover:text-gray-700">
           <span class="sr-only">Email</span>
           <svg class="inline-block w-6 h-7 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 4.99L4 6h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
         </a>
