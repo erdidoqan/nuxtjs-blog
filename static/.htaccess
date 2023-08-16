@@ -1,4 +1,3 @@
-DirectorySlash Off
 
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
-RewriteRule ^(.*)$ /$1/index.html [L]
+RewriteCond %{HTTP_HOST} ^www\.cyclingcleat\.com$
+RewriteRule ^/?$ "http\:\/\/cyclingcleat\.com\/" [R=301,L]
