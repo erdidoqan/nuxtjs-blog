@@ -15,7 +15,7 @@
       <div class="text-slate-900 dark:text-slate-200">
         By:
         <NuxtLink to="/author">
-          <u class="font-bold">{{ 'Yapay Yazar' }}</u>
+          <span class="font-bold underline">{{ 'Yapay Yazar' }}</span>
         </NuxtLink>
       </div>
       <p class="text-center text-gray-400">
