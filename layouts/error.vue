@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TheHeader />
     <div
       id="sky"
       class="fixed z-50 top-0 h-screen w-screen flex justify-center items-center"
@@ -19,7 +18,7 @@
           class="space cursor-pointer z-50 flex-col justify-center items-center flex pt-4 px-8 rounded-md text-purple-800 transform duration-150 ease-in hover:text-white hover:scale-105"
         >
           <!-- DON T FORGET TO CHANGE THE IMG -->
-          <nuxt-img src="/astronaut.webp" alt="astronot" />
+          <nuxt-img src="/astronot.png" width="200" alt="astronot" />
         </nuxt-link>
       </div>
     </div>
