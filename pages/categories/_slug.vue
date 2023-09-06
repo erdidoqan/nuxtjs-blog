@@ -38,15 +38,6 @@
     <div class="px-4 mx-auto sm:px-6 xl:max-w-[95%] xl:px-0 mt-10">
       <div class="flex">
         <div class="xl:w-3/4 sm:w-full">
-          <div class="mt-5 flex-wrap inline-flex items-center">
-            <NuxtLink
-              v-for="tag in article.tags"
-              :key="tag.title"
-              class="rounded-xl bg-zinc-700 text-sm px-3 py-1 text-white transition-colors hover:bg-blue-500 mr-2 mb-2 last:mr-0"
-              :to="{ name: 'tags-slug', params: { slug: tag.slug } }">
-              {{ tag.title }}
-            </NuxtLink>
-          </div>
 
           <div class="min-w-full p-2 mx-auto">
             <Toc />
