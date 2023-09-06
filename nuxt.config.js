@@ -1,6 +1,5 @@
 require('dotenv').config()
 const axios = require('axios')
-const ampify = require('./plugins/ampify')
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -69,23 +68,9 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
-    "@nuxtjs/amp",
     "nuxt-compress"
   ],
-  amp: {
-    origin: 'https://' + process.env.PUBLISH_URL || 'http://localhost:3000'
-  },
   hooks: {
-    'generate:page': (page) => {
-      if (/^\/amp\//gi.test(page.route)) {
-        page.html = ampify(page.html)
-      }
-    },
-    'render:route': (url, page, { req, res }) => {
-      if (/^\/amp\//gi.test(url)) {
-        page.html = ampify(page.html)
-      }
-    }
   },
   image: {
     domains: ['https://icerikplanla.com/img', 'https://icerikplanla.com']
