@@ -16,22 +16,22 @@
         </NuxtLink>
 
         <div class="px-5 py-2">
-          <NuxtLink to="/about-us" class="text-base hover:text-gray-400">
+          <NuxtLink to="/about-us/" class="text-base hover:text-gray-400">
             About Us
           </NuxtLink>
         </div>
         <div class="px-5 py-2">
-          <NuxtLink to="/terms-and-conditions" class="text-base hover:text-gray-400">
+          <NuxtLink to="/terms-and-conditions/" class="text-base hover:text-gray-400">
             Terms and Conditions
           </NuxtLink>
         </div>
         <div class="px-5 py-2">
-          <NuxtLink to="/privacy-policy" class="text-base hover:text-gray-400">
+          <NuxtLink to="/privacy-policy/" class="text-base hover:text-gray-400">
             Privacy Policy
           </NuxtLink>
         </div>
         <div class="px-5 py-2">
-          <NuxtLink to="/contact-us" class="text-base hover:text-gray-400">
+          <NuxtLink to="/contact-us/" class="text-base hover:text-gray-400">
             Contact Us
           </NuxtLink>
         </div>
