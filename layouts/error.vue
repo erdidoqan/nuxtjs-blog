@@ -33,9 +33,7 @@ export default {
 </script>
 
 <style scopped>
-body {
-  background-color: #263238;
-}
+
 
 .space img {
   -webkit-animation: mover 2s ease-in-out infinite alternate;
