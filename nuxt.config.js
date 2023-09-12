@@ -73,7 +73,12 @@ export default {
   hooks: {
   },
   image: {
-    domains: ['https://icerikplanla.com/img', 'https://icerikplanla.com']
+    domains: [
+      'https://icerikplanla.com/img',
+      'https://icerikplanla.com',
+      'https://turkce.icerikplanla.com',
+      'https://turkce.icerikplanla.com/img'
+    ]
   },
   'nuxt-compress': {
     gzip: {
