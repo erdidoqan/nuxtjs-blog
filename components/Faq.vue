@@ -37,12 +37,6 @@ export default {
       titles: null
     };
   },
-  methods: {
-
-  },
-  mounted() {
-    console.log(this.items)
-  },
 }
 </script>
 
