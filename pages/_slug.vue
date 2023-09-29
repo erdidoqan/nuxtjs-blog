@@ -200,7 +200,6 @@ export default {
         { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
         { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path + '/' }
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.jsonld())

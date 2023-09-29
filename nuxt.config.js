@@ -44,6 +44,7 @@ export default {
     ],
     link: [
       { rel: 'shortcut icon', href: process.env.META_FAVICON_ICO },
+      { rel: 'icon',type: 'image/x-icon', href: process.env.META_FAVICON_ICO },
       { rel: 'icon', sizes: '16x16 32x32 64x64', href: process.env.META_FAVICON_ICO },
       { rel: 'icon', type: 'image/png', sizes: '196x196', href: process.env.META_FAVICON_PNG_196 },
       { rel: 'icon', type: 'image/png', sizes: '160x160', href: process.env.META_FAVICON_PNG_160 },
