@@ -151,7 +151,7 @@ export default {
       routes:async () => {
         axios.defaults.headers.common = { Authorization: `Bearer ${process.env.PRIVATE_TOKEN}` };
         const { data } = await axios.get(process.env.API_URL + '/contents/sitemap')
-        return data.data.map((product) =>`${product.slug}`)
+        return data.map((product) =>`${product.slug}`)
       }
   },
   /*feed: [
