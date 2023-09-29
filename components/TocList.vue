@@ -11,7 +11,7 @@
 
       <TocList
         class="mt-3 ml-5 group subheadings"
-        v-if="item.subheadings.length"
+        v-show="item.subheadings.length"
         :items="item.subheadings"
       />
     </li>

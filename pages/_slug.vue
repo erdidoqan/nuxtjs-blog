@@ -47,9 +47,7 @@
         </div>
         <div class="xl:w-3/4 sm:w-full">
 
-          <div class="min-w-full p-2 mx-auto">
-            <Toc />
-          </div>
+
           <p v-if="article.body" class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></p>
 
           <div v-if="article.faq">
