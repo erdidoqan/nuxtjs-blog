@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <div class="bg-gray-200 text-black h-40 text-center w-full"></div>
     <div class="w-full text-xs m-0 text-center normal-case border-b border-gray-200 p-2">
       <p class="">
@@ -8,63 +8,43 @@
         </span>
       </p>
     </div>
-    <div class="px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 mt-10">
-      <!-- component -->
+    <header class="pt-10 sm:text-center">
       <Breadcrumbs :lists="breadcrumbs.lists" />
-
-      <h1 class="text-3xl mt-3 text-gray-700 font-extrabold mb-10 text-center">
-        {{ article.title }}
+      <h1 class="mb-4 mt-5 text-center text-4xl tracking-tight text-slate-800 font-extrabold">
+        {{ category.name }}
       </h1>
+      <p class="max-w-3xl mx-auto text-lg text-slate-700 dark:text-slate-400 p-5">
+        {{ category.description }}
+      </p>
+    </header>
+    <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0 mb-10">
 
-      <Author :articleCreated="article.createdAt" />
+      <section class="text-gray-600 body-font">
+        <NuxtLink
+          :to="{ name: 'category-slug', params: { slug: subcategory.slug } }"
+          v-for="(subcategory, key) in category.parent"
+          :key="key"
+          class="inline-flex items-center h-12 px-5 mr-3 text-lg mt-3 text-pink-700 transition-colors duration-150 border border-grey-100 rounded-lg focus:shadow-outline hover:bg-pink-700 hover:text-pink-100"
+        >{{ subcategory.name }}
+        </NuxtLink>
+      </section>
     </div>
-    <nuxt-img
-      class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
-      :src="article.image"
-      preload
-      loading="lazy"
-      width="850"
-      height="620"
-      format="webp"
-      sizes="sm:100vw md:50vw lg:400px"
-      :alt="article.title"
-    />
 
-    <p class="text-center font-bold my-5">
-        <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">
-            {{ article.readDuration }}
-        </span>
-    </p>
-    <div class="px-4 mx-auto sm:px-6 xl:max-w-[95%] xl:px-0 mt-10">
-      <div class="flex">
-        <div class="xl:w-3/4 sm:w-full">
+    <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
 
-          <div class="min-w-full p-2 mx-auto">
-            <Toc />
-          </div>
-
-          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></p>
-
-          <div v-if="article.faq">
-            <Faq :items="article.faq" />
-          </div>
-
-        </div>
-        <div class="xl:w-1/4 hidden lg:block">
-          <div class="p-2 relative sticky top-0">
-            <div class="mt-14">
-              <div class="bg-gray-200 text-black h-[35rem] w-full"></div>
-            </div>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-2 mx-auto">
+          <div class="flex flex-wrap -m-4">
+            <Articles :articles="category.contents" />
           </div>
         </div>
-      </div>
-      <hr>
-      <h2 class="mt-10 mb-4 text-4xl tracking-tight text-red-400 text-slate-800 font-extrabold">Content You May Be Interested In</h2>
-      <ArticlesRelated :category="'blog'" :articles="relateds" />
+      </section>
     </div>
   </div>
 </template>
 <script>
+
+import category from "@/pages/category/index";
 
 export default {
   data() {
@@ -73,24 +53,35 @@ export default {
     };
   },
   async asyncData({ $content, params, $axios}) {
-    const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug,{
-      timeout: 60000
-    })
-    const relateds = await $axios.$get(process.env.API_URL + '/contents')
+    try {
+      const category = await $axios.$get(process.env.API_URL + '/category/' + params.slug)
 
-    return {
-      relateds: relateds.data,
-      article: article.data,
-    };
+      return {
+        category: category.data[0]
+      };
+    } catch (error) {
+      console.error(error);
+    }
   },
   computed: {
     breadcrumbs() {
-      return {
-        lists: [
-          { name: "Home", url: "/", ok: true },
-          { name: "Blog", url: "/blog", ok: false },
-          { name: this.article.title, url: "/blog/" + this.article.slug, ok: false, hidden: true}
-        ],
+      if (this.category.up){
+        return {
+          lists: [
+            { name: "Home", url: "/", ok: true },
+            { name: "Categories", url: "/category", ok: true },
+            { name: this.category.up.name, url: '/category/'+this.category.up.slug, ok: true },
+            { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
+          ],
+        }
+      }else{
+        return {
+          lists: [
+            { name: "Home", url: "/", ok: true },
+            { name: "Categories", url: "/category", ok: true },
+            { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
+          ],
+        }
       }
     }
   },
@@ -107,7 +98,7 @@ export default {
           "datePublished": this.article.datePublished,
           "headline": this.article.title,
           "wordCount": this.article.wordCount,
-          "inLanguage":"en-US",
+          "inLanguage":"en-EN",
           "articleSection": "Lifestyle",
           "articleBody": this.article.cleanBody,
           "image": [
@@ -174,7 +165,7 @@ export default {
               return {
                 "@type": "ListItem",
                 "position": index + 1,
-                "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + related.slug,
+                "url": 'https://' + process.env.PUBLISH_URL + '/categories/' + related.slug,
                 "name": related.title
               }
             })
@@ -188,17 +179,17 @@ export default {
   },
   head() {
     return {
-      title: this.article.title,
+      title: this.category.meta_title,
       meta: [
-        { hid: "description", name: "description", content: this.article.description},
+        { hid: "description", name: "description", content: this.category.meta_description},
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
-        { hid: 'og:title', name: 'og:title', content: this.article.title },
-        { hid: 'og:image', name: 'og:image', content: this.article.image },
+        { hid: 'og:title', name: 'og:title', content: this.category.meta_title },
+
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       script: [{
         type: 'application/ld+json',
-        innerHTML: JSON.stringify(this.jsonld())
+        innerHTML: JSON.stringify('this.jsonld()')
       }],
       __dangerouslyDisableSanitizers: ['script'],
     };

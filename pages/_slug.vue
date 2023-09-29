@@ -10,14 +10,16 @@
     </div>
     <div class="px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 mt-10">
       <!-- component -->
-      <Breadcrumbs :lists="breadcrumbs.lists" />
+      <Breadcrumbs :lists="article.breadcrumbs" />
 
-      <h1 class="text-3xl mt-3 text-gray-700 font-extrabold mb-10 text-center">
+      <h1 class="text-4xl mt-3 text-gray-700 font-extrabold mb-10 text-center">
         {{ article.title }}
       </h1>
+
       <Author :articleCreated="article.createdAt" />
     </div>
     <nuxt-img
+      v-if="article.image"
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
       preload
@@ -28,6 +30,7 @@
       sizes="sm:100vw md:50vw lg:400px"
       :alt="article.title"
     />
+
     <p class="text-center font-bold my-5">
         <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">
             {{ article.readDuration }}
@@ -35,29 +38,36 @@
     </p>
     <div class="px-4 mx-auto sm:px-6 xl:max-w-[95%] xl:px-0 mt-10">
       <div class="flex">
+        <div class="xl:w-1/5 hidden lg:block">
+          <div class="p-2 relative sticky top-0">
+            <div class="mt-14">
+              <div class="bg-gray-200 text-black h-[45rem] w-full"></div>
+            </div>
+          </div>
+        </div>
         <div class="xl:w-3/4 sm:w-full">
 
           <div class="min-w-full p-2 mx-auto">
             <Toc />
           </div>
-          <p v-if="article.body" class="prose min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></p>
+          <p v-if="article.body" class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></p>
 
           <div v-if="article.faq">
             <Faq :items="article.faq" />
           </div>
 
         </div>
-        <div class="xl:w-1/4 hidden lg:block">
+        <div class="xl:w-1/3 hidden lg:block">
           <div class="p-2 relative sticky top-0">
             <div class="mt-14">
-              <div class="bg-gray-200 text-black h-[35rem] w-full"></div>
+              <div class="bg-gray-200 text-black h-[45rem] w-full"></div>
             </div>
           </div>
         </div>
       </div>
       <hr>
       <h2 class="mt-10 mb-4 text-4xl tracking-tight text-red-400 text-slate-800 font-extrabold">Content You May Be Interested In</h2>
-      <ArticlesRelated :category="'quote'" :articles="relateds" />
+      <Articles :articles="relateds" />
     </div>
   </div>
 </template>
@@ -73,7 +83,7 @@ export default {
     const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug,{
       timeout: 60000
     })
-    const relateds = await $axios.$get(process.env.API_URL + '/category/quote')
+    const relateds = await $axios.$get(process.env.API_URL + '/category/post')
 
     return {
       relateds: relateds.data,
@@ -81,15 +91,6 @@ export default {
     };
   },
   computed: {
-    breadcrumbs() {
-      return {
-        lists: [
-          { name: "Home", url: "/", ok: true },
-          { name: "Quote", url: "/quote", ok: false },
-          { name: this.article.title, url: "/quote/" + this.article.slug, ok: false, hidden: true}
-        ],
-      }
-    }
   },
   methods: {
     formatDate(date) {
@@ -171,7 +172,7 @@ export default {
               return {
                 "@type": "ListItem",
                 "position": index + 1,
-                "url": 'https://' + process.env.PUBLISH_URL + '/quote/' + related.slug,
+                "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + related.slug,
                 "name": related.title
               }
             })
@@ -190,7 +191,12 @@ export default {
         { hid: "description", name: "description", content: this.article.description},
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.article.title },
-        { hid: 'og:image', name: 'og:image', content: this.article.image },
+        { hid: 'og:image', name: 'og:image', content: this.article.image1200 },
+
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: this.article.image1200 },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
+        { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path + '/' }
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       script: [{

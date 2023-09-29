@@ -6,10 +6,9 @@
         :class="{ 'navbar--hidden': !showNavbar }">
         <NuxtLink to="/" class="flex items-center mb-2 font-medium text-gray-900 title-font md:mb-0">
           <nuxt-img
-            src="/kalp-logo.svg"
+            :src="siteLogo"
             alt="logo"
             preload
-            loading="lazy"
             width="35"
             height="35"
           />
@@ -18,12 +17,20 @@
       </div>
 
       <ul itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu" class="flex overflow-x-auto w-full lg:w-9/12 items-center justify-center lg:justify-end text-base">
-        <li itemprop="name" role="menuitem" v-for="item in navLinks" :key="item.path" class="text-center">
+        <li itemprop="name" role="menuitem" v-for="menu of menus.data" class="text-center">
           <NuxtLink
-            :to="item.path"
+            :to="'/category/'+menu.slug"
             itemprop="url"
             class="block md:inline-block px-2 py-1 hover:text-pink-700 hover:underline"
-          >{{ item.name }}
+          >{{ menu.name }}
+          </NuxtLink>
+        </li>
+        <li itemprop="name" role="menuitem" class="text-center">
+          <NuxtLink
+            to="/category"
+            itemprop="url"
+            class="block md:inline-block px-2 py-1 hover:text-pink-700 hover:underline"
+          >All
           </NuxtLink>
         </li>
       </ul>
@@ -40,9 +47,18 @@ export default {
     return {
       navLinks: menu,
       siteTitle: process.env.SITE_TITLE,
+      siteLogo: process.env.META_FAVICON_PNG_32,
       showNavbar: true,
-      lastScrollPosition: 0
+      lastScrollPosition: 0,
+      menus: []
     };
+  },
+  async fetch() {
+    this.menus = await fetch(process.env.API_URL + '/menu',{
+      headers: {
+        Authorization: `Bearer ${process.env.PRIVATE_TOKEN}`
+      }
+    }).then(res => res.json())
   },
   computed: {
     title() {

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-50 rounded p-5 border-slate-300" v-if="items.faq">
-    <div class="prose">
+    <div class="prose text-xl">
       <h2 class="border-b-2 border-slate-300 inline-block font-bold tracking-wide text-slate-800">
         Frequently Asked Questions (FAQs)
       </h2>

@@ -5,10 +5,9 @@
 
         <NuxtLink to="/" class="flex items-center mb-2 font-medium text-gray-900 title-font md:mb-0">
           <nuxt-img
-            src="/kalp-logo.svg"
+            :src="siteLogo"
             alt="logo"
             preload
-            loading="lazy"
             width="35"
             height="35"
           />
@@ -62,7 +61,8 @@ export default {
   data() {
     return {
       siteMetadata: siteMetaInfo,
-      siteTitle: process.env.SITE_TITLE
+      siteTitle: process.env.SITE_TITLE,
+      siteLogo: process.env.META_FAVICON_PNG_32,
     };
   },
 };

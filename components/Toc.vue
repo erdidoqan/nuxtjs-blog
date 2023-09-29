@@ -1,8 +1,6 @@
 <template>
   <div class="bg-slate-100 p-6">
-    <span
-      class="border-b-2 border-slate-300 inline-block uppercase font-bold tracking-wide text-slate-800"
-    >
+    <span class="border-b-2 border-slate-300 inline-block uppercase font-bold tracking-wide text-slate-800">
       Contents:
     </span>
 

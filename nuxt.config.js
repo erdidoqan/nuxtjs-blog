@@ -2,34 +2,70 @@ require('dotenv').config()
 const axios = require('axios')
 
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   generate: { fallback: true },
-  // Global page headers: https://go.nuxtjs.dev/config-head
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
-    PUBLISH_URL: process.env.PUBLISH_URL
+    PUBLISH_URL: process.env.PUBLISH_URL,
+    META_FAVICON_PNG_32: process.env.META_FAVICON_PNG_32
   },
   head: {
-    title: process.env.SITE_TITLE,
+    title: process.env.META_TITLE,
     htmlAttrs: {
-      lang: "en"
+      lang: process.env.HTML_LANG
     },
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
-      { name: "google-site-verification", content: process.env.GOOGLE_SITE_VERIFICATION }
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: process.env.META_DESC },
+      { name: 'author', content: process.env.META_AUTHOR },
+      { hid: 'robots', name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+      { name: 'mobile-web-app-capable', content: 'yes' },
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: process.env.META_TITLE },
+      { hid: 'og:image', property: 'og:image', content: process.env.META_COVER_IMAGE },
+      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: process.env.META_COVER_IMAGE },
+      { hid: 'og:image:width', property: 'og:image:width', content: '1280' },
+      { hid: 'og:image:height', property: 'og:image:height', content: '720' },
+      { hid: 'og:title', property: 'og:title', content: process.env.META_TITLE },
+      { hid: 'og:description', property: 'og:description', content: process.env.META_DESC },
+      { hid: 'og:url', property: 'og:url', content: process.env.PUBLISH_URL },
+      { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_TITLE },
+      { hid: 'og:type', property: 'og:type', content: 'article' },
+      { hid: 'profile:username', property: 'profile:username', content: 'GreetingBirds' },
+      { hid: 'fb:app_id', property: 'fb:app_id', content: '1951371271775373' },
+
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:creator', content: '@GreetingBirds' },
+      { name: 'twitter:site', content: '@GreetingBirds' },
+      { hid: 'twitter:image:src', name: 'twitter:image:src', content: process.env.META_COVER_IMAGE },
+      { hid: 'twitter:title', name: 'twitter:title', content: process.env.META_TITLE },
+      { hid: 'twitter:description', name: 'twitter:description', content: process.env.META_DESC },
+      { hid: 'twitter:url', name: 'twitter:url', content: process.env.PUBLISH_URL }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: [
+    link: [
+      { rel: 'shortcut icon', href: process.env.META_FAVICON_ICO },
+      { rel: 'icon', sizes: '16x16 32x32 64x64', href: process.env.META_FAVICON_ICO },
+      { rel: 'icon', type: 'image/png', sizes: '196x196', href: process.env.META_FAVICON_PNG_196 },
+      { rel: 'icon', type: 'image/png', sizes: '160x160', href: process.env.META_FAVICON_PNG_160 },
+      { rel: 'icon', type: 'image/png', sizes: '96x96', href: process.env.META_FAVICON_PNG_96 },
+      { rel: 'icon', type: 'image/png', sizes: '64x64', href: process.env.META_FAVICON_PNG_64 },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: process.env.META_FAVICON_PNG_32 },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: process.env.META_FAVICON_PNG_16 },
+
+      { rel: 'apple-touch-icon', href: process.env.META_FAVICON_PNG_57 },
+      { rel: 'apple-touch-icon', sizes: '72x72', href: process.env.META_FAVICON_PNG_72 },
+      { rel: 'apple-touch-icon', sizes: '114x144', href: process.env.META_FAVICON_PNG_114 },
+      { rel: 'apple-touch-icon', sizes: '144x144', href: process.env.META_FAVICON_PNG_144 },
+      { rel: 'apple-touch-icon', sizes: '60x60', href: process.env.META_FAVICON_PNG_60 },
+      { rel: 'apple-touch-icon', sizes: '120x120', href: process.env.META_FAVICON_PNG_120 },
+      { rel: 'apple-touch-icon', sizes: '76x76', href: process.env.META_FAVICON_PNG_76 },
+      { rel: 'apple-touch-icon', sizes: '152x152', href: process.env.META_FAVICON_PNG_152 },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: process.env.META_FAVICON_PNG_180 },
+    ],
+    noscript: [
       {
-        /*rel: 'preconnect',
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-        'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
-        defer: true,
-        async: true*/
+        innerHTML: 'This website requires JavaScript.',
+        body: true
       }
     ]
   },
@@ -77,7 +113,9 @@ export default {
       'https://icerikplanla.com/img',
       'https://icerikplanla.com',
       'https://turkce.icerikplanla.com',
-      'https://turkce.icerikplanla.com/img'
+      'https://turkce.icerikplanla.com/img',
+      'https://icerikplanla.test',
+      'https://icerikplanla.test/img'
     ]
   },
   'nuxt-compress': {
@@ -96,7 +134,7 @@ export default {
     },
     hostname: 'https://' + process.env.PUBLISH_URL,
     exclude: [
-      '/categories/',
+      '/category/',
       '/blog/*',
       '/detail/*',
       '/life/*',
