@@ -2,7 +2,7 @@ require('dotenv').config()
 const axios = require('axios')
 
 export default {
-  target: "static",
+  target: 'static',
   generate: { fallback: true },
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
@@ -97,8 +97,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    "@nuxt/content",
-    "@nuxtjs/svg",
     "@nuxtjs/axios",
     "@nuxtjs/markdownit",
     "@nuxtjs/sitemap",
@@ -106,7 +104,15 @@ export default {
     "@nuxt/image",
     "nuxt-compress"
   ],
-  hooks: {
+  markdownit: {
+    runtime: true,
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ]
   },
   image: {
     domains: [
@@ -135,13 +141,6 @@ export default {
     hostname: 'https://' + process.env.PUBLISH_URL,
     exclude: [
       '/category/',
-      '/blog/*',
-      '/detail/*',
-      '/life/*',
-      '/message/*',
-      '/post/*',
-      '/quote/*',
-      '/tags/*',
       '/about-us/',
       '/contact-us/',
       '/privacy-policy/',
@@ -183,25 +182,6 @@ export default {
       data: ['Some additional data'] // Will be passed as 2nd argument to `create` function
     }
   ],*/
-  svg: {
-    vueSvgLoader: {
-      // vue-svg-loader options
-    },
-    svgSpriteLoader: {
-      // svg-sprite-loader options
-    },
-    fileLoader: {
-      // file-loader options
-    }
-  },
-  content: {
-    liveEdit: false,
-    markdown: {
-      prism: {
-        theme: "prism-themes/themes/prism-dracula.css"
-      }
-    }
-  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
