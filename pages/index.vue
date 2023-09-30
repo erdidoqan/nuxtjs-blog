@@ -111,7 +111,6 @@ export default {
           content: process.env.META_DESC,
         },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.websiteJsonld())

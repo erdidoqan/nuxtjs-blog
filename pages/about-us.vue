@@ -49,7 +49,7 @@ export default {
         content: "",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
   },
 };
 </script>

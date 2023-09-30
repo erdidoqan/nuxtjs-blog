@@ -76,7 +76,7 @@ export default {
         content: "Terms and Conditions",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
   },
 };
 </script>

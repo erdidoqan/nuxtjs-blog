@@ -94,33 +94,33 @@ export default {
       return [
         {
           "@type": "NewsArticle",
-          "thumbnailUrl": this.article.thumbnailUrl,
-          "datePublished": this.article.datePublished,
-          "headline": this.article.title,
-          "wordCount": this.article.wordCount,
+          "thumbnailUrl": this.category.contents[0].thumbnailUrl,
+          "datePublished": this.category.contents[0].datePublished,
+          "headline": this.category.contents[0].title,
+          "wordCount": this.category.contents[0].wordCount,
           "inLanguage":"en-EN",
           "articleSection": "Lifestyle",
-          "articleBody": this.article.cleanBody,
+          "articleBody": this.category.contents[0].cleanBody,
           "image": [
             {
               "@type": "ImageObject",
               "height": 1200,
-              "thumbnail": this.article.thumbnailUrl,
-              "url": this.article.image1200,
+              "thumbnail": this.category.contents[0].thumbnailUrl,
+              "url": this.category.contents[0].image1200,
               "width": 1200
             },
             {
               "@type": "ImageObject",
               "height": 900,
-              "thumbnail": this.article.thumbnailUrl,
-              "url": this.article.image900,
+              "thumbnail": this.category.contents[0].thumbnailUrl,
+              "url": this.category.contents[0].image900,
               "width": 1200
             },
             {
               "@type": "ImageObject",
               "height": 675,
-              "thumbnail": this.article.thumbnailUrl,
-              "url": this.article.image675,
+              "thumbnail": this.category.contents[0].thumbnailUrl,
+              "url": this.category.contents[0].image675,
               "width": 1200
             }
           ],
@@ -144,7 +144,7 @@ export default {
           },
           "url": this.$nuxt.$route.path,
           "isBasedOn": this.$nuxt.$route.path,
-          "dateModified": this.article.dateModified,
+          "dateModified": this.category.contents[0].dateModified,
           "author": {
             "name": "Yapay Yazar",
             "url": "/author/",
@@ -161,11 +161,11 @@ export default {
           "@type": "ItemList",
           "numberOfItems": this.relateds.length,
           "itemListElement": [
-            this.relateds.map((related, index) => {
+            this.category.contents.map((related, index) => {
               return {
                 "@type": "ListItem",
                 "position": index + 1,
-                "url": 'https://' + process.env.PUBLISH_URL + '/categories/' + related.slug,
+                "url": 'https://' + process.env.PUBLISH_URL + '/' + related.slug,
                 "name": related.title
               }
             })
@@ -186,7 +186,7 @@ export default {
         { hid: 'og:title', name: 'og:title', content: this.category.meta_title },
 
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify('this.jsonld()')
