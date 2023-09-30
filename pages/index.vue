@@ -102,13 +102,13 @@ export default {
   },
   head() {
     return {
-      title: process.env.SITE_TITLE,
+      title: process.env.META_TITLE,
       meta: [
         { charset: "utf-8" },
         {
           hid: "description",
           name: "description",
-          content: siteMetaInfo.description,
+          content: process.env.META_DESC,
         },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
