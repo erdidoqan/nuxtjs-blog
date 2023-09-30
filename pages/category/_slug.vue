@@ -189,7 +189,7 @@ export default {
       link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
       script: [{
         type: 'application/ld+json',
-        innerHTML: JSON.stringify('this.jsonld()')
+        innerHTML: JSON.stringify(this.jsonld())
       }],
       __dangerouslyDisableSanitizers: ['script'],
     };
