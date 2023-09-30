@@ -159,7 +159,7 @@ export default {
         },{
           "@context": "https://schema.org",
           "@type": "ItemList",
-          "numberOfItems": this.relateds.length,
+          "numberOfItems": this.category.contents,
           "itemListElement": [
             this.category.contents.map((related, index) => {
               return {
