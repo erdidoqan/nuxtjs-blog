@@ -193,7 +193,9 @@ export default {
         { hid: "description", name: "description", content: this.article.description},
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.article.title },
+        { hid: 'og:description', name: 'og:description', content: this.article.description },
         { hid: 'og:image', name: 'og:image', content: this.article.image1200 },
+        { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path + '/' },
 
         { hid: 'twitter:image:src', name: 'twitter:image:src', content: this.article.image1200 },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
