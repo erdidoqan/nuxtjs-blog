@@ -39,13 +39,11 @@
 </template>
 
 <script>
-import menu from "../data/menu";
 
 export default {
   name: "TheHeader",
   data() {
     return {
-      navLinks: menu,
       siteTitle: process.env.SITE_TITLE,
       siteLogo: process.env.META_FAVICON_PNG_32,
       showNavbar: true,
