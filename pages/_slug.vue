@@ -54,8 +54,8 @@
           <div class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></div>
 
 
-          <div v-if="faq">
-            <Faq :items="faq" />
+          <div v-show="article.faq">
+            <Faq :items="article.faq" />
           </div>
 
         </div>
@@ -79,14 +79,12 @@ export default {
   data() {
     return {
       title: 0,
-      faq: '',
     };
   },
   async asyncData({ $content, params, $axios}) {
     const article = await $axios.$get(process.env.API_URL + '/contents/' + params.slug,{
       timeout: 60000
     })
-    this.faq = article.faq
     const relateds = await $axios.$get(process.env.API_URL + '/category/post')
 
     return {
