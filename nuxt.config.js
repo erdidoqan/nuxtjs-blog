@@ -72,15 +72,9 @@ export default {
   },
 
   router: {
-    trailingSlash: false,
+
     linkExactActiveClass: 'text-pink-700'
   },
-  redirect: [{
-    from: '^/(.*)/$',
-    to: (from, req) => {
-      return req.url.endsWith('/') ? req.url.slice(0, -1) : req.url
-    }
-  }],
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.css"],
 
