@@ -72,6 +72,7 @@ export default {
   },
 
   router: {
+    trailingSlash: false,
     middleware: 'trailingSlashMiddleware',
     linkExactActiveClass: 'text-pink-700'
   },
