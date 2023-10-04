@@ -87,10 +87,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8","@nuxt/image",{
-    provider: 'static',
-    dir: "assets/images"
-  }],
+  buildModules: ["@nuxt/postcss8","@nuxt/image"],
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
