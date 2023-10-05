@@ -22,6 +22,7 @@
               <p>
                 Above all, we are driven by our passion for making a difference. We believe that through hard work, dedication, and a commitment to excellence, we can achieve great things. We invite you to join us on this journey, and we look forward to serving you with the best possible products and services.
               </p>
+              <a href="https://greetingbirds.com/blog/love-advice-for-your-online-friend-expert-tips-for-effective-communication">giving love advice to an online friend</a>
             </div>
           </div>
         </div>
