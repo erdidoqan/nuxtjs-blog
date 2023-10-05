@@ -72,7 +72,6 @@ export default {
   },
 
   router: {
-    trailingSlash: true,
     linkExactActiveClass: 'text-pink-700'
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
