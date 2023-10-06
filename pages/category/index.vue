@@ -80,7 +80,7 @@ export default {
     breadcrumbs() {
       return {
         lists: [
-          { name: "Home", url: "/", ok: true },
+          { name: "Home", url: "", ok: true },
           { name: "Categories", url: "/category", ok: false },
         ],
       }
