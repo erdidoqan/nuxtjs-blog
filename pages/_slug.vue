@@ -54,7 +54,7 @@
           <div class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></div>
 
 
-          <template v-if="article.faq !== 'null'">
+          <template v-if="article.faq !== null">
             <div v-show="article.faq">
               <Faq :items="article.faq" />
             </div>
