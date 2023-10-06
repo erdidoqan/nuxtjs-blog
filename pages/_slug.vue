@@ -54,9 +54,12 @@
           <div class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></div>
 
 
-          <div v-show="article.faq">
-            <Faq :items="article.faq" />
-          </div>
+          <template v-if="article.faq !== 'null'">
+            <div v-show="article.faq">
+              <Faq :items="article.faq" />
+            </div>
+          </template>
+
 
         </div>
         <div class="xl:w-1/3 hidden lg:block">
