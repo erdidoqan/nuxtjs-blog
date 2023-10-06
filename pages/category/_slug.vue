@@ -69,9 +69,9 @@ export default {
         return {
           lists: [
             { name: "Home", url: "/", ok: true },
-            { name: "Categories", url: "/category/", ok: true },
-            { name: this.category.up.name, url: '/category/'+this.category.up.slug+'/', ok: true },
-            { name: this.category.name, url: '/category/'+this.category.slug+'/', ok: false },
+            { name: "Categories", url: "/category", ok: true },
+            { name: this.category.up.name, url: '/category/'+this.category.up.slug, ok: true },
+            { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
           ],
         }
       }else{
@@ -79,7 +79,7 @@ export default {
           lists: [
             { name: "Home", url: "/", ok: true },
             { name: "Categories", url: "/category/", ok: true },
-            { name: this.category.name, url: '/category/'+this.category.slug+'/', ok: false },
+            { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
           ],
         }
       }
