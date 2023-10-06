@@ -27,7 +27,7 @@
         </li>
         <li itemprop="name" role="menuitem" class="text-center">
           <NuxtLink
-            to="/category"
+            to="/category/"
             itemprop="url"
             class="block md:inline-block px-2 py-1 hover:text-pink-700 hover:underline"
           >All
