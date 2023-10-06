@@ -20,6 +20,11 @@
           </NuxtLink>
         </div>
         <div class="px-5 py-2">
+          <NuxtLink to="/category/" class="text-base hover:text-gray-400">
+            All Categories
+          </NuxtLink>
+        </div>
+        <div class="px-5 py-2">
           <NuxtLink to="/terms-and-conditions/" class="text-base hover:text-gray-400">
             Terms and Conditions
           </NuxtLink>
@@ -37,7 +42,7 @@
 
       </nav>
       <div class="flex justify-center mt-6 space-x-6">
-        <a target="_blank" rel='noreferrer' href="https://twitter.com/GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
+        <a target="_blank" rel='nofollow' href="https://twitter.com/GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
           <span class="sr-only">Twitter</span>
           <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
         </a>
@@ -47,22 +52,21 @@
         </a>
       </div>
       <p class="mt-4 text-xs text-center text-gray-400">
-        © 2023 GreetingBirds, All rights reserved
+        © 2023 {{ siteName }}, All rights reserved
       </p>
     </div>
   </footer>
 </template>
 
 <script>
-import siteMetaInfo from "@/data/sitemetainfo";
 
 
 export default {
   data() {
     return {
-      siteMetadata: siteMetaInfo,
       siteTitle: process.env.SITE_TITLE,
       siteLogo: process.env.META_FAVICON_PNG_32,
+      siteName: process.env.SITE_TITLE,
     };
   },
 };
