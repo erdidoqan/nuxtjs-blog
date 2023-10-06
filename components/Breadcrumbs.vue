@@ -8,7 +8,7 @@
 
           <NuxtLink
             itemprop="item"
-            :to="list.url+'/'"
+            :to="`${list.url + '/'}`"
             data-vars-ga-ux-element="Breadcrumbs"
             :data-vars-ga-call-to-action="list.name"
             :data-vars-ga-outbound-link="list.url"
@@ -29,6 +29,10 @@
 export default {
   props: ['lists'],
   name: "Breadcrumbs",
+
+  mounted() {
+    console.log(this.lists)
+  }
 }
 </script>
 
