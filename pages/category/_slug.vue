@@ -69,17 +69,17 @@ export default {
         return {
           lists: [
             { name: "Home", url: "/", ok: true },
-            { name: "Categories", url: "/category", ok: true },
-            { name: this.category.up.name, url: '/category/'+this.category.up.slug, ok: true },
-            { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
+            { name: "Categories", url: "/category/", ok: true },
+            { name: this.category.up.name, url: '/category/'+this.category.up.slug+'/', ok: true },
+            { name: this.category.name, url: '/category/'+this.category.slug+'/', ok: false },
           ],
         }
       }else{
         return {
           lists: [
             { name: "Home", url: "/", ok: true },
-            { name: "Categories", url: "/category", ok: true },
-            { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
+            { name: "Categories", url: "/category/", ok: true },
+            { name: this.category.name, url: '/category/'+this.category.slug+'/', ok: false },
           ],
         }
       }
@@ -91,87 +91,89 @@ export default {
       return new Date(date).toLocaleDateString("en", options);
     },
     jsonld() {
-      return [
-        {
-          "@type": "NewsArticle",
-          "thumbnailUrl": this.category.contents[0].thumbnailUrl,
-          "datePublished": this.category.contents[0].datePublished,
-          "headline": this.category.contents[0].title,
-          "wordCount": this.category.contents[0].wordCount,
-          "inLanguage":"en-EN",
-          "articleSection": "Lifestyle",
-          "articleBody": this.category.contents[0].cleanBody,
-          "image": [
-            {
-              "@type": "ImageObject",
-              "height": 1200,
-              "thumbnail": this.category.contents[0].thumbnailUrl,
-              "url": this.category.contents[0].image1200,
-              "width": 1200
-            },
-            {
-              "@type": "ImageObject",
-              "height": 900,
-              "thumbnail": this.category.contents[0].thumbnailUrl,
-              "url": this.category.contents[0].image900,
-              "width": 1200
-            },
-            {
-              "@type": "ImageObject",
-              "height": 675,
-              "thumbnail": this.category.contents[0].thumbnailUrl,
-              "url": this.category.contents[0].image675,
-              "width": 1200
-            }
-          ],
-          "mainEntityOfPage": {
-            "@id": this.$nuxt.$route.path,
-            "@type": "WebPage"
-          },
-          "publisher": {
-            "@type": "NewsMediaOrganization",
-            "name": process.env.SITE_TITLE,
-            "logo": {
-              "@type": "ImageObject",
-              "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
-              "width": 312,
-              "height": 60
-            },
-            "parentOrganization": {
-              "@type": "NewsMediaOrganization",
-              "name": "Greetingbirds"
-            }
-          },
-          "url": this.$nuxt.$route.path,
-          "isBasedOn": this.$nuxt.$route.path,
-          "dateModified": this.category.contents[0].dateModified,
-          "author": {
-            "name": "Yapay Yazar",
-            "url": "/author/",
-            "@type": "Person",
-            "description": "<p>Yapay Yazar is a Greetingbirds analyst, which he evaluates based on 'Quotes' using specialized equipment and consumer tester data. Before starting Greetingbirds in 2022, she earned an MA in authoring and a BA in fiber science from Epoka University. While earning his Yazar degrees, he worked in smart and nanotechnology research laboratories.</p>",
-            "jobTitle": "Quotes Lab Product Analyst",
-            "image": "https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg",
-            "email": "greetingbirds@gmail.com",
-            "sameAs": []
-          },
-          "@context": "http://schema.org"
-        },{
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "numberOfItems": this.category.contents,
-          "itemListElement": [
-            this.category.contents.map((related, index) => {
-              return {
-                "@type": "ListItem",
-                "position": index + 1,
-                "url": 'https://' + process.env.PUBLISH_URL + '/' + related.slug,
-                "name": related.title
+      if (this.category.contents[0]){
+        return [
+          {
+            "@type": "NewsArticle",
+            "thumbnailUrl": this.category.contents[0].thumbnailUrl,
+            "datePublished": this.category.contents[0].datePublished,
+            "headline": this.category.contents[0].title,
+            "wordCount": this.category.contents[0].wordCount,
+            "inLanguage":"en-EN",
+            "articleSection": "Lifestyle",
+            "articleBody": this.category.contents[0].cleanBody,
+            "image": [
+              {
+                "@type": "ImageObject",
+                "height": 1200,
+                "thumbnail": this.category.contents[0].thumbnailUrl,
+                "url": this.category.contents[0].image1200,
+                "width": 1200
+              },
+              {
+                "@type": "ImageObject",
+                "height": 900,
+                "thumbnail": this.category.contents[0].thumbnailUrl,
+                "url": this.category.contents[0].image900,
+                "width": 1200
+              },
+              {
+                "@type": "ImageObject",
+                "height": 675,
+                "thumbnail": this.category.contents[0].thumbnailUrl,
+                "url": this.category.contents[0].image675,
+                "width": 1200
               }
-            })
-          ]
-        }
-      ]
+            ],
+            "mainEntityOfPage": {
+              "@id": this.$nuxt.$route.path,
+              "@type": "WebPage"
+            },
+            "publisher": {
+              "@type": "NewsMediaOrganization",
+              "name": process.env.SITE_TITLE,
+              "logo": {
+                "@type": "ImageObject",
+                "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+                "width": 312,
+                "height": 60
+              },
+              "parentOrganization": {
+                "@type": "NewsMediaOrganization",
+                "name": "Greetingbirds"
+              }
+            },
+            "url": this.$nuxt.$route.path,
+            "isBasedOn": this.$nuxt.$route.path,
+            "dateModified": this.category.contents[0].dateModified,
+            "author": {
+              "name": "Yapay Yazar",
+              "url": "/author/",
+              "@type": "Person",
+              "description": "<p>Yapay Yazar is a Greetingbirds analyst, which he evaluates based on 'Quotes' using specialized equipment and consumer tester data. Before starting Greetingbirds in 2022, she earned an MA in authoring and a BA in fiber science from Epoka University. While earning his Yazar degrees, he worked in smart and nanotechnology research laboratories.</p>",
+              "jobTitle": "Quotes Lab Product Analyst",
+              "image": "https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg",
+              "email": "greetingbirds@gmail.com",
+              "sameAs": []
+            },
+            "@context": "http://schema.org"
+          },{
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "numberOfItems": this.category.contents,
+            "itemListElement": [
+              this.category.contents.map((related, index) => {
+                return {
+                  "@type": "ListItem",
+                  "position": index + 1,
+                  "url": 'https://' + process.env.PUBLISH_URL + '/' + related.slug + '/',
+                  "name": related.title
+                }
+              })
+            ]
+          }
+        ]
+      }
     }
   },
   mounted() {
