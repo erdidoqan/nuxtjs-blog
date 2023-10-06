@@ -68,7 +68,7 @@ export default {
       if (this.category.up){
         return {
           lists: [
-            { name: "Home", url: "/", ok: true },
+            { name: "Home", url: "", ok: true },
             { name: "Categories", url: "/category", ok: true },
             { name: this.category.up.name, url: '/category/'+this.category.up.slug, ok: true },
             { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
@@ -77,8 +77,8 @@ export default {
       }else{
         return {
           lists: [
-            { name: "Home", url: "/", ok: true },
-            { name: "Categories", url: "/category/", ok: true },
+            { name: "Home", url: "", ok: true },
+            { name: "Categories", url: "/category", ok: true },
             { name: this.category.name, url: '/category/'+this.category.slug, ok: false },
           ],
         }
