@@ -19,7 +19,7 @@
       <ul itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu" class="flex overflow-x-auto w-full lg:w-9/12 items-center justify-center lg:justify-end text-base">
         <li itemprop="name" role="menuitem" v-for="menu of menus.data" class="text-center">
           <NuxtLink
-            :to="'/category/'+menu.slug"
+            :to="'/category/'+menu.slug+'/'"
             itemprop="url"
             class="block md:inline-block px-2 py-1 hover:text-pink-700 hover:underline"
           >{{ menu.name }}
