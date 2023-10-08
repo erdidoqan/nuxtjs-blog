@@ -2,20 +2,22 @@
   <!-- Section 1 -->
   <section class="antialiased bg-white">
     <div class="mx-auto">
-      <TheHeader />
-      <Nuxt />
+      <Header />
+      <div class="mt-16">
+        <Nuxt />
+      </div>
       <TheFooter />
     </div>
   </section>
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader.vue";
+import Header from "../components/Header.vue";
 import TheFooter from "../components/TheFooter.vue";
 
 export default {
   component: {
-    TheHeader,
+    Header,
     TheFooter,
   },
   head() {

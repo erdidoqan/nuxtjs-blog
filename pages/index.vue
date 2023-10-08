@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-6">
+  <div class="mt-24">
     <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-2 mx-auto">

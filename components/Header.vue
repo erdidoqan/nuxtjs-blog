@@ -1,32 +1,42 @@
 <template>
-  <nav class="flex items-center justify-between flex-wrap bg-gray-700 p-6">
-    <div class="flex items-center flex-no-shrink text-black mr-6">
-      <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-      <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
-    </div>
-    <div class="block sm:hidden">
-      <button @click="toggle" class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-      </button>
-    </div>
 
-    <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
-      <div class="text-sm sm:flex-grow">
-        <a href="#responsive-header" class="no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4">
-          Docs
-        </a>
-        <a href="#responsive-header" class="no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4">
-          Examples
-        </a>
-        <a href="#responsive-header" class="no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white">
-          Blog
-        </a>
-      </div>
-      <div>
-        <a href="#" class="no-underline inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal hover:bg-white mt-4 sm:mt-0">Download</a>
+  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <NuxtLink to="/" class="flex items-center">
+        <nuxt-img
+          :src="siteLogo"
+          alt="logo"
+          preload
+          width="35"
+          height="35"
+        />
+        <span class="h-8 text-pink-700 pl-2 text-2xl">{{ siteTitle }}</span>
+      </NuxtLink>
+      <button @click="toggle" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+      <div :class="open ? 'block': 'hidden'" class="items-center justify-end w-3/4 md:flex md:w-5/6 md:order-1" id="navbar-sticky">
+        <ul itemscope itemtype="https://schema.org/SiteNavigationElement"
+            class="flex flex-col md:flex-row md:mt-0 md:border-0 md:bg-white "
+        >
+          <li itemprop="name" role="menuitem" v-for="menu of menus.data">
+
+            <NuxtLink
+              :to="'/category/'+menu.slug+'/'"
+              itemprop="url"
+              class="block md:inline-block px-1 hover:text-pink-700 hover:underline"
+            >{{ menu.name }}
+            </NuxtLink>
+          </li>
+
+        </ul>
       </div>
     </div>
   </nav>
+
 </template>
 
 <script>
@@ -55,6 +65,12 @@ export default {
       return process.env.API_URL;
     },
   },
+  beforeCreate() {
+    this.open = false
+  },
+  mounted() {
+    this.open = false
+  },
   methods: {
     toggle() {
       this.open = !this.open
@@ -63,19 +79,3 @@ export default {
 };
 </script>
 
-<style>
-.nuxt-link-exact-active {
-  @apply text-indigo-600;
-}
-.navbar {
-  transform: translate3d(0, 0, 0);
-  transition: 0.1s all ease-out;
-}
-
-@media (max-width: 768px) {
-  .navbar.navbar--hidden {
-    display: none;
-    transform: translate3d(0, -100%, 0);
-  }
-}
-</style>
