@@ -9,6 +9,7 @@
             alt="logo"
             preload
             loading="lazy"
+            format="webp"
             width="35"
             height="35"
           />

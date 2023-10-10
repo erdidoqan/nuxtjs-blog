@@ -7,6 +7,7 @@
           :src="siteLogo"
           alt="logo"
           preload
+          format="webp"
           width="35"
           height="35"
         />
