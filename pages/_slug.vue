@@ -196,6 +196,7 @@ export default {
         { hid: 'og:title', name: 'og:title', content: this.article.title },
         { hid: 'og:description', name: 'og:description', content: this.article.description },
         { hid: 'og:image', name: 'og:image', content: this.article.image1200 },
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: this.article.image1200 },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
 
         { hid: 'twitter:image:src', name: 'twitter:image:src', content: this.article.image1200 },

@@ -21,14 +21,13 @@
         </svg>
       </button>
       <div :class="open ? 'block': 'hidden'" class="items-center sm:w-full justify-end md:w-4/5 md:flex md:order-1" id="navbar-sticky">
-        <ul itemscope itemtype="https://schema.org/SiteNavigationElement"
+        <ul
             class="flex flex-col mt-4 md:flex-row md:mt-0 md:border-0 md:bg-white "
         >
-          <li itemprop="name" role="menuitem" v-for="menu of menus.data">
+          <li v-for="menu of menus.data">
 
             <NuxtLink
               :to="'/category/'+menu.slug+'/'"
-              itemprop="url"
               class="block md:p-0 p-3 md:inline-block hover:text-pink-700 hover:underline"
             >{{ menu.name }}
             </NuxtLink>
@@ -71,11 +70,6 @@ export default {
   },
   mounted() {
     this.open = false
-  },
-  watch: {
-    $route() {
-      this.open = false;
-    },
   },
   methods: {
     toggle() {
