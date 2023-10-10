@@ -21,6 +21,8 @@
     "@tailwindcss/typography": "^0.5.2",
     "clipboard": "^2.0.10",
     "core-js": "^3.19.3",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-div": "^1.1.0",
     "nuxt": "^2.15.8",

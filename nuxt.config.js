@@ -1,13 +1,33 @@
 require('dotenv').config()
 const axios = require('axios')
+import fs from 'fs'
+const https = require('https')
+
+https.get(process.env.META_FAVICON_ICO, resp => resp.pipe(fs.createWriteStream('static/favicon.ico')));
+https.get(process.env.META_FAVICON_PNG, resp => resp.pipe(fs.createWriteStream('static/icons/icon.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=114&h=114&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon114.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=196&h=196&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon196.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=160&h=160&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon160.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=96&h=96&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon96.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=64&h=64&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon64.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=32&h=32&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon32.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=16&h=16&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon16.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=72&h=72&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon72.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=144&h=144&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon144.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=60&h=60&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon60.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=120&h=120&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon120.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=76&h=76&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon76.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=152&h=152&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon152.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon180.png')));
+
+
 
 export default {
   target: 'static',
   generate: { fallback: true },
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
-    PUBLISH_URL: process.env.PUBLISH_URL,
-    META_FAVICON_PNG_32: process.env.META_FAVICON_PNG_32
+    PUBLISH_URL: process.env.PUBLISH_URL
   },
   head: {
     title: process.env.META_TITLE,
@@ -37,31 +57,31 @@ export default {
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:creator', content: '@GreetingBirds' },
       { name: 'twitter:site', content: '@GreetingBirds' },
-      { hid: 'twitter:image:src', name: 'twitter:image:src', content: process.env.META_COVER_IMAGE },
+      { hid: 'twitter:image:src', name: 'twitter:image:src', content: '/icons/icon.png' },
       { hid: 'twitter:title', name: 'twitter:title', content: process.env.META_TITLE },
       { hid: 'twitter:description', name: 'twitter:description', content: process.env.META_DESC },
       { hid: 'twitter:url', name: 'twitter:url', content: process.env.PUBLISH_URL }
     ],
     link: [
-      { rel: 'shortcut icon', href: process.env.META_FAVICON_ICO },
-      { rel: 'icon',type: 'image/x-icon', href: process.env.META_FAVICON_ICO },
-      { rel: 'icon', sizes: '16x16 32x32 64x64', href: process.env.META_FAVICON_ICO },
-      { rel: 'icon', type: 'image/png', sizes: '196x196', href: process.env.META_FAVICON_PNG_196 },
-      { rel: 'icon', type: 'image/png', sizes: '160x160', href: process.env.META_FAVICON_PNG_160 },
-      { rel: 'icon', type: 'image/png', sizes: '96x96', href: process.env.META_FAVICON_PNG_96 },
-      { rel: 'icon', type: 'image/png', sizes: '64x64', href: process.env.META_FAVICON_PNG_64 },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: process.env.META_FAVICON_PNG_32 },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: process.env.META_FAVICON_PNG_16 },
+      { rel: 'shortcut icon', href: '/favicon.ico' },
+      { rel: 'icon',type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', sizes: '16x16 32x32 64x64', href: '/icons/icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/icons/icon196.png' },
+      { rel: 'icon', type: 'image/png', sizes: '160x160', href: '/icons/icon160.png' },
+      { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/icons/icon96.png' },
+      { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/icons/icon64.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/icon32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/icon16.png' },
 
-      { rel: 'apple-touch-icon', href: process.env.META_FAVICON_PNG_57 },
-      { rel: 'apple-touch-icon', sizes: '72x72', href: process.env.META_FAVICON_PNG_72 },
-      { rel: 'apple-touch-icon', sizes: '114x144', href: process.env.META_FAVICON_PNG_114 },
-      { rel: 'apple-touch-icon', sizes: '144x144', href: process.env.META_FAVICON_PNG_144 },
-      { rel: 'apple-touch-icon', sizes: '60x60', href: process.env.META_FAVICON_PNG_60 },
-      { rel: 'apple-touch-icon', sizes: '120x120', href: process.env.META_FAVICON_PNG_120 },
-      { rel: 'apple-touch-icon', sizes: '76x76', href: process.env.META_FAVICON_PNG_76 },
-      { rel: 'apple-touch-icon', sizes: '152x152', href: process.env.META_FAVICON_PNG_152 },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: process.env.META_FAVICON_PNG_180 },
+      { rel: 'apple-touch-icon', href: '/icons/icon.png' },
+      { rel: 'apple-touch-icon', sizes: '72x72', href: '/icons/icon72.png' },
+      { rel: 'apple-touch-icon', sizes: '114x144', href: '/icons/icon114.png' },
+      { rel: 'apple-touch-icon', sizes: '144x144', href: '/icons/icon144.png' },
+      { rel: 'apple-touch-icon', sizes: '60x60', href: '/icons/icon60.png' },
+      { rel: 'apple-touch-icon', sizes: '120x120', href: '/icons/icon120.png' },
+      { rel: 'apple-touch-icon', sizes: '76x76', href: '/icons/icon76.png' },
+      { rel: 'apple-touch-icon', sizes: '152x152', href: '/icons/icon152.png' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon180.png' }
     ],
     noscript: [
       {
