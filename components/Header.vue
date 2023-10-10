@@ -20,7 +20,7 @@
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
-      <div :class="open ? 'block': 'hidden'" class="items-center w-full justify-end w-4/5 md:flex md:order-1" id="navbar-sticky">
+      <div :class="open ? 'block': 'hidden'" class="items-center sm:w-full justify-end md:w-4/5 md:flex md:order-1" id="navbar-sticky">
         <ul itemscope itemtype="https://schema.org/SiteNavigationElement"
             class="flex flex-col mt-4 md:flex-row md:mt-0 md:border-0 md:bg-white "
         >
@@ -48,7 +48,7 @@ export default {
     return {
       open: false,
       siteTitle: process.env.SITE_TITLE,
-      siteLogo: process.env.META_FAVICON_PNG,
+      siteLogo: process.env.META_FAVICON_PNG + '?w=40&h=40&fit=crop',
       showNavbar: true,
       lastScrollPosition: 0,
       menus: []
