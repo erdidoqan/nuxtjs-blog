@@ -1,7 +1,7 @@
 <template>
 
   <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="flex flex-wrap items-center justify-between mx-auto md:p-2 p-4">
       <NuxtLink to="/" class="flex items-center">
         <nuxt-img
           :src="siteLogo"
@@ -20,7 +20,7 @@
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
-      <div :class="open ? 'block': 'hidden'" class="items-center w-full justify-end w-2/3 md:flex md:w-2/3 md:order-1" id="navbar-sticky">
+      <div :class="open ? 'block': 'hidden'" class="items-center w-full justify-end w-4/5 md:flex md:order-1" id="navbar-sticky">
         <ul itemscope itemtype="https://schema.org/SiteNavigationElement"
             class="flex flex-col mt-4 md:flex-row md:mt-0 md:border-0 md:bg-white "
         >
