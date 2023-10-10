@@ -4,8 +4,8 @@ import fs from 'fs'
 const https = require('https')
 
 https.get(process.env.META_FAVICON_ICO, resp => resp.pipe(fs.createWriteStream('static/favicon.ico')));
-https.get(process.env.META_FAVICON_PNG, resp => resp.pipe(fs.createWriteStream('static/icons/icon.png')));
-/*https.get(process.env.META_FAVICON_PNG + '?w=114&h=114&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon114.png')));
+/*https.get(process.env.META_FAVICON_PNG, resp => resp.pipe(fs.createWriteStream('static/icons/icon.png')));
+https.get(process.env.META_FAVICON_PNG + '?w=114&h=114&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon114.png')));
 https.get(process.env.META_FAVICON_PNG + '?w=196&h=196&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon196.png')));
 https.get(process.env.META_FAVICON_PNG + '?w=160&h=160&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon160.png')));
 https.get(process.env.META_FAVICON_PNG + '?w=96&h=96&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon96.png')));
