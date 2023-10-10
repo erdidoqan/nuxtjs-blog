@@ -1,7 +1,7 @@
 <template>
   <div class="md:flex mx-auto dark:bg-gray-900">
     <div>
-      <div :class="'lg:grid-cols-'+piece" class="ltablet:grid-cols-6 grid w-full gap-6 grid-cols-2 sm:grid-cols-3">
+      <div :class="'lg:grid-cols-'+piece" class="ltablet:grid-cols-3 grid w-full gap-6 grid-cols-2 sm:grid-cols-4">
         <div
           v-for="(article, key) in articles"
           :key="key"
