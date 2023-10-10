@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       siteTitle: process.env.SITE_TITLE,
-      siteLogo: process.env.META_FAVICON_PNG_32,
+      siteLogo: process.env.META_FAVICON_PNG,
       siteName: process.env.SITE_TITLE,
     };
   },

@@ -46,7 +46,7 @@ export default {
     return {
       open: false,
       siteTitle: process.env.SITE_TITLE,
-      siteLogo: process.env.META_FAVICON_PNG_32,
+      siteLogo: process.env.META_FAVICON_PNG,
       showNavbar: true,
       lastScrollPosition: 0,
       menus: []
