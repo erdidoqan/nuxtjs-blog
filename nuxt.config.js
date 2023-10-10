@@ -125,14 +125,7 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
-    "nuxt-compress",
-    "@nuxtjs/redirect-module"
-  ],
-  redirect: [
-    {
-      from: '^.*(?<!\/)$',
-      to: (from, req) => req.url + '/'
-    }
+    "nuxt-compress"
   ],
   markdownit: {
     runtime: true,
