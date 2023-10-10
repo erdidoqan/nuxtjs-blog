@@ -50,10 +50,10 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "",
+        content: "Send us a email: <a href=\"mailto:greetingbirdscom@gmail.com\">greetingbirdscom@gmail.com</a> <br> Welcome to our Contact Us page. If you have any questions, comments, or concerns, we encourage you to get in touch with us",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
+    link: [{ rel: "icon", type: "image/x-icon", href: '/favicon.ico' }],
   },
 };
 </script>

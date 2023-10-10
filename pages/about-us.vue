@@ -50,7 +50,7 @@ export default {
         content: "",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
+    link: [{ rel: "icon", type: "image/x-icon", href: '/favicon.ico' }],
   },
 };
 </script>

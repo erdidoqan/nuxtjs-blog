@@ -29,7 +29,7 @@ export default {
         "@type": "Organization",
         "name": process.env.SITE_TITLE,
         "url": 'https://' + process.env.PUBLISH_URL,
-        "logo": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png'
+        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png'
       }
     },
     websiteJsonld(){
@@ -38,7 +38,7 @@ export default {
         "@type":"WebSite",
         "name": process.env.SITE_TITLE,
         "url": 'https://' + process.env.PUBLISH_URL,
-        "logo": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
         "potentialAction":[
           {
             "@type":"SearchAction",
@@ -78,13 +78,13 @@ export default {
           "headline": "Blogs",
           "datePublished": this.articles[0].datePublished,
           "dateModified": this.articles[0].dateModified,
-          "description": process.env.SITE_TITLE + " Our team of talented writers and experts has poured their passion and expertise into each article, striving to create an unforgettable reading experience for our valued readers like you."
+          "description": process.env.META_DESC
         },
         "publisher": {
           "@type": "Organization",
           "logo": {
             "@type": "ImageObject",
-            "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+            "url": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
             "width": 312,
             "height": 60
           },
@@ -95,7 +95,7 @@ export default {
             "name": process.env.SITE_TITLE
           }
         },
-        "url": 'https://' + process.env.PUBLISH_URL + '/blog/'
+        "url": 'https://' + process.env.PUBLISH_URL + '/'
       }
     },
   },

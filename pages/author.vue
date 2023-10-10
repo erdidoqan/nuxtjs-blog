@@ -72,10 +72,10 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: siteMetaInfo.description,
+        content: 'Yapay Yazar is a Greetingbirds analyst, which he evaluates based on "Quotes" using specialized equipment and consumer tester data',
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
+    link: [{ rel: "icon", type: "image/x-icon", href: '/favicon.ico' }],
   },
 };
 </script>

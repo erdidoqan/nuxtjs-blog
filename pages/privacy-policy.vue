@@ -133,17 +133,17 @@ export default {
     };
   },
   head: {
-    title: "Privacy Policy",
+    title: "Privacy Policy - " + process.env.SITE_TITLE,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Some of Projects developed by Solaiman",
+        content: process.env.SITE_TITLE + " This privacy policy has been compiled to better serve those who are concerned",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
+    link: [{ rel: "icon", type: "image/x-icon", href: '/favicon.ico' }],
   },
 };
 </script>

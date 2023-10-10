@@ -99,7 +99,7 @@ export default {
             return {
               "@type": "ListItem",
               "position": index + 1,
-              "url": 'https://' + process.env.PUBLISH_URL + '/categories/' + article.slug,
+              "url": 'https://' + process.env.PUBLISH_URL + '/' + article.slug,
               "name": article.title
             }
           })
@@ -120,7 +120,7 @@ export default {
           "@type": "Organization",
           "logo": {
             "@type": "ImageObject",
-            "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+            "url": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
             "width": 312,
             "height": 60
           },
@@ -131,7 +131,7 @@ export default {
             "name": process.env.SITE_TITLE
           }
         },
-        "url": 'https://' + process.env.PUBLISH_URL + '/categories/'
+        "url": 'https://' + process.env.PUBLISH_URL + '/category/'
       }
     },
   },
@@ -147,7 +147,7 @@ export default {
           content: " ",
         },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
+      link: [{ rel: "icon", type: "image/x-icon", href: '/favicon.ico' }],
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.jsonld())

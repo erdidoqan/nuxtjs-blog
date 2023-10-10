@@ -66,17 +66,17 @@ export default {
     };
   },
   head: {
-    title: "Terms and Conditions",
+    title: "Terms and Conditions - " + process.env.SITE_TITLE,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Terms and Conditions",
+        content: "Terms and Conditions - " + process.env.SITE_TITLE,
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
+    link: [{ rel: "icon", type: "image/x-icon", href: '/favicon.ico' }],
   },
 };
 </script>

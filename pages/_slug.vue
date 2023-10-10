@@ -143,7 +143,7 @@ export default {
             "name": process.env.SITE_TITLE,
             "logo": {
               "@type": "ImageObject",
-              "url": 'https://' + process.env.PUBLISH_URL + '/static/logo-jsonld.png',
+              "url": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
               "width": 312,
               "height": 60
             },
@@ -175,7 +175,7 @@ export default {
               return {
                 "@type": "ListItem",
                 "position": index + 1,
-                "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + related.slug,
+                "url": 'https://' + process.env.PUBLISH_URL + '/' + related.slug,
                 "name": related.title
               }
             })
