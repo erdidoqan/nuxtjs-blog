@@ -70,6 +70,11 @@ export default {
   mounted() {
     this.open = false
   },
+  watch: {
+    $route() {
+      this.open = false;
+    },
+  },
   methods: {
     toggle() {
       this.open = !this.open
