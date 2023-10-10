@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import siteMetaInfo from "@/data/sitemetainfo";
 
 export default {
   async asyncData({$axios}) {
@@ -64,7 +63,7 @@ export default {
             return {
               "@type": "ListItem",
               "position": index + 1,
-              "url": 'https://' + process.env.PUBLISH_URL + '/blog/' + article.slug,
+              "url": 'https://' + process.env.PUBLISH_URL + '/' + article.slug,
               "name": article.title
             }
           }),
