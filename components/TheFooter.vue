@@ -8,8 +8,9 @@
             :src="siteLogo"
             alt="logo"
             preload
-            width="45"
-            height="45"
+            loading="lazy"
+            width="35"
+            height="35"
           />
           <span class="h-8 text-pink-700 pl-2 text-2xl">{{ siteTitle }}</span>
         </NuxtLink>
@@ -65,7 +66,7 @@ export default {
   data() {
     return {
       siteTitle: process.env.SITE_TITLE,
-      siteLogo: process.env.META_FAVICON_PNG,
+      siteLogo: '/icons/icon.png',
       siteName: process.env.SITE_TITLE,
     };
   },
