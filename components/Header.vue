@@ -18,16 +18,16 @@
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
-      <div :class="open ? 'block': 'hidden'" class="items-center justify-end w-3/4 md:flex md:w-5/6 md:order-1" id="navbar-sticky">
+      <div :class="open ? 'block': 'hidden'" class="items-center justify-end w-2/3 md:flex md:w-2/3 md:order-1" id="navbar-sticky">
         <ul itemscope itemtype="https://schema.org/SiteNavigationElement"
-            class="flex flex-col md:flex-row md:mt-0 md:border-0 md:bg-white "
+            class="flex flex-col mt-4 md:flex-row md:mt-0 md:border-0 md:bg-white "
         >
           <li itemprop="name" role="menuitem" v-for="menu of menus.data">
 
             <NuxtLink
               :to="'/category/'+menu.slug+'/'"
               itemprop="url"
-              class="block md:inline-block px-1 hover:text-pink-700 hover:underline"
+              class="block md:px-0 md:py-0 md:pl-0 md:pr-0 py-3 pl-3 pr-4 md:inline-block px-3 hover:text-pink-700 hover:underline"
             >{{ menu.name }}
             </NuxtLink>
           </li>
