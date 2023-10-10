@@ -29,7 +29,7 @@
             <NuxtLink
               :to="'/category/'+menu.slug+'/'"
               itemprop="url"
-              class="block md:px-0 md:py-0 md:pl-0 md:pr-0 py-3 pl-3 pr-4 md:inline-block px-3 hover:text-pink-700 hover:underline"
+              class="block md:p-0 p-3 md:inline-block hover:text-pink-700 hover:underline"
             >{{ menu.name }}
             </NuxtLink>
           </li>
@@ -48,7 +48,7 @@ export default {
     return {
       open: false,
       siteTitle: process.env.SITE_TITLE,
-      siteLogo: process.env.META_FAVICON_PNG + '?w=40&h=40&fit=crop',
+      siteLogo: process.env.META_FAVICON_PNG,
       showNavbar: true,
       lastScrollPosition: 0,
       menus: []

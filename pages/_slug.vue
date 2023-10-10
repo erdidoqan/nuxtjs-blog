@@ -70,7 +70,7 @@
       </div>
       <hr>
       <h2 class="mt-10 mb-4 text-4xl tracking-tight text-red-400 text-slate-800 font-extrabold">Content You May Be Interested In</h2>
-      <Articles :articles="relateds" />
+      <Articles :articles="article.relateds" :piece="6" />
     </div>
   </div>
 </template>

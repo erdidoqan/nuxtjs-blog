@@ -1,7 +1,7 @@
 <template>
   <div class="md:flex mx-auto dark:bg-gray-900">
     <div>
-      <div :class="'lg:grid-cols-'+piece" class="ltablet:grid-cols-6 grid w-full gap-6 grid-cols-2 sm:grid-cols-3">
+      <div class="ltablet:grid-cols-6 grid w-full gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
         <div
           v-for="(article, key) in articles"
           :key="key"
@@ -9,26 +9,22 @@
         >
 
           <div class="relative">
-            <NuxtLink :to="{ name: 'slug', params: { slug: article.slug } }">
-
+            <NuxtLink :to="{ name: category+'-slug', params: { slug: article.slug } }">
               <nuxt-img
-                v-if="article.image"
-                class="h-40 w-full rounded-lg object-cover"
                 :src="article.image"
                 preload
                 loading="lazy"
-                width="850"
-                height="620"
-                format="webp"
                 sizes="sm:100vw md:50vw lg:400px"
-                :alt="article.title"
+                class="h-40 w-full rounded-lg object-cover"
+                :alt="article.title +' '+ key"
               />
             </NuxtLink>
+            <span class="inline-block px-3 font-sans transition-shadow duration-300 py-1 text-[0.65rem] rounded-full bg-primary-100 text-primary-500 border-primary-100 dark:border-primary-500 dark:text-primary-500 border dark:bg-transparent absolute start-3 top-3 translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Productivity</span>
           </div>
           <div>
             <div class="mb-6 mt-3">
               <p class="font-heading text-base font-medium leading-snug line-clamp-4 text-gray-800 dark:text-gray-100">
-                <NuxtLink :to="{ name: 'slug', params: { slug: article.slug } }">
+                <NuxtLink :to="{ name: category+'-slug', params: { slug: article.slug } }">
                   {{ article.title }}
                 </NuxtLink>
               </p>
@@ -43,17 +39,8 @@
 
 <script>
 export default {
-  props: {
-    articles: {
-      type: Array,
-      default: null
-    },
-    piece: {
-      type: Number,
-      default: 4
-    }
-  },
-  name: "Articles.vue"
+  props: ['articles','category'],
+  name: "ArticlesRelated.vue"
 }
 </script>
 
