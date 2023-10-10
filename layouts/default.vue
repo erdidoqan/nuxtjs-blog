@@ -6,7 +6,7 @@
       <div class="mt-16">
         <Nuxt />
       </div>
-
+      <TheFooter />
     </div>
   </section>
 </template>
