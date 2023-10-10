@@ -2,11 +2,11 @@
   <!-- Section 1 -->
   <section class="antialiased bg-white">
     <div class="mx-auto">
-
+      <Header />
       <div class="mt-16">
         <Nuxt />
       </div>
-      <TheFooter />
+
     </div>
   </section>
 </template>
