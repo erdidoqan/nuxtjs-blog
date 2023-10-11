@@ -4,7 +4,7 @@
     <div class="flex flex-wrap items-center justify-between mx-auto md:p-2 p-4">
       <NuxtLink to="/" class="flex items-center">
         <nuxt-img
-          :src="siteLogo"
+          src="/icons/icon.png"
           alt="logo"
           preload
           format="webp"
@@ -48,7 +48,6 @@ export default {
     return {
       open: false,
       siteTitle: process.env.SITE_TITLE,
-      siteLogo: process.env.META_FAVICON_PNG,
       menus: []
     };
   },
