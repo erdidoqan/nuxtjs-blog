@@ -59,6 +59,11 @@ export default {
       }
     }).then(res => res.json())
   },
+  watch: {
+    $route() {
+      this.open = false;
+    },
+  },
   methods: {
     toggle() {
       this.open = !this.open
