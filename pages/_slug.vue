@@ -175,7 +175,7 @@ export default {
               return {
                 "@type": "ListItem",
                 "position": index + 1,
-                "url": 'https://' + process.env.PUBLISH_URL + '/' + related.slug,
+                "url": 'https://' + process.env.PUBLISH_URL + '/' + related.slug + '/',
                 "name": related.title
               }
             })

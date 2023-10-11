@@ -63,7 +63,7 @@ export default {
             return {
               "@type": "ListItem",
               "position": index + 1,
-              "url": 'https://' + process.env.PUBLISH_URL + '/' + article.slug,
+              "url": 'https://' + process.env.PUBLISH_URL + '/' + article.slug + '/',
               "name": article.title
             }
           }),
