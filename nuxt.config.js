@@ -84,10 +84,6 @@ export default {
       { rel: 'apple-touch-icon', sizes: '152x152', href: '/icons/icon152.png' },
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon180.png' }
     ],
-    script: [
-      { src: "https://www.googletagmanager.com/gtag/js?id=" + process.env.GOOGLE_ANALYTICS_ID, async: true },
-      { src: "js/ga.js"}
-    ],
     noscript: [
       {
         innerHTML: 'This website requires JavaScript.',
@@ -132,8 +128,12 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
-    "nuxt-compress"
+    "nuxt-compress",
+    "@nuxtjs/google-gtag"
   ],
+  'google-gtag': {
+    id: process.env.GOOGLE_ANALYTICS_ID
+  },
   markdownit: {
     runtime: true,
     preset: 'default',
