@@ -84,6 +84,10 @@ export default {
       { rel: 'apple-touch-icon', sizes: '152x152', href: '/icons/icon152.png' },
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon180.png' }
     ],
+    script: [
+      { src: "https://www.googletagmanager.com/gtag/js?id=" + process.env.GOOGLE_ANALYTICS_ID, async: true },
+      { src: "js/ga.js"}
+    ],
     noscript: [
       {
         innerHTML: 'This website requires JavaScript.',
@@ -110,17 +114,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 
   buildModules: [
-    "@nuxt/postcss8","@nuxt/image",
-    '@nuxtjs/google-analytics'
+    "@nuxt/postcss8","@nuxt/image", "@nuxtjs/tailwindcss",
   ],
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID
-    }
-  },
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
@@ -224,18 +219,6 @@ export default {
       plugins: {
         tailwindcss: {},
         autoprefixer: {}
-      }
-    },
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue)$/,
-            chunks: 'all',
-            enforce: false
-          }
-        }
       }
     },
     splitChunks: {
