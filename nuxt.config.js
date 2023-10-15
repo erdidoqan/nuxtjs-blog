@@ -110,7 +110,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 
   buildModules: [
-    "@nuxt/postcss8","@nuxt/image", "@nuxtjs/tailwindcss",
+    "@nuxt/postcss8","@nuxt/image"
   ],
   vite: {
     /* options for vite */
