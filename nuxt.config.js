@@ -108,7 +108,19 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8","@nuxt/image"],
+
+  buildModules: [
+    "@nuxt/postcss8","@nuxt/image",
+    '@nuxtjs/google-analytics'
+  ],
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID
+    }
+  },
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)

@@ -20,6 +20,31 @@ export default {
     Header,
     TheFooter,
   },
+  methods: {
+    OrganizationJsonld() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": process.env.SITE_TITLE,
+        "url": 'https://' + process.env.PUBLISH_URL,
+        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
+        "sameAs" : [
+          "http://www.facebook.com/your-profile",
+          "http://www.twitter.com/yourProfile",
+          "http://plus.google.com/your_profile"
+        ]
+      }
+    },
+    websiteJsonld() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": process.env.SITE_TITLE,
+        "url": 'https://' + process.env.PUBLISH_URL,
+        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
+      }
+    },
+  },
   head() {
     return {
       link: [
@@ -27,7 +52,15 @@ export default {
           rel: 'canonical',
           href: 'https://' + process.env.PUBLISH_URL + this.$route.path
         }
-      ]
+      ],
+      script: [{
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(this.websiteJsonld())
+    },{
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(this.OrganizationJsonld())
+    }],
+      __dangerouslyDisableSanitizers: ['script'],
     }
   }
 };

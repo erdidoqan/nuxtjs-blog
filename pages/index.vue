@@ -23,34 +23,6 @@ export default {
     }
   },
   methods: {
-    OrganizationJsonld(){
-      return {
-        "@context":"https://schema.org",
-        "@type": "Organization",
-        "name": process.env.SITE_TITLE,
-        "url": 'https://' + process.env.PUBLISH_URL,
-        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png'
-      }
-    },
-    websiteJsonld(){
-      return {
-        "@context":"https://schema.org",
-        "@type":"WebSite",
-        "name": process.env.SITE_TITLE,
-        "url": 'https://' + process.env.PUBLISH_URL,
-        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
-        "potentialAction":[
-          {
-            "@type":"SearchAction",
-            "target":{
-              "@type":"EntryPoint",
-              "urlTemplate": 'https://' + process.env.PUBLISH_URL + "/search?q={search_term_string}"
-            },
-            "query-input":"required name=search_term_string"
-          }
-        ]
-      }
-    },
     jsonld() {
       return {
         "@context": "https://schema.org",
@@ -111,12 +83,6 @@ export default {
         },
       ],
       script: [{
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(this.websiteJsonld())
-      },{
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(this.OrganizationJsonld())
-      },{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.jsonld())
       }],

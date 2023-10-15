@@ -166,12 +166,60 @@ export default {
             "sameAs": []
           },
           "@context": "http://schema.org"
-        },{
+        }
+      ]
+    },
+    articleJsonLd(){
+      return [
+        { "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": this.article.title,
+          "alternativeHeadline": this.article.meta_title,
+          "image": this.article.image,
+          "award": "Best anniversary article ever written",
+          "editor": "Craig Mount",
+          "genre": "list",
+          "keywords": "seo sales b2b",
+          "wordcount": this.article.wordCount,
+          "datePublished": this.article.datePublished,
+          "dateCreated": this.article.datePublished,
+          "dateModified": this.article.dateModified,
+          "description": this.article.description,
+          "articleBody": this.article.cleanFullBody,
+          "author": {
+            "name": "Yapay Yazar",
+            "url": "/author/",
+            "@type": "Person",
+            "description": "Yapay Yazar is a Greetingbirds analyst, which he evaluates based on 'Quotes' using specialized equipment and consumer tester data. Before starting Greetingbirds in 2022, she earned an MA in authoring and a BA in fiber science from Epoka University. While earning his Yazar degrees, he worked in smart and nanotechnology research laboratories.",
+            "jobTitle": "Quotes Lab Product Analyst",
+            "image": "https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg",
+            "email": "greetingbirds@gmail.com",
+            "sameAs": []
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": process.env.SITE_TITLE,
+            "logo": {
+              "@type": "ImageObject",
+              "url": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
+            }
+          },
+          "url": this.$nuxt.$route.path,
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": this.$nuxt.$route.path
+          }
+        }
+      ]
+    },
+    relatedlistJsonLd(){
+      return [
+        {
           "@context": "https://schema.org",
           "@type": "ItemList",
-          "numberOfItems": this.relateds.length,
+          "numberOfItems": this.article.relateds.length,
           "itemListElement": [
-            this.relateds.map((related, index) => {
+            this.article.relateds.map((related, index) => {
               return {
                 "@type": "ListItem",
                 "position": index + 1,
@@ -207,6 +255,12 @@ export default {
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.jsonld())
+      },{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.articleJsonLd())
+      },{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.relatedlistJsonLd())
       }],
       __dangerouslyDisableSanitizers: ['script'],
     };
