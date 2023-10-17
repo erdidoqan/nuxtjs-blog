@@ -27,7 +27,7 @@
       width="850"
       height="620"
       format="webp"
-      sizes="sm:100vw md:50vw lg:400px"
+      sizes="sm:100vw md:60vw lg:1200px"
       :alt="article.title"
     />
 

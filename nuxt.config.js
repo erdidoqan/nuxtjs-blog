@@ -65,6 +65,7 @@ export default {
     ],
     link: [
       { rel: 'shortcut icon', href: '/favicon.ico' },
+      { rel: 'icon', href: '/icons/icon.png' },
       { rel: 'icon',type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', sizes: '16x16 32x32 64x64', href: '/icons/icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/icons/icon196.png' },
