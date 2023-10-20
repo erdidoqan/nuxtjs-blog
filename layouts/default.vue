@@ -23,83 +23,25 @@ export default {
   methods: {
     OrganizationJsonld() {
       return {
-        "@type":[
-          "Corporation",
-          "Organization"
-        ],
-        "@id": process.env.PUBLISH_URL+"/#organization",
+        "@context": "https://schema.org",
+        "@type": "Organization",
         "name": process.env.SITE_TITLE,
-        "url": process.env.PUBLISH_URL,
-        "sameAs":[
-          "https://www.facebook.com/greetingbirds",
-          "https://twitter.com/greetingbirds"
-        ],
-        "email":"rhett.oconner@walker.com",
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"4066 Schmeler Knoll, 05396",
-          "addressLocality":"New Neva",
-          "addressRegion":"California",
-          "postalCode":"05396",
-          "addressCountry":"USA"
-        },
-        "logo":{
-          "@type":"ImageObject",
-          "@id": process.env.PUBLISH_URL+"/#logo",
-          "url": process.env.PUBLISH_URL+"/icons/icon.png",
-          "contentUrl": process.env.PUBLISH_URL+"/icons/icon.png",
-          "caption": process.env.SITE_TITLE,
-          "inLanguage":"en",
-          "width":"512",
-          "height":"512"
-        },
-        "contactPoint":[
-          {
-            "@type":"ContactPoint",
-            "telephone":"824-766-2037",
-            "contactType":"customer support"
-          }
-        ],
-        "location":{
-          "@id": process.env.PUBLISH_URL+"/#place"
-        }
-      }
-    },
-    PlaceJsonld() {
-      return {
-        "@type":"Place",
-        "@id": process.env.PUBLISH_URL + "/#place",
-        "geo":{
-          "@type":"GeoCoordinates",
-          "latitude":"36.2659575",
-          "longitude":"-115.1301159"
-        },
-        "hasMap":"https://www.google.com/maps/search/?api=1&amp;query=36.2659575,-115.1301159",
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"4066 Schmeler Knoll, 05396",
-          "addressLocality":"New Neva",
-          "addressRegion":"California",
-          "postalCode":"05396",
-          "addressCountry":"USA"
-        }
+        "url": 'https://' + process.env.PUBLISH_URL,
+        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
+        "sameAs" : [
+          "http://www.facebook.com/your-profile",
+          "http://www.twitter.com/yourProfile",
+          "http://plus.google.com/your_profile"
+        ]
       }
     },
     websiteJsonld() {
       return {
-        "@type":"WebSite",
-        "@id": process.env.PUBLISH_URL+"/#website",
-        "url": process.env.PUBLISH_URL,
+        "@context": "https://schema.org",
+        "@type": "WebSite",
         "name": process.env.SITE_TITLE,
-        "publisher":{
-          "@id": process.env.PUBLISH_URL+"/#organization"
-        },
-        "inLanguage":"en",
-        "potentialAction":{
-          "@type":"SearchAction",
-          "target": process.env.PUBLISH_URL+"/?s={search_term_string}",
-          "query-input":"required name=search_term_string"
-        }
+        "url": 'https://' + process.env.PUBLISH_URL,
+        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
       }
     },
   },
@@ -114,9 +56,14 @@ export default {
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.websiteJsonld())
+      },{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.OrganizationJsonld())
       }],
       __dangerouslyDisableSanitizers: ['script'],
     }
   }
 };
 </script>
+
+<style></style>
