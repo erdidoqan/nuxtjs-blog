@@ -23,15 +23,43 @@ export default {
   methods: {
     OrganizationJsonld() {
       return {
-        "@context": "https://schema.org",
+        "@context":"http://schema.org",
         "@type": "Organization",
         "name": process.env.SITE_TITLE,
-        "url": 'https://' + process.env.PUBLISH_URL,
-        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
-        "sameAs" : [
-          "http://www.facebook.com/your-profile",
-          "http://www.twitter.com/yourProfile",
-          "http://plus.google.com/your_profile"
+        "legalName": process.env.SITE_TITLE,
+        "url": process.env.PUBLISH_URL,
+        "logo": process.env.PUBLISH_URL+'/icons/icon.png',
+        "contactPoint":[
+          {
+            "@type":"ContactPoint",
+            "telephone":"1-260-333-8946",
+            "contactType":"customer service",
+            "email":"info@greetingbirds.com"
+          }
+        ],
+        "sameAs":[
+          "https://www.facebook.com/greetingbirds",
+          "https://twitter.com/greetingbirds",
+          "https://www.instagram.com/greetingbirds/",
+          "https://www.linkedin.com/company/greetingbirds/"
+        ],
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"53926 Green Path Suite 840",
+          "addressLocality":"South Dakota",
+          "addressRegion":"Schmidtmouth",
+          "postalCode":"35091-1209",
+          "addressCountry":"EN"
+        },
+        "founders":[
+          {
+            "@type":"Person",
+            "name":"Erdi Doqan"
+          },
+          {
+            "@type":"Person",
+            "name":"Muzaffer Osmanoqlu"
+          }
         ]
       }
     },
