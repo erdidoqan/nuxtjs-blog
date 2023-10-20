@@ -94,7 +94,7 @@ export default {
         "publisher":{
           "@id": process.env.PUBLISH_URL+"/#organization"
         },
-        "inLanguage":"tr",
+        "inLanguage":"en",
         "potentialAction":{
           "@type":"SearchAction",
           "target": process.env.PUBLISH_URL+"/?s={search_term_string}",
@@ -112,19 +112,11 @@ export default {
         }
       ],
       script: [{
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(this.websiteJsonld())
-    },{
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(this.OrganizationJsonld())
-    },{
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(this.PlaceJsonld())
-    }],
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(this.websiteJsonld())
+      }],
       __dangerouslyDisableSanitizers: ['script'],
     }
   }
 };
 </script>
-
-<style></style>
