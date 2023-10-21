@@ -61,7 +61,9 @@ export default {
       { hid: 'twitter:image:src', name: 'twitter:image:src', content: '/icons/icon.png' },
       { hid: 'twitter:title', name: 'twitter:title', content: process.env.META_TITLE },
       { hid: 'twitter:description', name: 'twitter:description', content: process.env.META_DESC },
-      { hid: 'twitter:url', name: 'twitter:url', content: process.env.PUBLISH_URL }
+      { hid: 'twitter:url', name: 'twitter:url', content: process.env.PUBLISH_URL },
+
+      { name: 'google-adsense-account', content: process.env.GOOGLE_ADSENSE_ID }
     ],
     link: [
       { rel: 'shortcut icon', href: '/favicon.ico' },
@@ -111,7 +113,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 
   buildModules: [
-    "@nuxt/postcss8","@nuxt/image"
+    "@nuxt/image"
   ],
   vite: {
     /* options for vite */
@@ -130,7 +132,8 @@ export default {
     "@nuxtjs/dotenv",
     "@nuxt/image",
     "nuxt-compress",
-    "@nuxtjs/google-gtag"
+    "@nuxtjs/google-gtag",
+    "@nuxtjs/tailwindcss"
   ],
   'google-gtag': {
     id: process.env.GOOGLE_ANALYTICS_ID
