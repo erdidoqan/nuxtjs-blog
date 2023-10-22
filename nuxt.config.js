@@ -136,10 +136,19 @@ export default {
     "@nuxt/image",
     "nuxt-compress",
     "@nuxtjs/google-gtag",
-    ['@nuxtjs/google-adsense', {
-      id: 'ca-pub-###########'
-    }]
+    "@nuxtjs/google-adsense"
   ],
+  'google-adsense': {
+    onPageLoad: false,
+    pageLevelAds: true
+  },
+
+  publicRuntimeConfig: {
+    'google-adsense': {
+      id: process.env.GOOGLE_ADSENSE_ID,
+      test: process.env.GOOGLE_ADSENSE_TEST_MODE
+    }
+  },
   'google-gtag': {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
