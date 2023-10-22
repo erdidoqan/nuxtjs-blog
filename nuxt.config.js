@@ -217,7 +217,22 @@ export default {
     }
   ],*/
   // Build Configuration: https://go.nuxtjs.dev/config-build
+  loading: false,
+  loadingIndicator: false,
+  features: {
+    store: false,
+    middleware: false,
+    deprecations: false,
+    validate: false,
+    clientOnline: false,
+    clientPrefetch: false,
+    clientUseUrl: true,
+    componentAliases: false,
+    componentClientOnly: false
+  },
   build: {
+    indicator: false,
+    terser: true,
     preset: {
       stage: 1
     },

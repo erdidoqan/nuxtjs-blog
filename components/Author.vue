@@ -3,7 +3,7 @@
     <nuxt-img
       src="/images/author.jpeg"
       alt="author"
-      preload
+      :preload="true"
       loading="lazy"
       width="48"
       height="48"
