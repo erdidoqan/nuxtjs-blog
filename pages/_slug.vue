@@ -24,6 +24,8 @@
       :src="article.image"
       loading="eager"
       :preload="true"
+      width="1200"
+      height="480"
       format="webp"
       sizes="sm:320px lg:640px lg:1200px"
       :alt="article.title"

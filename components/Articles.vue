@@ -16,10 +16,13 @@
                 class="h-40 w-full rounded-lg object-cover"
                 :src="article.image"
                 format="webp"
+                width="640"
+                height="480"
                 sizes="sm:320px lg:640px xl:768px"
                 :alt="article.title"
                 :quality="75"
                 loading="eager"
+                :modifiers="{ roundCorner: '0:100' }"
                 :preload="true"
               />
             </NuxtLink>
