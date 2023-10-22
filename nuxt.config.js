@@ -132,8 +132,7 @@ export default {
     "@nuxtjs/dotenv",
     "@nuxt/image",
     "nuxt-compress",
-    "@nuxtjs/google-gtag",
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/google-gtag"
   ],
   'google-gtag': {
     id: process.env.GOOGLE_ANALYTICS_ID
@@ -267,9 +266,14 @@ export default {
       }
     },
     postcss: {
-      plugins: {
-        tailwindcss: path.resolve(__dirname, "./tailwind.config.js"),
-        "postcss-custom-properties": false
+      postcssOptions: {
+        plugins: {
+          tailwindcss: path.resolve(__dirname, "./tailwind.config.js"),
+          "postcss-custom-properties": false,
+          'postcss-import': {},
+          'postcss-custom-media': {},
+          autoprefixer: {}
+        }
       }
     }
   }
