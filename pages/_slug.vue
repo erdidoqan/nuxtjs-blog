@@ -240,6 +240,11 @@ export default {
       title: this.article.meta_title,
       meta: [
         { hid: "description", name: "description", content: this.article.description},
+
+        { itemprop: "name", content: process.env.SITE_TITLE },
+        { itemprop: "description", content: process.env.META_DESC },
+        { itemprop: "image", content: process.env.META_FAVICON_PNG },
+
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.article.title },
         { hid: 'og:description', name: 'og:description', content: this.article.description },

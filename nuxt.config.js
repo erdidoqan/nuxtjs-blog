@@ -44,6 +44,11 @@ export default {
       { name: 'author', content: process.env.META_AUTHOR },
       { hid: 'robots', name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'mobile-web-app-capable', content: 'yes' },
+
+      { itemprop: "name", content: process.env.SITE_TITLE },
+      { itemprop: "description", content: process.env.META_DESC },
+      { itemprop: "image", content: process.env.META_FAVICON_PNG },
+
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: process.env.META_TITLE },
       { hid: 'og:image', property: 'og:image', content: process.env.META_FAVICON_PNG },
       { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: process.env.META_FAVICON_PNG },
@@ -56,6 +61,7 @@ export default {
       { hid: 'og:type', property: 'og:type', content: 'article' },
       { hid: 'profile:username', property: 'profile:username', content: 'GreetingBirds' },
       { hid: 'fb:app_id', property: 'fb:app_id', content: '1951371271775373' },
+
 
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:creator', content: '@GreetingBirds' },
@@ -139,7 +145,7 @@ export default {
     "@nuxtjs/google-adsense"
   ],
   'google-adsense': {
-    onPageLoad: false,
+    onPageLoad: true,
     pageLevelAds: true
   },
 
