@@ -135,7 +135,10 @@ export default {
     "@nuxtjs/dotenv",
     "@nuxt/image",
     "nuxt-compress",
-    "@nuxtjs/google-gtag"
+    "@nuxtjs/google-gtag",
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-###########'
+    }]
   ],
   'google-gtag': {
     id: process.env.GOOGLE_ANALYTICS_ID
