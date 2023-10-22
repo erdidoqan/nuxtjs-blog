@@ -1,23 +1,23 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindTypography from '@tailwindcss/typography'
+
 module.exports = {
   darkMode: 'class',
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [tailwindTypography],
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
-    "./pages/**/*.{html,js}",
-    "./components/**/*.{html,js}",
+    'components/**/*.{vue,js,ts}',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.{js,ts}',
+    'App.{js,ts,vue}',
+    'app.{js,ts,vue}',
+    'Error.{js,ts,vue}',
+    'error.{js,ts,vue}',
   ],
   options: {
-    whitelist: [
-    ],
-    whitelistPatternsChildren: [
-    ]
+
   }
 };

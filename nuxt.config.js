@@ -247,7 +247,7 @@ export default {
         }
       }
     },
-    extractCSS: false,
+    extractCSS: true,
     html: {
       minify: {
         collapseBooleanAttributes: true,
