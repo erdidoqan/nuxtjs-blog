@@ -1,6 +1,6 @@
 require('dotenv').config()
 const axios = require('axios')
-
+const path = require('path');
 import fs from 'fs'
 const https = require('https')
 
@@ -218,19 +218,46 @@ export default {
   ],*/
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCSS: false,
+    preset: {
+      stage: 1
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          tailwindConfig: {
+            test: /tailwind\.config/,
+            chunks: "all",
+            priority: 10,
+            name: true,
+          },
+        },
+      },
+    },
+
+    extractCSS: true,
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: true,
+        minifyJS: true,
+        optimizeCSS: true,
+
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true,
+        preserveLineBreaks: true,
+        collapseWhitespace: true,
+      },
+    },
+
     postcss: {
       plugins: {
-        tailwindcss: {},
-        autoprefixer: {}
-      }
+        tailwindcss: path.resolve(__dirname, "./tailwind.config.js"),
+        "postcss-custom-properties": false,
+      },
     },
-    splitChunks: {
-      pages: false,
-      vendor: false,
-      commons: false,
-      runtime: false,
-      layouts: false
-    }
-  }
+  },
 };
