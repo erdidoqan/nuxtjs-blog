@@ -75,7 +75,6 @@ export default {
     return {
       title: process.env.META_TITLE,
       meta: [
-        { charset: "utf-8" },
         {
           hid: "description",
           name: "description",
