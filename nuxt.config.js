@@ -4,6 +4,8 @@ const path = require('path');
 import fs from 'fs'
 const https = require('https')
 
+https.get('https://icerikplanla.com/atom/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/feed.xml')));
+
 https.get(process.env.META_FAVICON_ICO, resp => resp.pipe(fs.createWriteStream('static/favicon.ico')));
 https.get(process.env.META_FAVICON_PNG, resp => resp.pipe(fs.createWriteStream('static/icons/icon.png')));
 https.get(process.env.META_FAVICON_PNG + '?w=114&h=114&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon114.png')));
@@ -36,7 +38,7 @@ export default {
       lang: process.env.HTML_LANG
     },
     meta: [
-      { charset: 'utf-8' },
+      { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.META_DESC },
       { name: 'author', content: process.env.META_AUTHOR },
@@ -85,7 +87,8 @@ export default {
       { rel: 'apple-touch-icon', sizes: '120x120', href: '/icons/icon120.png' },
       { rel: 'apple-touch-icon', sizes: '76x76', href: '/icons/icon76.png' },
       { rel: 'apple-touch-icon', sizes: '152x152', href: '/icons/icon152.png' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon180.png' }
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon180.png' },
+      { rel: 'alternate', type: 'application/rss+xml', href: '/feed.xml' }
     ],
     noscript: [
       {
