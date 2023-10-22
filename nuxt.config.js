@@ -228,13 +228,12 @@ export default {
             test: /tailwind\.config/,
             chunks: "all",
             priority: 10,
-            name: true,
-          },
-        },
-      },
+            name: true
+          }
+        }
+      }
     },
-
-    extractCSS: true,
+    extractCSS: false,
     html: {
       minify: {
         collapseBooleanAttributes: true,
@@ -249,15 +248,14 @@ export default {
         trimCustomFragments: true,
         useShortDoctype: true,
         preserveLineBreaks: true,
-        collapseWhitespace: true,
-      },
+        collapseWhitespace: true
+      }
     },
-
     postcss: {
       plugins: {
         tailwindcss: path.resolve(__dirname, "./tailwind.config.js"),
-        "postcss-custom-properties": false,
-      },
-    },
-  },
+        "postcss-custom-properties": false
+      }
+    }
+  }
 };

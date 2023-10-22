@@ -22,12 +22,10 @@
       v-if="article.image"
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
-      preload
-      loading="lazy"
-      width="850"
-      height="620"
+      loading="eager"
+      :preload="true"
       format="webp"
-      sizes="sm:100vw md:60vw lg:1200px"
+      sizes="sm:320px lg:640px lg:1200px"
       :alt="article.title"
     />
 

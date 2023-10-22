@@ -15,13 +15,12 @@
                 v-if="article.image"
                 class="h-40 w-full rounded-lg object-cover"
                 :src="article.image"
-                preload
-                loading="lazy"
-                width="850"
-                height="620"
                 format="webp"
-                sizes="sm:100vw md:50vw lg:400px"
+                sizes="sm:320px lg:640px xl:768px"
                 :alt="article.title"
+                :quality="75"
+                loading="eager"
+                :preload="true"
               />
             </NuxtLink>
           </div>
