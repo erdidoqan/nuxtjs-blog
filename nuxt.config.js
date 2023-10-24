@@ -4,7 +4,7 @@ const path = require('path');
 import fs from 'fs'
 const https = require('https')
 
-/*https.get('https://icerikplanla.com/atom/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/feed.xml')));
+https.get('https://icerikplanla.com/atom/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/feed.xml')));
 
 https.get(process.env.META_FAVICON_ICO, resp => resp.pipe(fs.createWriteStream('static/favicon.ico')));
 https.get(process.env.META_FAVICON_PNG, resp => resp.pipe(fs.createWriteStream('static/icons/icon.png')));
@@ -21,7 +21,7 @@ https.get(process.env.META_FAVICON_PNG + '?w=60&h=60&fit=crop', resp => resp.pip
 https.get(process.env.META_FAVICON_PNG + '?w=120&h=120&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon120.png')));
 https.get(process.env.META_FAVICON_PNG + '?w=76&h=76&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon76.png')));
 https.get(process.env.META_FAVICON_PNG + '?w=152&h=152&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon152.png')));
-https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon180.png')));*/
+https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon180.png')));
 
 
 

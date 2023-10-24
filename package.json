@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --openssl-legacy-provider",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate --openssl-legacy-provider"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
