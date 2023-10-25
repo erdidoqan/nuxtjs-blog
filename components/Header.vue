@@ -22,19 +22,24 @@
         </svg>
       </button>
       <div :class="open ? 'block': 'hidden'" class="items-center sm:w-full justify-end md:w-4/5 md:flex md:order-1" id="navbar-sticky">
-        <ul
-            class="flex flex-col mt-4 md:flex-row md:mt-0 md:border-0 md:bg-white "
-        >
-          <li v-for="menu of menus.data">
+        <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <ul
+              class="flex flex-col mt-4 md:flex-row md:mt-0 md:border-0 md:bg-white "
+          >
+            <li v-for="menu of menus.data">
 
-            <NuxtLink
-              :to="'/category/'+menu.slug+'/'"
-              class="block md:p-0 p-3 md:inline-block hover:text-pink-700 hover:underline"
-            >{{ menu.name }}
-            </NuxtLink>
-          </li>
+              <NuxtLink
+                :to="'/category/'+menu.slug+'/'"
+                class="block md:p-1 p-3 md:inline-block hover:text-pink-700 hover:underline"
+                itemprop="url"
+                :title="'Link to ' + menu.name "
+              >
+                <span itemprop="name">{{ menu.name }}</span>
+              </NuxtLink>
+            </li>
 
-        </ul>
+          </ul>
+        </nav>
       </div>
     </div>
   </nav>
