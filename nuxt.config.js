@@ -168,8 +168,8 @@ export default {
       'markdown-it-attrs'
     ]
   },
-  img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
   image: {
+    staticFilename: '[publicPath]/image/[name][ext]',
     domains: [
       'https://icerikplanla.com/img',
       'https://icerikplanla.com',
@@ -252,9 +252,6 @@ export default {
     componentClientOnly: false
   },
   build: {
-    filenames: {
-      img: 'img/[name]-[contenthash:7].[ext]'
-    },
     indicator: false,
     terser: true,
     preset: {
