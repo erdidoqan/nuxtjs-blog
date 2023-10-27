@@ -175,7 +175,7 @@ export default {
           "@type": "Article",
           "headline": this.article.title,
           "alternativeHeadline": this.article.meta_title,
-          "image": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
+          "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
           "award": "Best anniversary article ever written",
           "editor": "Craig Mount",
           "genre": "list",
@@ -242,16 +242,16 @@ export default {
 
         { itemprop: "name", content: this.article.meta_title },
         { itemprop: "description", content: this.article.description },
-        { itemprop: "image", content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
+        { itemprop: "image", content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
 
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.article.title },
         { hid: 'og:description', name: 'og:description', content: this.article.description },
-        { hid: 'og:image', name: 'og:image', content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
-        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
+        { hid: 'og:image', name: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
 
-        { hid: 'twitter:image:src', name: 'twitter:image:src', content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
         { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
         { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }
