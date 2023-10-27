@@ -104,7 +104,7 @@ export default {
       return [
         {
           "@type": "NewsArticle",
-          "thumbnailUrl": this.article.thumbnailUrl,
+          "thumbnailUrl": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
           "datePublished": this.article.datePublished,
           "headline": this.article.title,
           "wordCount": this.article.wordCount,
@@ -115,21 +115,21 @@ export default {
             {
               "@type": "ImageObject",
               "height": 1200,
-              "thumbnail": this.article.thumbnailUrl,
+              "thumbnail": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
               "url": this.article.image1200,
               "width": 1200
             },
             {
               "@type": "ImageObject",
               "height": 900,
-              "thumbnail": this.article.thumbnailUrl,
+              "thumbnail": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
               "url": this.article.image900,
               "width": 1200
             },
             {
               "@type": "ImageObject",
               "height": 675,
-              "thumbnail": this.article.thumbnailUrl,
+              "thumbnail": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
               "url": this.article.image675,
               "width": 1200
             }
@@ -175,11 +175,10 @@ export default {
           "@type": "Article",
           "headline": this.article.title,
           "alternativeHeadline": this.article.meta_title,
-          "image": this.article.image,
+          "image": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
           "award": "Best anniversary article ever written",
           "editor": "Craig Mount",
           "genre": "list",
-          "keywords": "seo sales b2b",
           "wordcount": this.article.wordCount,
           "datePublished": this.article.datePublished,
           "dateCreated": this.article.datePublished,
@@ -243,16 +242,16 @@ export default {
 
         { itemprop: "name", content: this.article.meta_title },
         { itemprop: "description", content: this.article.description },
-        { itemprop: "image", content: this.article.image1200 },
+        { itemprop: "image", content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
 
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.article.title },
         { hid: 'og:description', name: 'og:description', content: this.article.description },
-        { hid: 'og:image', name: 'og:image', content: this.article.image1200 },
-        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: this.article.image1200 },
+        { hid: 'og:image', name: 'og:image', content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
 
-        { hid: 'twitter:image:src', name: 'twitter:image:src', content: this.article.image1200 },
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp' },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
         { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
         { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }
