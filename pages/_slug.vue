@@ -19,13 +19,14 @@
       <Author :articleCreated="article.createdAt" />
     </div>
     <nuxt-img
-      v-if="article.image_webp"
+      v-if="article.image"
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
-      :src="article.image_webp"
+      :src="article.image"
       loading="eager"
       :preload="true"
       width="1200"
       height="820"
+      format="webp"
       sizes="sm:100vw md:50vw lg:640px xl:1200px"
       :alt="article.title"
     />
