@@ -119,20 +119,6 @@ export default {
               "url": this.article.image1200,
               "width": 1200
             },
-            {
-              "@type": "ImageObject",
-              "height": 900,
-              "thumbnail": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
-              "url": this.article.image900,
-              "width": 1200
-            },
-            {
-              "@type": "ImageObject",
-              "height": 675,
-              "thumbnail": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
-              "url": this.article.image675,
-              "width": 1200
-            }
           ],
           "mainEntityOfPage": {
             "@id": this.$nuxt.$route.path,
@@ -184,7 +170,7 @@ export default {
           "dateCreated": this.article.datePublished,
           "dateModified": this.article.dateModified,
           "description": this.article.description,
-          "articleBody": this.article.cleanFullBody,
+          "articleBody": this.article.cleanBody,
           "author": {
             "name": "Yapay Yazar",
             "url": "/author/",
