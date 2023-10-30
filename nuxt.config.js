@@ -26,7 +26,7 @@ https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.p
 
 
 export default {
-  target: 'server',
+  target: 'static',
   generate: { fallback: true },
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
