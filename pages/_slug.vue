@@ -99,6 +99,21 @@ export default {
     jsonld() {
       return [
         {
+          "@type": "WebPage",
+          "@id": process.env.PUBLISH_URL,
+          "url": process.env.PUBLISH_URL,
+          "name": process.env.SITE_TITLE,
+          "description": this.article.description,
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@id": process.env.PUBLISH_URL+"/#website"
+          },
+          "breadcrumb": {
+            "@id": process.env.PUBLISH_URL+"/#breadcrumblist"
+          },
+          "datePublished": this.article.datePublished,
+          "dateModified": this.article.dateModified
+        },{
           "@type": "NewsArticle",
           "thumbnailUrl": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
           "datePublished": this.article.datePublished,
