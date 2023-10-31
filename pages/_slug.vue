@@ -113,7 +113,8 @@ export default {
           },
           "datePublished": this.article.datePublished,
           "dateModified": this.article.dateModified
-        },{
+        },
+        {
           "@type": "NewsArticle",
           "thumbnailUrl": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.webp',
           "datePublished": this.article.datePublished,
