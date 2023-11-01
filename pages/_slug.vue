@@ -31,11 +31,11 @@
       :alt="article.title"
     />
     <nuxt-img
-      v-if="article.image"
+      v-if="article.image1200"
       class="hidden"
-      :src="article.image"
+      :src="article.image1200"
       width="1200"
-      height="820"
+      format="jpg"
       :alt="article.title"
     />
 
