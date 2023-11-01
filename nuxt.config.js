@@ -99,6 +99,14 @@ export default {
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon180.png' },
       { rel: 'alternate', type: 'application/rss+xml', href: '/feed.xml' }
     ],
+    script: [
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
+        'crossorigin':'anonymous',
+        async: true
+      }
+    ],
     noscript: [
       {
         innerHTML: 'This website requires JavaScript.',
