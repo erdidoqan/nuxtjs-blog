@@ -124,7 +124,7 @@ export default {
         },
         {
           "@type": "NewsArticle",
-          "thumbnailUrl": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg',
+          "thumbnailUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
           "datePublished": this.article.datePublished,
           "headline": this.article.title,
           "wordCount": this.article.wordCount,
@@ -136,8 +136,8 @@ export default {
               "@type": "ImageObject",
               "width": 1200,
               "height": 628,
-              "thumbnail": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg',
-              "url": process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg'
+              "thumbnail": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+              "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '')
             },
           ],
           "mainEntityOfPage": {
@@ -181,7 +181,7 @@ export default {
           "@type": "Article",
           "headline": this.article.title,
           "alternativeHeadline": this.article.meta_title,
-          "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg',
+          "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
           "award": "Best anniversary article ever written",
           "editor": "Craig Mount",
           "genre": "list",
@@ -249,16 +249,16 @@ export default {
         { property: 'article:modified_time', content: this.article.dateModified },
         { itemprop: "name", content: this.article.meta_title },
         { itemprop: "description", content: this.article.description },
-        { itemprop: "image", content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg' },
+        { itemprop: "image", content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
 
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.article.title },
         { hid: 'og:description', name: 'og:description', content: this.article.description },
-        { hid: 'og:image', name: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg' },
-        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg' },
+        { hid: 'og:image', name: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
 
-        { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg' },
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
         { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
         { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }

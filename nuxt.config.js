@@ -42,7 +42,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.META_DESC },
       { name: 'author', content: process.env.META_AUTHOR },
-      { hid: 'robots', name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+      { hid: 'robots', name: 'robots', content: 'max-image-preview:large' },
       { name: 'mobile-web-app-capable', content: 'yes' },
 
       /*<meta property="article:published_time" content="2023-10-28T03:30:33+00:00" />
