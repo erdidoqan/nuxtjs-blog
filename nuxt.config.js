@@ -45,6 +45,9 @@ export default {
       { hid: 'robots', name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'mobile-web-app-capable', content: 'yes' },
 
+      /*<meta property="article:published_time" content="2023-10-28T03:30:33+00:00" />
+      <meta property="article:modified_time" content="2023-10-28T03:30:33+00:00" />*/
+
       { itemprop: "name", content: process.env.SITE_TITLE },
       { itemprop: "description", content: process.env.META_DESC },
       { itemprop: "image", content: process.env.META_FAVICON_PNG },

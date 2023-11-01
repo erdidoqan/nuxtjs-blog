@@ -30,6 +30,14 @@
       sizes="sm:100vw md:50vw lg:640px xl:1200px"
       :alt="article.title"
     />
+    <nuxt-img
+      v-if="article.image"
+      class="hidden"
+      :src="article.image"
+      width="1200"
+      height="820"
+      :alt="article.title"
+    />
 
     <p class="text-center font-bold my-5">
         <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">
