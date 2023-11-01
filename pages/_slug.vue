@@ -245,7 +245,8 @@ export default {
       title: this.article.meta_title,
       meta: [
         { hid: "description", name: "description", content: this.article.description},
-
+        { property: 'article:published_time', content: this.article.datePublished },
+        { property: 'article:modified_time', content: this.article.dateModified },
         { itemprop: "name", content: this.article.meta_title },
         { itemprop: "description", content: this.article.description },
         { itemprop: "image", content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.slug+'.jpg' },
