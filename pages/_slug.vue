@@ -28,7 +28,7 @@
       height="820"
       format="webp"
       sizes="sm:100vw md:50vw lg:640px xl:1200px"
-      :alt="article.title"
+      :alt="article.image_alt"
     />
     <nuxt-img
       v-if="article.image1200"
@@ -36,7 +36,7 @@
       :src="article.image1200"
       width="1200"
       format="jpg"
-      :alt="article.title"
+      :alt="article.image_alt"
     />
 
     <p class="text-center font-bold my-5">
@@ -107,135 +107,67 @@ export default {
     jsonld() {
       return [
         {
-          "@type": "WebPage",
-          "@id": process.env.PUBLISH_URL,
-          "url": process.env.PUBLISH_URL,
-          "name": process.env.SITE_TITLE,
-          "description": this.article.description,
-          "inLanguage": "en-US",
-          "isPartOf": {
-            "@id": process.env.PUBLISH_URL+"/#website"
-          },
-          "breadcrumb": {
-            "@id": process.env.PUBLISH_URL+"/#breadcrumblist"
-          },
-          "datePublished": this.article.datePublished,
-          "dateModified": this.article.dateModified
-        },
-        {
-          "@type": "NewsArticle",
-          "thumbnailUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
-          "datePublished": this.article.datePublished,
-          "headline": this.article.title,
-          "wordCount": this.article.wordCount,
-          "inLanguage":"en-EN",
-          "articleSection": "Lifestyle",
-          "articleBody": this.article.cleanBody,
-          "image": [
-            {
-              "@type": "ImageObject",
-              "width": 1200,
-              "height": 628,
-              "thumbnail": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
-              "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '')
-            },
-          ],
+          "@context": "http://schema.org",
+          "@type": "Article",
           "mainEntityOfPage": {
-            "@id": this.$nuxt.$route.path,
-            "@type": "WebPage"
-          },
-          "publisher": {
-            "@type": "NewsMediaOrganization",
-            "name": process.env.SITE_TITLE,
-            "logo": {
-              "@type": "ImageObject",
-              "url": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
-              "width": 312,
-              "height": 60
-            },
-            "parentOrganization": {
-              "@type": "NewsMediaOrganization",
-              "name": "Greetingbirds"
+            "@type": "WebPage",
+            "@id": 'https://' + process.env.PUBLISH_URL + this.$route.path,
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                this.article.breadcrumbs.map((breadcrumb, index) => {
+                  if (!breadcrumb.hidden){
+                    return {
+                      "@type": "ListItem",
+                      "position": index + 1,
+                      "item": {
+                        "@id": "https://" + process.env.PUBLISH_URL+breadcrumb.url,
+                        "name": breadcrumb.name
+                      }
+                    }
+                  }
+                })
+              ]
             }
           },
-          "url": this.$nuxt.$route.path,
-          "isBasedOn": this.$nuxt.$route.path,
-          "dateModified": this.article.dateModified,
-          "author": {
-            "name": "Yapay Yazar",
-            "url": "/author/",
-            "@type": "Person",
-            "description": "Yapay Yazar is a Greetingbirds analyst, which he evaluates based on 'Quotes' using specialized equipment and consumer tester data. Before starting Greetingbirds in 2022, she earned an MA in authoring and a BA in fiber science from Epoka University. While earning his Yazar degrees, he worked in smart and nanotechnology research laboratories.",
-            "jobTitle": "Quotes Lab Product Analyst",
-            "image": "https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg",
-            "email": "greetingbirds@gmail.com",
-            "sameAs": []
-          },
-          "@context": "http://schema.org"
-        }
-      ]
-    },
-    articleJsonLd(){
-      return [
-        { "@context": "https://schema.org",
-          "@type": "Article",
           "headline": this.article.title,
-          "alternativeHeadline": this.article.meta_title,
-          "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
-          "award": "Best anniversary article ever written",
-          "editor": "Craig Mount",
-          "genre": "list",
-          "wordcount": this.article.wordCount,
-          "datePublished": this.article.datePublished,
-          "dateCreated": this.article.datePublished,
-          "dateModified": this.article.dateModified,
-          "description": this.article.description,
-          "articleBody": this.article.cleanBody,
+          "image": {
+            "@type": "ImageObject",
+            "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+            "height": 628,
+            "width": 1200
+          },
+          "datePublished": "2023-11-02T13:15:10+00:00",
+          "dateModified": "2023-11-02T13:15:10+00:00",
           "author": {
-            "name": "Yapay Yazar",
-            "url": "/author/",
             "@type": "Person",
-            "description": "Yapay Yazar is a Greetingbirds analyst, which he evaluates based on 'Quotes' using specialized equipment and consumer tester data. Before starting Greetingbirds in 2022, she earned an MA in authoring and a BA in fiber science from Epoka University. While earning his Yazar degrees, he worked in smart and nanotechnology research laboratories.",
-            "jobTitle": "Quotes Lab Product Analyst",
-            "image": "https://pub-fb75283ac8564bffa221dee82a54590b.r2.dev/d949c708-1e73-4363-8a42-60114934edbe.jpg",
-            "email": "greetingbirds@gmail.com",
-            "sameAs": []
+            "name": "Carolyn C Messer",
+            "url": "/author/carolyn-c-messer",
+            "jobTitle": "Writer"
           },
           "publisher": {
             "@type": "Organization",
             "name": process.env.SITE_TITLE,
+            "url": "https://"+process.env.PUBLISH_URL,
             "logo": {
               "@type": "ImageObject",
               "url": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
+              "width": "880",
+              "height": "177"
+            },
+            "brand": {
+              "@type": "Brand",
+              "name": process.env.SITE_TITLE,
+              "type": "Thing",
+              "sameAs": [
+                "http://www.facebook.com/anniversaryclick",
+              ]
             }
           },
-          "url": this.$nuxt.$route.path,
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": this.$nuxt.$route.path
-          }
+          "description": this.article.description
         }
       ]
     },
-    relatedlistJsonLd(){
-      return [
-        {
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "numberOfItems": this.article.relateds.length,
-          "itemListElement": [
-            this.article.relateds.map((related, index) => {
-              return {
-                "@type": "ListItem",
-                "position": index + 1,
-                "url": 'https://' + process.env.PUBLISH_URL + '/' + related.slug + '/',
-                "name": related.title
-              }
-            })
-          ]
-        }
-      ]
-    }
   },
   mounted() {
 
@@ -257,6 +189,7 @@ export default {
         { hid: 'og:image', name: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
+        { hid: 'og:og:image:alt', name: 'og:image:alt', content: this.article.image_alt },
 
         { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
@@ -266,12 +199,6 @@ export default {
       script: [{
         type: 'application/ld+json',
         innerHTML: JSON.stringify(this.jsonld())
-      },{
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(this.articleJsonLd())
-      },{
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(this.relatedlistJsonLd())
       }],
       __dangerouslyDisableSanitizers: ['script'],
     };
