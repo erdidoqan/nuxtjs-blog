@@ -24,7 +24,7 @@
       quality="80"
       loading="eager"
       :preload="true"
-      format="jpg,webp"
+      format="jpg"
       :img-attrs="{ class: 'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm' }"
     />
 
