@@ -49,7 +49,7 @@ export default {
       <meta property="article:modified_time" content="2023-10-28T03:30:33+00:00" />*/
 
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: process.env.META_TITLE },
-
+      { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_TITLE },
       { hid: 'og:type', property: 'og:type', content: 'article' },
       { hid: 'profile:username', property: 'profile:username', content: 'GreetingBirds' },
       { hid: 'fb:app_id', property: 'fb:app_id', content: '1951371271775373' },
