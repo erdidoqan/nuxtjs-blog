@@ -48,19 +48,8 @@ export default {
       /*<meta property="article:published_time" content="2023-10-28T03:30:33+00:00" />
       <meta property="article:modified_time" content="2023-10-28T03:30:33+00:00" />*/
 
-      { itemprop: "name", content: process.env.SITE_TITLE },
-      { itemprop: "description", content: process.env.META_DESC },
-      { itemprop: "image", content: process.env.META_FAVICON_PNG },
-
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: process.env.META_TITLE },
-      { hid: 'og:image', property: 'og:image', content: process.env.META_FAVICON_PNG },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: process.env.META_FAVICON_PNG },
-      { hid: 'og:image:width', property: 'og:image:width', content: '1280' },
-      { hid: 'og:image:height', property: 'og:image:height', content: '720' },
-      { hid: 'og:title', property: 'og:title', content: process.env.META_TITLE },
-      { hid: 'og:description', property: 'og:description', content: process.env.META_DESC },
-      { hid: 'og:url', property: 'og:url', content: process.env.PUBLISH_URL },
-      { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_TITLE },
+
       { hid: 'og:type', property: 'og:type', content: 'article' },
       { hid: 'profile:username', property: 'profile:username', content: 'GreetingBirds' },
       { hid: 'fb:app_id', property: 'fb:app_id', content: '1951371271775373' },
