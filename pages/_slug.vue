@@ -27,7 +27,7 @@
       width="1200"
       height="820"
       format="webp"
-      sizes="sm:100vw md:50vw lg:640px xl:1200px"
+      sizes="xl:1200px"
       :alt="article.image_alt"
     />
     <nuxt-img
