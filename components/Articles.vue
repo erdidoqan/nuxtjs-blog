@@ -21,7 +21,7 @@
                 height="820"
                 format="webp"
                 sizes="sm:100vw md:50vw lg:640px xl:1200px"
-                :alt="article.title"
+                :alt="article.image_alt"
               />
             </NuxtLink>
           </div>
