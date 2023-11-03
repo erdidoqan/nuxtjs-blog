@@ -180,7 +180,7 @@ export default {
     ]
   },
   image: {
-    staticFilename: '[publicPath]/image/[name][ext]',
+    /*staticFilename: '[publicPath]/image/[name][ext]',*/
     domains: [
       'https://icerikplanla.com/img',
       'https://icerikplanla.com',
