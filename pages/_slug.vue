@@ -18,14 +18,25 @@
 
       <Author :articleCreated="article.createdAt" />
     </div>
-    <nuxt-picture
-      :src="article.image1200"
-      :alt="article.image_alt"
-      quality="80"
+    <nuxt-img
+      v-if="article.image"
+      class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
+      :src="article.image"
       loading="eager"
       :preload="true"
+      width="1200"
+      height="820"
+      format="webp"
+      sizes="sm:100vw md:50vw lg:640px xl:1200px"
+      :alt="article.image_alt"
+    />
+    <nuxt-img
+      v-if="article.image1200"
+      class="hidden"
+      :src="article.image1200"
+      width="1200"
       format="jpg"
-      :img-attrs="{ class: 'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm' }"
+      :alt="article.image_alt"
     />
 
 
