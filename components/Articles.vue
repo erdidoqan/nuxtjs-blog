@@ -12,13 +12,13 @@
             <NuxtLink :to="{ name: 'slug', params: { slug: article.slug } }">
 
               <nuxt-img
-                v-if="article.image"
+                v-if="article.image200"
                 class="h-40 w-full rounded-lg object-cover"
-                :src="article.image"
+                :src="article.image200"
                 loading="eager"
                 :preload="true"
-                width="1200"
-                height="820"
+                width="200"
+                height="200"
                 format="webp"
                 sizes="sm:100vw md:50vw lg:640px xl:1200px"
                 :alt="article.image_alt"
