@@ -138,8 +138,8 @@ export default {
             "height": 628,
             "width": 1200
           },
-          "datePublished": "2023-11-02T13:15:10+00:00",
-          "dateModified": "2023-11-02T13:15:10+00:00",
+          "datePublished": this.article.datePublished,
+          "dateModified": this.article.dateModified,
           "author": {
             "@type": "Person",
             "name": "Carolyn C Messer",
@@ -166,6 +166,47 @@ export default {
             }
           },
           "description": this.article.description
+        },
+        {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": 'https://' + process.env.PUBLISH_URL + this.$route.path +"/#primaryimage",
+          "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+          "contentUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+          "width": 1200,
+          "height": 628,
+          "caption": this.article.image_alt
+        },
+        {
+          "@type": "WebPage",
+          "@id": 'https://' + process.env.PUBLISH_URL + this.$route.path,
+          "url": 'https://' + process.env.PUBLISH_URL + this.$route.path,
+          "name": this.article.title,
+          "isPartOf": {
+            "@id": 'https://' + process.env.PUBLISH_URL +"/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": 'https://' + process.env.PUBLISH_URL +"/#primaryimage"
+          },
+          "image": {
+            "@id": 'https://' + process.env.PUBLISH_URL +"/#primaryimage"
+          },
+          "thumbnailUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+          "datePublished": this.article.datePublished,
+          "dateModified": this.article.dateModified,
+          "description": this.article.description,
+          "breadcrumb": {
+            "@id": 'https://' + process.env.PUBLISH_URL +"/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                'https://' + process.env.PUBLISH_URL + this.$route.path
+              ]
+            }
+          ]
         }
       ]
     },

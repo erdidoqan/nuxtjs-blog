@@ -24,8 +24,6 @@ https.get(process.env.META_FAVICON_PNG + '?w=76&h=76&fit=crop', resp => resp.pip
 https.get(process.env.META_FAVICON_PNG + '?w=152&h=152&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon152.png')));
 https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.pipe(fs.createWriteStream('static/icons/icon180.png')));
 
-
-
 export default {
   target: 'static',
   generate: { fallback: true },
