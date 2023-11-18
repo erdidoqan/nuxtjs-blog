@@ -193,13 +193,12 @@ export default {
       lastmod: new Date()
     },
     hostname: 'https://' + process.env.PUBLISH_URL,
-    exclude: [
+    include: [
       '/category/',
       '/about-us/',
       '/contact-us/',
       '/privacy-policy/',
-      '/terms-and-conditions/',
-      '*.html'
+      '/terms-and-conditions/'
     ],
       routes:async () => {
         axios.defaults.headers.common = { Authorization: `Bearer ${process.env.PRIVATE_TOKEN}` };
