@@ -170,7 +170,7 @@ export default {
         {
           "@type": "ImageObject",
           "inLanguage": "en-US",
-          "@id": 'https://' + process.env.PUBLISH_URL + this.$route.path +"/#primaryimage",
+          "@id": 'https://' + process.env.PUBLISH_URL + this.$route.path +"#primaryimage",
           "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
           "contentUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
           "width": 1200,
