@@ -16,7 +16,11 @@
         {{ article.title }}
       </h1>
 
-      <Author :articleCreated="article.createdAt" />
+      <Author
+        :author="article.author"
+        :articleCreated="article.createdAt"
+        :datePublished="article.datePublished"
+      />
     </div>
     <nuxt-img
       v-if="article.image"
@@ -68,6 +72,28 @@
             </div>
           </template>
 
+          <template v-if="article.author">
+            <NuxtLink
+              class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-2 mt-10 mb-10"
+              :to="{ name: 'author-slug', params: { slug: article.author.slug } }">
+              <nuxt-img
+                v-if="article.author.image"
+                class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                :src="article.author.image"
+                loading="eager"
+                :preload="true"
+                width="500"
+                height="500"
+                format="webp"
+                sizes="sm:100vw md:50vw lg:640px xl:1200px"
+                :alt="article.author.full_name +', ' + article.author.job_title"
+              />
+              <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="text-4xl font-extrabold leading-none tracking-tight text-gray-900">{{article.author.full_name}}</h5>
+                <p class="mb-3 text-xl text-gray-700 dark:text-gray-400">{{article.author.full_name+', '+article.author.job_title}}</p>
+              </div>
+            </NuxtLink>
+          </template>
         </div>
         <div class="xl:w-1/3 hidden lg:block">
           <div class="p-2 relative sticky top-0">
@@ -142,9 +168,12 @@ export default {
           "dateModified": this.article.dateModified,
           "author": {
             "@type": "Person",
-            "name": "Carolyn C Messer",
-            "url": "/author/carolyn-c-messer",
-            "jobTitle": "Writer"
+            "name": this.article.author.full_name,
+            "description": this.article.author.description,
+            "jobTitle": this.article.author.job_title,
+            "knowsAbout": [""],
+            "image": this.article.author.image,
+            "url": 'https://'+process.env.PUBLISH_URL + '/author/' + this.article.author.slug,
           },
           "publisher": {
             "@type": "Organization",
@@ -169,7 +198,7 @@ export default {
         },
         {
           "@type": "ImageObject",
-          "inLanguage": "en-US",
+          "inLanguage": "en_US",
           "@id": 'https://' + process.env.PUBLISH_URL + this.$route.path +"#primaryimage",
           "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
           "contentUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
@@ -198,7 +227,7 @@ export default {
           "breadcrumb": {
             "@id": 'https://' + process.env.PUBLISH_URL +"/#breadcrumb"
           },
-          "inLanguage": "en-US",
+          "inLanguage": "en_US",
           "potentialAction": [
             {
               "@type": "ReadAction",
@@ -237,6 +266,7 @@ export default {
         { hid: 'og:og:image:alt', name: 'og:image:alt', content: this.article.image_alt },
 
         { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
+        { hid: 'twitter:image', name: 'twitter:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
         { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
         { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }

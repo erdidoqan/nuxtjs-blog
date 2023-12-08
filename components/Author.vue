@@ -1,8 +1,8 @@
 <template>
   <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
     <nuxt-img
-      src="/images/author.jpeg"
-      alt="author"
+      :src="author.image"
+      :alt="author.full_name +', ' + author.job_title"
       :preload="true"
       loading="lazy"
       width="48"
@@ -14,12 +14,12 @@
     <div>
       <div class="text-slate-900 dark:text-slate-200">
         By:
-        <NuxtLink to="/author">
-          <span class="font-bold underline">{{ 'Yapay Yazar' }}</span>
+        <NuxtLink :to="{ name: 'author-slug', params: { slug: author.slug } }">
+          <span class="font-bold underline">{{ author.full_name }}</span>
         </NuxtLink>
       </div>
       <p class="text-center text-gray-400">
-        Created: {{ articleCreated }}
+        Published: <time :datetime="datePublished">{{ articleCreated }}</time>
       </p>
     </div>
   </div>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  props: ['articleCreated'],
+  props: ['articleCreated','datePublished', 'author'],
   name: "Author.vue"
 }
 </script>

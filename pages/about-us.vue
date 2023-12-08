@@ -20,6 +20,23 @@
         <div class="xl:w-3/4 sm:w-full">
           <Breadcrumbs :lists="breadcrumbs.lists" />
           <div class="prose text-xl min-w-full p-2 mx-auto" v-html="$md.render(about.detail)"></div>
+          <!-- component -->
+
+          <div class="prose text-xl min-w-full mt-10">
+            <h2 class="mb-2 text-[1.75rem] font-semibold text-dark">Our Executive Team</h2>
+            <span class="text-[1.15rem] font-medium text-muted"> Meet our talented team, a dynamic group of experts driven by passion and innovation. </span>
+          </div>
+
+          <div class="flex flex-wrap -mx-3 mb-5">
+            <div class="w-full max-w-full px-3 mb-6  mx-auto">
+              <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] border border-dashed border-stone-200 bg-white m-5">
+                <!-- card body  -->
+                <div class="flex-auto block py-8 px-9">
+                  <AuthorList :authors="authors" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="xl:w-1/3 hidden lg:block">
           <div class="p-2 relative sticky top-0">
@@ -34,18 +51,15 @@
 </template>
 
 <script>
-import projectsData from "../data/projects";
+
 export default {
-  data() {
-    return {
-      projectsData: projectsData,
-    };
-  },
   async asyncData({params, $axios}) {
     const about = await $axios.$get(process.env.API_URL + '/pages/about-us')
+    const authors = await $axios.$get(process.env.API_URL + '/authors')
 
     return {
       about: about.data,
+      authors: authors.data
     };
   },
   computed: {

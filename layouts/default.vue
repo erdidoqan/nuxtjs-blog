@@ -49,7 +49,7 @@ export default {
           "addressLocality":"South Dakota",
           "addressRegion":"Schmidtmouth",
           "postalCode":"35091-1209",
-          "addressCountry":"EN"
+          "addressCountry":"en_US"
         },
         "founders":[
           {
