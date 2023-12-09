@@ -215,36 +215,6 @@ export default {
         return data.map((product) =>`${product.slug}`)
       }
   },
-  /*feed: [
-    // A default feed configuration object
-    {
-      path: '/feed.xml', // The route to your feed.
-      async create (feed) {
-        axios.defaults.headers.common = { Authorization: `Bearer ${process.env.PRIVATE_TOKEN}` };
-        const { posts } = await axios.get(process.env.API_URL + '/contents/sitemap')
-
-        posts.data.forEach((post) => {
-          feed.addItem({
-            title: 'a',
-            id: 'asd',
-            link: post.slug,
-            description: 'desc',
-            published: new Date(),
-            author: [
-              {
-                name: 'Your name',
-                email: 'your-email@gmail.com'
-              }
-            ]
-          })
-        })
-      },
-      cacheTime: 1000 * 60 * 15, // How long should the feed be cached
-      type: 'rss2', // Can be: rss2, atom1, json1
-      data: ['Some additional data'] // Will be passed as 2nd argument to `create` function
-    }
-  ],*/
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   loading: false,
   loadingIndicator: false,
   features: {
@@ -259,6 +229,17 @@ export default {
     componentClientOnly: false
   },
   build: {
+    configureWebpack: {
+      module: {
+        rules: [
+          {
+            test: /\.mjs$/,
+            include: /node_modules/,
+            type: "javascript/auto"
+          }
+        ]
+      }
+    },
     indicator: false,
     terser: true,
     preset: {
