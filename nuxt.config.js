@@ -134,7 +134,6 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/markdownit",
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
     "@nuxt/image",
@@ -156,7 +155,7 @@ export default {
   'google-gtag': {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
-  markdownit: {
+  /*markdownit: {
     runtime: true,
     preset: 'default',
     linkify: true,
@@ -165,7 +164,7 @@ export default {
       'markdown-it-div',
       'markdown-it-attrs'
     ]
-  },
+  },*/
   image: {
     staticFilename: '[publicPath]/image/[name][ext]',
 
