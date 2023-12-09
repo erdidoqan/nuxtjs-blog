@@ -228,18 +228,19 @@ export default {
     componentAliases: false,
     componentClientOnly: false
   },
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: "javascript/auto"
+        }
+      ]
+    }
+  },
   build: {
-    configureWebpack: {
-      module: {
-        rules: [
-          {
-            test: /\.mjs$/,
-            include: /node_modules/,
-            type: "javascript/auto"
-          }
-        ]
-      }
-    },
+
     indicator: false,
     terser: true,
     preset: {
