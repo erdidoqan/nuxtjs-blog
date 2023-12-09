@@ -64,7 +64,11 @@
             <Toc />
           </div>
 
-          <div class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="$md.render(article.body)"></div>
+          <div class="prose text-xl min-w-full p-2 mx-auto" id="content">
+            <template lang="md">
+              {{article.body}}
+            </template>
+          </div>
 
           <template v-if="article.faq !== null">
             <div v-show="article.faq">
@@ -110,6 +114,7 @@
   </div>
 </template>
 <script>
+
 
 export default {
   data() {

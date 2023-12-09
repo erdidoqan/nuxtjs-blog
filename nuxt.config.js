@@ -133,6 +133,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/markdownit",
     "@nuxtjs/axios",
     "@nuxtjs/sitemap",
     "@nuxtjs/dotenv",
@@ -141,6 +142,15 @@ export default {
     "@nuxtjs/google-gtag",
     "@nuxtjs/google-adsense"
   ],
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ]
+  },
   'google-adsense': {
     onPageLoad: true,
     pageLevelAds: true
