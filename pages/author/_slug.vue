@@ -40,7 +40,7 @@
           </div>
 
 
-          <div class="prose text-xl min-w-full p-2 mt-10 mx-auto" v-html="$md.render(author.about)"></div>
+          <div class="prose text-xl min-w-full p-2 mt-10 mx-auto" v-html="md.render(author.about)"></div>
           <!-- component -->
         </div>
         <div class="xl:w-1/3 hidden lg:block">
@@ -59,7 +59,18 @@
 
 <script>
 
+import markdownit from "markdown-it";
+
 export default {
+  data() {
+    return {
+      md: markdownit({
+        html: true,
+        linkify: true,
+        typographer: true,
+      }),
+    };
+  },
   async asyncData({params, $axios}) {
     const author = await $axios.$get(process.env.API_URL + '/authors/' + params.slug)
 

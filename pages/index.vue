@@ -13,6 +13,9 @@
 </template>
 
 <script>
+import markdownit from 'markdown-it'
+
+
 
 export default {
   async asyncData({$axios}) {
@@ -21,6 +24,15 @@ export default {
     return {
       articles: articles.data,
     }
+  },
+  data() {
+    return {
+      md: markdownit({
+        html: true,
+        linkify: true,
+        typographer: true,
+      }),
+    };
   },
   methods: {
     jsonld() {

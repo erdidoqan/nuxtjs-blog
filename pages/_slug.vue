@@ -64,11 +64,7 @@
             <Toc />
           </div>
 
-          <div class="prose text-xl min-w-full p-2 mx-auto" id="content">
-            <template lang="md">
-              {{article.body}}
-            </template>
-          </div>
+          <div class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="md.render(article.body)"></div>
 
           <template v-if="article.faq !== null">
             <div v-show="article.faq">
@@ -114,12 +110,19 @@
   </div>
 </template>
 <script>
-
+import markdownit from 'markdown-it'
 
 export default {
+  components:{
+    markdownit
+  },
   data() {
     return {
-      title: 0,
+      md: markdownit({
+        html: true,
+        linkify: true,
+        typographer: true,
+      }),
     };
   },
   async asyncData({params, $axios}) {

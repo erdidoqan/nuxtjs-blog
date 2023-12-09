@@ -19,7 +19,7 @@
         </div>
         <div class="xl:w-3/4 sm:w-full">
           <Breadcrumbs :lists="breadcrumbs.lists" />
-          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="$md.render(about.detail)"></div>
+          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="md.render(article.body)"></div>
           <!-- component -->
 
           <div class="prose text-xl min-w-full mt-10">
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import markdownit from 'markdown-it'
 
 export default {
   async asyncData({params, $axios}) {
@@ -60,6 +61,15 @@ export default {
     return {
       about: about.data,
       authors: authors.data
+    };
+  },
+  data() {
+    return {
+      md: markdownit({
+        html: true,
+        linkify: true,
+        typographer: true,
+      }),
     };
   },
   computed: {

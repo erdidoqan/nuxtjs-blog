@@ -19,7 +19,7 @@
         </div>
         <div class="xl:w-3/4 sm:w-full">
           <Breadcrumbs :lists="breadcrumbs.lists"/>
-          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="$md.render(privacy.detail)"></div>
+          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="md.render(privacy.detail)"></div>
         </div>
         <div class="xl:w-1/3 hidden lg:block">
           <div class="p-2 relative sticky top-0">
@@ -34,12 +34,17 @@
 </template>
 
 <script>
-import projectsData from "../data/projects";
+
+import markdownit from "markdown-it";
 
 export default {
   data() {
     return {
-      projectsData: projectsData,
+      md: markdownit({
+        html: true,
+        linkify: true,
+        typographer: true,
+      }),
     };
   },
   async asyncData({params, $axios}) {
