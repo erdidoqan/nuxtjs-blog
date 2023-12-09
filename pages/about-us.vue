@@ -19,7 +19,7 @@
         </div>
         <div class="xl:w-3/4 sm:w-full">
           <Breadcrumbs :lists="breadcrumbs.lists" />
-          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="md.render(article.body)"></div>
+          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="md.render(about.detail)"></div>
           <!-- component -->
 
           <div class="prose text-xl min-w-full mt-10">
