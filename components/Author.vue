@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
     <nuxt-img
-      :src="author.image"
+      :src="author.image_small"
       :alt="author.full_name +', ' + author.job_title"
       :preload="true"
       loading="lazy"
