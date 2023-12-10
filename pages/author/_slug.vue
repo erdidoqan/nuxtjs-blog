@@ -101,7 +101,7 @@ export default {
             "description": this.author.description,
             "jobTitle": this.author.job_title,
             "knowsAbout": [""],
-            "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '')
+            "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image_text.replace('authors/', '')
           },
           "mainEntity": {
             "@type": "Person",
@@ -109,7 +109,7 @@ export default {
             "description": this.author.description,
             "jobTitle": this.author.job_title,
             "knowsAbout": [""],
-            "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '')
+            "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image_text.replace('authors/', '')
           }
         }
       ]
@@ -121,11 +121,14 @@ export default {
       meta: [
         { hid: "description", name: "description", content: this.author.description},
 
-        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '') },
+        { hid: 'og:title', name: 'og:title', content: this.author.full_name + ', ' + this.author.job_title },
+        { hid: 'og:description', name: 'og:description', content: this.author.description },
+        { hid: 'og:image', property: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image_text.replace('authors/', '') },
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image_text.replace('authors/', '') },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
 
-        { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '') },
-        { hid: 'twitter:image', name: 'twitter:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '') },
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image_text.replace('authors/', '') },
+        { hid: 'twitter:image', name: 'twitter:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image_text.replace('authors/', '') },
         { hid: 'twitter:title', name: 'twitter:title', content: this.author.full_name },
         { hid: 'twitter:description', name: 'twitter:description', content: this.author.description },
         { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }
