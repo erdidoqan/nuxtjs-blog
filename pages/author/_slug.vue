@@ -101,7 +101,7 @@ export default {
             "description": this.author.description,
             "jobTitle": this.author.job_title,
             "knowsAbout": [""],
-            "image": this.author.image
+            "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '')
           },
           "mainEntity": {
             "@type": "Person",
@@ -109,7 +109,7 @@ export default {
             "description": this.author.description,
             "jobTitle": this.author.job_title,
             "knowsAbout": [""],
-            "image": this.author.image
+            "image": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '')
           }
         }
       ]
@@ -117,11 +117,20 @@ export default {
   },
   head() {
     return {
-      title: this.author.title,
+      title: this.author.full_name + ', ' + this.author.job_title,
       meta: [
         { hid: "description", name: "description", content: this.author.description},
 
-        /*{ property: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },*/
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '') },
+        { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
+
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '') },
+        { hid: 'twitter:image', name: 'twitter:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('authors/', '') },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.author.full_name },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.author.description },
+        { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }
+
+        /*{ property: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.author.image.replace('contents/', '') },*/
       ],
       script: [{
         type: 'application/ld+json',
