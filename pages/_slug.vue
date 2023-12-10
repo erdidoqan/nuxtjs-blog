@@ -90,7 +90,7 @@
               />
               <div class="flex flex-col justify-between p-4 leading-normal">
                 <h5 class="text-4xl font-extrabold leading-none tracking-tight text-gray-900">{{article.author.full_name}}</h5>
-                <p class="mb-3 text-xl text-gray-700 dark:text-gray-400">{{article.author.full_name+', '+article.author.job_title}}</p>
+                <p class="mb-3 pt-3 text-xl text-gray-700 dark:text-gray-400">{{article.author.description}}</p>
               </div>
             </NuxtLink>
           </template>
