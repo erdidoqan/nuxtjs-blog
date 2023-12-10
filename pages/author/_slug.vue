@@ -33,6 +33,14 @@
               sizes="sm:100vw md:50vw lg:640px xl:1200px"
               :alt="author.full_name +', ' + author.job_title"
             />
+            <nuxt-img
+              v-if="author.image"
+              class="hidden"
+              :src="author.image"
+              width="1200"
+              format="jpg"
+              :alt="author.full_name +', ' + author.job_title"
+            />
             <div class="flex flex-col justify-between p-4 leading-normal">
               <h1 class="text-4xl font-extrabold leading-none tracking-tight text-gray-900">{{author.full_name}}</h1>
               <p class="mb-3 text-xl text-gray-700 dark:text-gray-400">{{author.full_name+', '+author.job_title}}</p>
