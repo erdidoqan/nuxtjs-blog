@@ -1,13 +1,13 @@
 <template>
   <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
     <nuxt-img
-      :src="author.image_small"
+      :src="author.image"
       :alt="author.full_name +', ' + author.job_title"
       :preload="true"
       loading="lazy"
-      width="48"
-      height="48"
-      sizes="sm:48px md:50vw lg:96px"
+      width="150"
+      height="150"
+      sizes="sm:150px md:50vw lg:250px"
       format="webp"
       class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
     />
