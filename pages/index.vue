@@ -27,11 +27,7 @@ export default {
   },
   data() {
     return {
-      md: markdownit({
-        html: true,
-        linkify: true,
-        typographer: true,
-      }),
+      md: markdownit(),
     };
   },
   methods: {

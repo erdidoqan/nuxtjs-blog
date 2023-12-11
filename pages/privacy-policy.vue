@@ -18,8 +18,9 @@
           </div>
         </div>
         <div class="xl:w-3/4 sm:w-full">
-          <Breadcrumbs :lists="breadcrumbs.lists"/>
-          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="md.render(privacy.detail)"></div>
+          <Breadcrumbs :lists="breadcrumbs.lists" />
+          <div class="prose text-xl min-w-full p-2 mx-auto" v-html="md.render(about.detail)"></div>
+          <!-- component -->
         </div>
         <div class="xl:w-1/3 hidden lg:block">
           <div class="p-2 relative sticky top-0">
@@ -34,24 +35,19 @@
 </template>
 
 <script>
-
-import markdownit from "markdown-it";
+import markdownit from 'markdown-it'
 
 export default {
-  data() {
-    return {
-      md: markdownit({
-        html: true,
-        linkify: true,
-        typographer: true,
-      }),
-    };
-  },
   async asyncData({params, $axios}) {
-    const privacy = await $axios.$get(process.env.API_URL + '/pages/privacy-policy')
+    const about = await $axios.$get(process.env.API_URL + '/sayfalar/privacy-policy')
 
     return {
-      privacy: privacy.data,
+      about: about.data
+    };
+  },
+  data() {
+    return {
+      md: markdownit(),
     };
   },
   computed: {
@@ -66,9 +62,9 @@ export default {
   },
   head() {
     return {
-      title: this.privacy.title,
+      title: this.about.title,
       meta: [
-        {hid: "description", name: "description", content: this.privacy.description},
+        { hid: "description", name: "description", content: this.about.description},
 
         /*{ property: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },*/
       ],

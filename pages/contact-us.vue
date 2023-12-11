@@ -40,11 +40,7 @@ import markdownit from "markdown-it";
 export default {
   data() {
     return {
-      md: markdownit({
-        html: true,
-        linkify: true,
-        typographer: true,
-      }),
+      md: markdownit(),
     };
   },
   async asyncData({params, $axios}) {
