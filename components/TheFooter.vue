@@ -1,6 +1,89 @@
 <template>
   <footer>
     <div class="px-4 py-24 mx-auto overflow-hidden mt-20 sm:px-6 lg:px-8 bg-gray-100 rounded-t-xl">
+      <div class="mx-auto w-full max-w-screen-xl">
+        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                <NuxtLink to="/about-us/" class="hover:underline">
+                  About Us
+                </NuxtLink>
+              </li>
+              <li class="mb-4">
+                <NuxtLink to="/author/" class="hover:underline">
+                  Authors
+                </NuxtLink>
+              </li>
+
+              <li class="mb-4">
+                <NuxtLink to="/category/" class="hover:underline">
+                  All Categories
+                </NuxtLink>
+              </li>
+              <li class="mb-4">
+                <NuxtLink to="/terms-and-conditions/" class="hover:underline">
+                  Terms and Conditions
+                </NuxtLink>
+              </li>
+              <li class="mb-4">
+                <NuxtLink to="/privacy-policy/" class="hover:underline">
+                  Privacy Policy
+                </NuxtLink>
+              </li>
+              <li class="mb-4">
+                <NuxtLink to="/contact-us/" class="hover:underline">
+                  Contact Us
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Trends</h2>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li v-for="trend of trends.data" class="mb-4">
+                <NuxtLink
+                  class="hover:underline"
+                  :to="'/'+trend.slug+'/'"
+                  :title="'Best to ' + trend.name "
+                >
+                  <span>{{ trend.name }}</span>
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Lasest</h2>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li v-for="last of lasest.data" class="mb-4">
+                <NuxtLink
+                  class="hover:underline"
+                  :to="'/'+last.slug+'/'"
+                  :title="'Last to ' + last.name "
+                >
+                  <span>{{ last.name }}</span>
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Suggestions</h2>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li v-for="suggestion of suggestions.data" class="mb-4">
+                <NuxtLink
+                  class="hover:underline"
+                  :to="'/'+suggestion.slug+'/'"
+                  :title="'suggestion to ' + suggestion.name "
+                >
+                  <span>{{ suggestion.name }}</span>
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
       <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
 
         <NuxtLink to="/" class="flex items-center mb-2 font-medium text-gray-900 title-font md:mb-0">
@@ -15,33 +98,6 @@
           />
           <span class="h-8 text-pink-700 pl-2 text-2xl">{{ siteTitle }}</span>
         </NuxtLink>
-
-        <div class="px-5 py-2">
-          <NuxtLink to="/about-us/" class="text-base hover:text-gray-400">
-            About Us
-          </NuxtLink>
-        </div>
-        <div class="px-5 py-2">
-          <NuxtLink to="/category/" class="text-base hover:text-gray-400">
-            All Categories
-          </NuxtLink>
-        </div>
-        <div class="px-5 py-2">
-          <NuxtLink to="/terms-and-conditions/" class="text-base hover:text-gray-400">
-            Terms and Conditions
-          </NuxtLink>
-        </div>
-        <div class="px-5 py-2">
-          <NuxtLink to="/privacy-policy/" class="text-base hover:text-gray-400">
-            Privacy Policy
-          </NuxtLink>
-        </div>
-        <div class="px-5 py-2">
-          <NuxtLink to="/contact-us/" class="text-base hover:text-gray-400">
-            Contact Us
-          </NuxtLink>
-        </div>
-
       </nav>
       <div class="flex justify-center mt-6 space-x-6">
         <a target="_blank" rel='nofollow' href="https://twitter.com/GreetingBirds" class="text-gray-400 cursor-pointer hover:text-gray-700">
@@ -69,7 +125,29 @@ export default {
       siteTitle: process.env.SITE_TITLE,
       siteLogo: '/icons/icon.png',
       siteName: process.env.SITE_TITLE,
+      trends: [],
+      lasest: [],
+      suggestions: []
     };
+  },
+  async fetch() {
+    this.trends = await fetch(process.env.API_URL + '/footer?page=1',{
+      headers: {
+        Authorization: `Bearer ${process.env.PRIVATE_TOKEN}`
+      }
+    }).then(res => res.json())
+
+    this.lasest = await fetch(process.env.API_URL + '/footer?page=2',{
+      headers: {
+        Authorization: `Bearer ${process.env.PRIVATE_TOKEN}`
+      }
+    }).then(res => res.json())
+
+    this.suggestions = await fetch(process.env.API_URL + '/footer?page=3',{
+      headers: {
+        Authorization: `Bearer ${process.env.PRIVATE_TOKEN}`
+      }
+    }).then(res => res.json())
   },
 };
 </script>

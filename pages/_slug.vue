@@ -269,6 +269,7 @@ export default {
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
         { hid: 'og:og:image:alt', name: 'og:image:alt', content: this.article.image_alt },
 
+
         { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'twitter:image', name: 'twitter:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
@@ -297,3 +298,4 @@ export default {
   margin-bottom: 20px;
 }
 </style>
+
