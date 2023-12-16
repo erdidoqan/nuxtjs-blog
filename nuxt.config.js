@@ -159,6 +159,7 @@ export default {
   },
   image: {
     domains: [
+      'icerikplanla.com',
       'https://cdn.foodnutritious.com'
     ]
   },
