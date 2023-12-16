@@ -22,7 +22,7 @@
         :datePublished="article.datePublished"
       />
     </div>
-    <nuxt-img
+<!--    <nuxt-img
       v-if="article.image"
       class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
       :src="article.image"
@@ -41,8 +41,20 @@
       width="1200"
       format="jpg"
       :alt="article.image_alt"
-    />
+    />-->
 
+    <nuxt-picture
+      v-if="article.image"
+      :src="article.image"
+      :alt="article.image_alt"
+      :copyright="article.image_alt"
+      :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
+      sizes="md:100vw lg:50vw xl:33vw"
+      width="1200"
+      height="820"
+      format="webp"
+      loading="lazy"
+    />
 
     <p class="text-center font-bold my-5">
         <span class="text-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600">

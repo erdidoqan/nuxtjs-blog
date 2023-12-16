@@ -2,7 +2,7 @@
   <!-- Section 1 -->
   <section class="antialiased bg-white">
     <div class="mx-auto">
-      <Header />
+      <NewHeader />
       <div class="mt-16">
         <Nuxt />
       </div>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
+import NewHeader from "../components/NewHeader.vue";
 import TheFooter from "../components/TheFooter.vue";
 
 export default {
   component: {
-    Header,
+    NewHeader,
     TheFooter,
   },
   methods: {
