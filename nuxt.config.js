@@ -27,6 +27,7 @@ https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.p
 export default {
   target: 'static',
   generate: { fallback: true },
+  ssr: false,
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
     PUBLISH_URL: process.env.PUBLISH_URL
@@ -156,26 +157,9 @@ export default {
   'google-gtag': {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
-  /*markdownit: {
-    runtime: true,
-    preset: 'default',
-    linkify: true,
-    breaks: true,
-    use: [
-      'markdown-it-div',
-      'markdown-it-attrs'
-    ]
-  },*/
   image: {
-    staticFilename: '[publicPath]/image/[name][ext]',
-
     domains: [
-      'https://icerikplanla.com/img',
-      'https://icerikplanla.com',
-      'https://turkce.icerikplanla.com',
-      'https://turkce.icerikplanla.com/img',
-      'https://icerikplanla.test',
-      'https://icerikplanla.test/img'
+      'https://cdn.foodnutritious.com'
     ]
   },
   'nuxt-compress': {
