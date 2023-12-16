@@ -157,11 +157,10 @@ export default {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
   image: {
+    provider: 'glide',
     domains: ['icerikplanla.com'],
-    image: {
-      glide: {
-        baseURL: 'https://icerikplanla.com'
-      }
+    glide: {
+      baseURL: 'https://icerikplanla.com'
     }
   },
   'nuxt-compress': {
