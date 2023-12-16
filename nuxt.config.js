@@ -27,7 +27,6 @@ https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.p
 export default {
   target: 'static',
   generate: { fallback: true },
-  ssr: false,
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
     PUBLISH_URL: process.env.PUBLISH_URL
@@ -158,10 +157,11 @@ export default {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
   image: {
-    domains: [
-      'icerikplanla.com',
-      'https://cdn.foodnutritious.com'
-    ]
+    image: {
+      glide: {
+        baseURL: 'https://icerikplanla.com'
+      }
+    }
   },
   'nuxt-compress': {
     gzip: {
