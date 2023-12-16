@@ -157,6 +157,7 @@ export default {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
   image: {
+    domains: ['icerikplanla.com'],
     image: {
       glide: {
         baseURL: 'https://icerikplanla.com'
