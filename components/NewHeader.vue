@@ -8,8 +8,10 @@
           alt="logo"
           preload
           format="webp"
-          width="35"
-          height="35"
+          width="40"
+          height="40"
+          provider="static"
+          quality="100"
         />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ siteTitle }}</span>
       </NuxtLink>

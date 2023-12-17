@@ -7,7 +7,7 @@
       loading="lazy"
       width="150"
       height="150"
-      sizes="sm:150px md:50vw lg:250px"
+      sizes="sm:150px md:150px lg:250px"
       format="webp"
       class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
     />

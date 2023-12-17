@@ -95,6 +95,8 @@
             format="webp"
             width="35"
             height="35"
+            provider="static"
+            quality="100"
           />
           <span class="h-8 text-pink-700 pl-2 text-2xl">{{ siteTitle }}</span>
         </NuxtLink>

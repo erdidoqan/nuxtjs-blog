@@ -48,13 +48,13 @@
       :src="article.image"
       :alt="article.image_alt"
       :copyright="article.image_alt"
-
       :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
       sizes="md:100vw lg:50vw xl:33vw"
       width="1200"
       height="820"
       format="webp"
-      loading="lazy"
+      loading="eager"
+      :preload="true"
     />
 
     <p class="text-center font-bold my-5">
@@ -98,7 +98,7 @@
                 width="500"
                 height="500"
                 format="webp"
-                sizes="sm:100vw md:50vw lg:640px xl:1200px"
+                sizes="sm:100vw md:500px lg:640px xl:1200px"
                 :alt="article.author.full_name +', ' + article.author.job_title"
               />
               <div class="flex flex-col justify-between p-4 leading-normal">
