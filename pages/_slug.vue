@@ -177,7 +177,7 @@ export default {
           "headline": this.article.title,
           "image": {
             "@type": "ImageObject",
-            "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+            "url": this.article.image1200,
             "height": 628,
             "width": 1200
           },
@@ -217,8 +217,8 @@ export default {
           "@type": "ImageObject",
           "inLanguage": "en_US",
           "@id": 'https://' + process.env.PUBLISH_URL + this.$route.path +"#primaryimage",
-          "url": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
-          "contentUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+          "url": this.article.image1200,
+          "contentUrl": this.article.image1200,
           "width": 1200,
           "height": 628,
           "caption": this.article.image_alt
@@ -237,7 +237,7 @@ export default {
           "image": {
             "@id": 'https://' + process.env.PUBLISH_URL +"/#primaryimage"
           },
-          "thumbnailUrl": 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', ''),
+          "thumbnailUrl": this.article.image1200,
           "datePublished": this.article.datePublished,
           "dateModified": this.article.dateModified,
           "description": this.article.description,
@@ -269,22 +269,22 @@ export default {
         { property: 'article:modified_time', content: this.article.dateModified },
         { itemprop: "name", content: this.article.meta_title },
         { itemprop: "description", content: this.article.description },
-        { itemprop: "image", content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
+        { itemprop: "image", content: this.article.image1200 },
 
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.article.title },
         { hid: 'og:description', name: 'og:description', content: this.article.description },
 
-        { name: 'thumbnail', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
-        { property: 'og:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
+        { name: 'thumbnail', content: this.article.image1200 },
+        { property: 'og:image', content: this.article.image1200 },
 
-        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: this.article.image1200 },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
         { hid: 'og:og:image:alt', name: 'og:image:alt', content: this.article.image_alt },
 
 
-        { hid: 'twitter:image:src', name: 'twitter:image:src', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
-        { hid: 'twitter:image', name: 'twitter:image', content: 'https://'+process.env.PUBLISH_URL + '/_nuxt/image/'+this.article.image_full.replace('contents/', '') },
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: this.article.image1200 },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.article.image1200 },
         { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
         { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
         { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }
