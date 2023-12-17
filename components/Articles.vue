@@ -9,8 +9,11 @@
         >
 
           <div class="relative">
-            <NuxtLink :to="{ name: 'slug', params: { slug: article.slug } }">
-
+            <NuxtLink
+              :to="{ name: 'slug', params: { slug: article.slug } }"
+              :title="article.image_alt"
+              :aria-label="'Read More ' +article.image_alt"
+            >
               <nuxt-img
                 class="h-40 w-full rounded-lg object-cover"
                 v-if="article.image"
@@ -30,7 +33,11 @@
           <div>
             <div class="mb-6 mt-3">
               <p class="font-heading text-base font-medium leading-snug line-clamp-4 text-gray-800 dark:text-gray-100">
-                <NuxtLink :to="{ name: 'slug', params: { slug: article.slug } }">
+                <NuxtLink
+                  :to="{ name: 'slug', params: { slug: article.slug } }"
+                  :title="article.image_alt"
+                  :aria-label="'Read More ' +article.image_alt"
+                >
                   {{ article.title }}
                 </NuxtLink>
               </p>
