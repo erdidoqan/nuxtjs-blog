@@ -161,7 +161,11 @@ export default {
     provider: 'glide',
     domains: ['icerikplanla.com'],
     glide: {
-      baseURL: 'https://icerikplanla.com'
+      baseURL: 'https://icerikplanla.com',
+      modifiers: {
+        effect: 'sharpen:100',
+        quality: 'auto:best'
+      }
     },
     screens: {
       xs: 320,
