@@ -33,7 +33,8 @@
       width="1200"
       height="820"
       format="webp"
-      quality="75"
+      fit="crop"
+      quality="85"
       loading="lazy"
       :preload="true"
     />
