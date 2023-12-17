@@ -23,7 +23,7 @@
                 width="200"
                 height="200"
                 format="webp"
-                sizes="xs:16vw sm:32vw md:50vw lg:80vw"
+                sizes="xs:16vw sm:32vw md:200px lg:200px"
                 :alt="article.image_alt"
                 fit="crop"
                 quality="50"
