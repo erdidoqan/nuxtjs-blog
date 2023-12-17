@@ -29,7 +29,7 @@
       :alt="article.image_alt"
       :copyright="article.image_alt"
       :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
-      sizes="xs:16vw sm:32vw md:90vw lg:100vw "
+      sizes="xs:16vw sm:32vw md:50vw lg:80vw xl:120vw"
       width="1200"
       height="820"
       format="webp"
