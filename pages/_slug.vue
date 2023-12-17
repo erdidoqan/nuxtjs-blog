@@ -98,7 +98,7 @@
                 width="500"
                 height="500"
                 format="webp"
-                sizes="sm:100vw md:500px lg:640px xl:1200px"
+                sizes="sm:150px md:150px lg:250px"
                 :alt="article.author.full_name +', ' + article.author.job_title"
               />
               <div class="flex flex-col justify-between p-4 leading-normal">
