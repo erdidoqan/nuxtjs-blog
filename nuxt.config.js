@@ -157,7 +157,7 @@ export default {
     glide: {
       baseURL: 'https://icerikplanla.com',
       modifiers: {
-        quality: '60'
+        quality: '90'
       }
     }
   },
