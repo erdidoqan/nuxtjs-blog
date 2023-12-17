@@ -22,7 +22,8 @@
                 format="webp"
                 sizes="sm:80px md:170px lg:350px"
                 :alt="article.image_alt"
-                quality="75"
+                fit="crop"
+                quality="50"
               />
             </NuxtLink>
           </div>
