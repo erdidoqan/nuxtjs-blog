@@ -22,26 +22,6 @@
         :datePublished="article.datePublished"
       />
     </div>
-<!--    <nuxt-img
-      v-if="article.image"
-      class="lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm"
-      :src="article.image"
-      loading="eager"
-      :preload="true"
-      width="1200"
-      height="820"
-      format="webp"
-      sizes="xl:1200px"
-      :alt="article.image_alt"
-    />
-    <nuxt-img
-      v-if="article.image1200"
-      class="hidden"
-      :src="article.image1200"
-      width="1200"
-      format="jpg"
-      :alt="article.image_alt"
-    />-->
 
     <nuxt-picture
       v-if="article.image"
@@ -53,7 +33,7 @@
       width="1200"
       height="820"
       format="webp"
-      loading="eager"
+      loading="lazy"
       :preload="true"
     />
 
@@ -93,7 +73,7 @@
                 v-if="article.author.image"
                 class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                 :src="article.author.image"
-                loading="eager"
+                loading="lazy"
                 :preload="true"
                 width="500"
                 height="500"

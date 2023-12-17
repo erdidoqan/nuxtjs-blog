@@ -15,7 +15,7 @@
                 class="h-40 w-full rounded-lg object-cover"
                 v-if="article.image"
                 :src="article.image"
-                loading="eager"
+                loading="lazy"
                 :preload="true"
                 width="200"
                 height="200"
