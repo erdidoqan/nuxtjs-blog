@@ -29,7 +29,7 @@
       :alt="article.image_alt"
       :copyright="article.image_alt"
       :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
-      sizes="xs:16vw sm:32vw md:50vw lg:80vw "
+      sizes="xs:16vw sm:32vw md:50vw lg:80vw"
       width="1200"
       height="820"
       format="webp"
@@ -79,7 +79,8 @@
                 width="500"
                 height="500"
                 format="webp"
-                sizes="sm:150px md:150px lg:250px"
+                sizes="xs:16vw sm:32vw md:50vw lg:80vw"
+                fit="crop"
                 :alt="article.author.full_name +', ' + article.author.job_title"
               />
               <div class="flex flex-col justify-between p-4 leading-normal">

@@ -1,15 +1,16 @@
 <template>
   <div class="flex items-center font-medium mt-6 sm:mx-3 justify-center">
     <nuxt-img
+      class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
       :src="author.image"
       :alt="author.full_name +', ' + author.job_title"
       :preload="true"
       loading="lazy"
       width="150"
       height="150"
-      sizes="sm:150px md:150px lg:250px"
+      sizes="xs:16vw sm:32vw md:50vw lg:80vw"
+      fit="crop"
       format="webp"
-      class="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
     />
     <div>
       <div class="text-slate-900 dark:text-slate-200">

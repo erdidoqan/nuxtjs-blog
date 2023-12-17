@@ -20,7 +20,7 @@
                 width="200"
                 height="200"
                 format="webp"
-                sizes="sm:80px md:170px lg:350px"
+                sizes="xs:16vw sm:32vw md:50vw lg:80vw"
                 :alt="article.image_alt"
                 fit="crop"
                 quality="50"
