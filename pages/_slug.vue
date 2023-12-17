@@ -29,7 +29,7 @@
       :alt="article.image_alt"
       :copyright="article.image_alt"
       :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
-      sizes="160w, 320w, 480w, 640w, 960w, 1280w"
+      sizes="160vw, 320vw, 480vw, 640vw, 960vw, 1280vw"
       width="1200"
       height="820"
       format="webp"
