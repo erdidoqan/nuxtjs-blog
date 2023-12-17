@@ -94,12 +94,6 @@ export default {
         'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
         async: true
       }*/
-    ],
-    noscript: [
-      {
-        innerHTML: 'This website requires JavaScript.',
-        body: true
-      }
     ]
   },
 
@@ -171,10 +165,7 @@ export default {
       xs: 320,
       sm: 640,
       md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
-      '2xl': 1536
+      lg: 1200
     }
   },
   'nuxt-compress': {
