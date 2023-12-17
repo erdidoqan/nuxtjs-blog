@@ -157,15 +157,8 @@ export default {
     glide: {
       baseURL: 'https://icerikplanla.com',
       modifiers: {
-        effect: 'sharpen:100',
-        quality: 'auto:best'
+        quality: '60'
       }
-    },
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1200
     }
   },
   'nuxt-compress': {
