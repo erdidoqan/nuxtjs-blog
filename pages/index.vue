@@ -91,14 +91,14 @@ export default {
 
 
         { hid: 'og:type', name: 'og:type', content: 'website' },
-        { hid: 'og:title', name: 'og:title', content: this.article.title },
+        { hid: 'og:title', name: 'og:title', content: process.env.META_TITLE },
         { hid: 'og:description', name: 'og:description', content: process.env.META_DESC },
         { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
         { hid: 'og:image', name:'og:image',content: '/icons/icon.png' },
         { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: '/icons/icon.png' },
 
         { hid: 'twitter:image', name: 'twitter:image', content: '/icons/icon.png' },
-        { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
+        { hid: 'twitter:title', name: 'twitter:title', content: process.env.META_TITLE },
         { hid: 'twitter:description', name: 'twitter:description', content: process.env.META_TITLE },
         { hid: 'twitter:url', name: 'twitter:url', content: '/icons/icon.png' }
       ],
