@@ -83,11 +83,22 @@ export default {
     return {
       title: process.env.META_TITLE,
       meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: process.env.META_DESC,
-        },
+        { hid: "description", name: "description", content: process.env.META_DESC},
+        { itemprop: "name", content: process.env.META_TITLE },
+        { itemprop: "description", content: process.env.META_DESC },
+        { itemprop: "image", content: '/icons/icon.png' },
+
+        { hid: 'og:description', name: 'og:description', content: process.env.META_DESC },
+        { property: 'og:image', content: '/icons/icon.png' },
+
+        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: '/icons/icon.png' },
+        { hid: 'og:url', name: 'og:url', content: '/icons/icon.png' },
+
+        { hid: 'twitter:image:src', name: 'twitter:image:src', content: '/icons/icon.png' },
+        { hid: 'twitter:image', name: 'twitter:image', content: '/icons/icon.png' },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: process.env.META_TITLE },
+        { hid: 'twitter:url', name: 'twitter:url', content: '/icons/icon.png' }
       ],
       script: [{
         type: 'application/ld+json',
