@@ -7,6 +7,7 @@ const https = require('https')
 https.get('https://icerikplanla.com/atom/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/feed.xml')));
 https.get('https://icerikplanla.com/feed/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/rss.xml')));
 https.get('https://icerikplanla.com/sitemaps/image/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/sitemap-image.xml')));
+https.get('https://icerikplanla.com/sitemaps/news/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/news_sitemap.xml')));
 
 https.get(process.env.META_FAVICON_ICO, resp => resp.pipe(fs.createWriteStream('static/favicon.ico')));
 https.get(process.env.META_FAVICON_PNG, resp => resp.pipe(fs.createWriteStream('static/icons/icon.png')));
