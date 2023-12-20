@@ -116,6 +116,11 @@ export default {
   buildModules: [
     "@nuxt/image"
   ],
+  hooks: {
+    'generate:page': page => {
+      page.html = page.html.replace(/ data-n-head=".*?"/gi, '').replace(/ data-hid=".*?"/gi, '')
+    }
+  },
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
