@@ -47,12 +47,6 @@ export default {
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: process.env.META_TITLE },
       { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_TITLE },
 
-
-      { hid: 'twitter:image:src', name: 'twitter:image:src', content: '/icons/icon.png' },
-      { hid: 'twitter:title', name: 'twitter:title', content: process.env.META_TITLE },
-      { hid: 'twitter:description', name: 'twitter:description', content: process.env.META_DESC },
-      { hid: 'twitter:url', name: 'twitter:url', content: process.env.PUBLISH_URL },
-
       { name: 'google-adsense-account', content: process.env.GOOGLE_ADSENSE_ID }
     ],
     link: [
