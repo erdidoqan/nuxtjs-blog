@@ -245,10 +245,15 @@ export default {
   head() {
     return {
       title: this.article.meta_title,
+
       meta: [
         { hid: "description", name: "description", content: this.article.description},
-        { property: 'article:published_time', content: this.article.datePublished },
-        { property: 'article:modified_time', content: this.article.dateModified },
+
+        { hid: 'article:published_time', name: 'article:published_time', content: this.article.datePublished },
+        { hid: 'article:modified_time', name: 'article:modified_time', content: this.article.dateModified },
+        { hid: 'author', name: 'author', content: this.article.author.full_name },
+
+
         { itemprop: "name", content: this.article.meta_title },
         { itemprop: "description", content: this.article.description },
         { itemprop: "image", content: this.article.image1200 },
