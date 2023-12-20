@@ -13,7 +13,7 @@
       <Breadcrumbs :lists="article.breadcrumbs" />
 
       <h1 class="text-4xl mt-3 text-gray-700 font-extrabold mb-10 text-center">
-        {{ article.title }}
+        {{ article.meta_title }}
       </h1>
 
       <Author
@@ -99,7 +99,7 @@
         </div>
       </div>
       <hr>
-      <h2 class="mt-10 mb-4 text-4xl tracking-tight text-red-400 text-slate-800 font-extrabold">Content You May Be Interested In</h2>
+      <span class="mt-10 mb-4 text-4xl tracking-tight text-red-400 text-slate-800 font-extrabold">Content You May Be Interested In</span>
       <Articles :articles="article.relateds" :piece="6" />
     </div>
   </div>
@@ -244,37 +244,38 @@ export default {
   },
   head() {
     return {
-      title: this.article.meta_title,
+      title: this.article.meta_title + ' - '+process.env.SITE_TITLE,
 
       meta: [
         { hid: "description", name: "description", content: this.article.description},
 
+        { property: 'og:title', content: this.article.title },
+        { property: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:description', content: this.article.description },
+        { property: 'og:image', content: this.article.image1200 },
+        { property: 'og:image:url', content: this.article.image1200 },
+        { property: 'og:image:secure_url', content: this.article.image1200 },
         { property: 'article:published_time', content: this.article.datePublished },
         { property: 'article:modified_time', content: this.article.dateModified },
         { property: 'og:updated_time', content: this.article.dateModified },
+        { property: 'article:section', content: this.article.category },
+        { property: 'fb:app_id', content: '12873892173892' },
+
+        { itemprop: 'name', content: this.article.meta_title },
+        { itemprop: 'headline', content: this.article.meta_title },
+        { itemprop: 'description', content: this.article.description },
+        { itemprop: 'image', content: this.article.image1200 },
+        { itemprop: 'datePublished', content: this.article.datePublished },
+        { itemprop: 'dateModified', content: this.article.dateModified },
         { name: 'author', content: this.article.author.full_name },
 
-        { itemprop: "name", content: this.article.meta_title },
-        { itemprop: "description", content: this.article.description },
-        { itemprop: "image", content: this.article.image1200 },
-
-        { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
-        { hid: 'og:title', name: 'og:title', content: this.article.title },
-        { hid: 'og:description', name: 'og:description', content: this.article.description },
-
-        { name: 'thumbnail', content: this.article.image1200 },
-        { property: 'og:image', content: this.article.image1200 },
-
-        { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: this.article.image1200 },
-        { hid: 'og:url', name: 'og:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
-        { hid: 'og:og:image:alt', name: 'og:image:alt', content: this.article.image_alt },
-
-
-        { hid: 'twitter:image:src', name: 'twitter:image:src', content: this.article.image1200 },
-        { hid: 'twitter:image', name: 'twitter:image', content: this.article.image1200 },
-        { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
-        { hid: 'twitter:description', name: 'twitter:description', content: this.article.description },
-        { hid: 'twitter:url', name: 'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path }
+        { name:'twitter:title', content: this.article.meta_title },
+        { name:'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
+        { name:'twitter:description', content: this.article.description },
+        { name:'twitter:image', content: this.article.image1200 },
+        { name:'twitter:card', content: 'summary_large_image' },
+        { name:'twitter:card', content: 'GreetingBirds' },
       ],
       script: [{
         type: 'application/ld+json',

@@ -39,24 +39,15 @@ export default {
     },
     meta: [
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' },
       { hid: 'description', name: 'description', content: process.env.META_DESC },
       { hid: 'robots', name: 'robots', content: 'max-image-preview:large' },
       { name: 'mobile-web-app-capable', content: 'yes' },
 
-      /*<meta property="article:published_time" content="2023-10-28T03:30:33+00:00" />
-      <meta property="article:modified_time" content="2023-10-28T03:30:33+00:00" />*/
-
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: process.env.META_TITLE },
       { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_TITLE },
-      { hid: 'og:type', property: 'og:type', content: 'article' },
-      { hid: 'profile:username', property: 'profile:username', content: 'GreetingBirds' },
-      { hid: 'fb:app_id', property: 'fb:app_id', content: '1951371271775373' },
 
 
-      { name: 'twitter:card', content: 'summary' },
-      { name: 'twitter:creator', content: '@GreetingBirds' },
-      { name: 'twitter:site', content: '@GreetingBirds' },
       { hid: 'twitter:image:src', name: 'twitter:image:src', content: '/icons/icon.png' },
       { hid: 'twitter:title', name: 'twitter:title', content: process.env.META_TITLE },
       { hid: 'twitter:description', name: 'twitter:description', content: process.env.META_DESC },

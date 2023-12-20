@@ -4,7 +4,7 @@
       <div class="mx-auto w-full max-w-screen-xl">
         <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li class="mb-4">
                 <NuxtLink to="/about-us/" class="hover:underline">
@@ -40,7 +40,7 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Trends</h2>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Trends</div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="trend of trends.data" class="mb-4">
                 <NuxtLink
@@ -54,7 +54,7 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Lasest</h2>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Lasest</div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="last of lasest.data" class="mb-4">
                 <NuxtLink
@@ -68,7 +68,7 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Suggestions</h2>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Suggestions</div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="suggestion of suggestions.data" class="mb-4">
                 <NuxtLink
