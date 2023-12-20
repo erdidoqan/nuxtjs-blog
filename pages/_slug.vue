@@ -274,8 +274,8 @@ export default {
         { name:'twitter:url', content: 'https://' + process.env.PUBLISH_URL + this.$route.path },
         { name:'twitter:description', content: this.article.description },
         { name:'twitter:image', content: this.article.image1200 },
+        { name:'twitter:site', content: '@GreetingBirds' },
         { name:'twitter:card', content: 'summary_large_image' },
-        { name:'twitter:card', content: 'GreetingBirds' },
       ],
       script: [{
         type: 'application/ld+json',
