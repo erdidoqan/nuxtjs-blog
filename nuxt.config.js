@@ -41,7 +41,6 @@ export default {
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.META_DESC },
-      { name: 'author', content: process.env.META_AUTHOR },
       { hid: 'robots', name: 'robots', content: 'max-image-preview:large' },
       { name: 'mobile-web-app-capable', content: 'yes' },
 

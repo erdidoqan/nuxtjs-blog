@@ -252,7 +252,7 @@ export default {
         { hid: 'article:published_time', property: 'article:published_time', content: this.article.datePublished },
         { hid: 'article:modified_time', property: 'article:modified_time', content: this.article.dateModified },
         { hid: 'og:updated_time', property: 'og:updated_time', content: this.article.dateModified },
-        { hid: 'author', name: 'author', content: article.author.full_name },
+        { hid: 'author', name: 'author', content: this.article.author.full_name },
 
         { itemprop: "name", content: this.article.meta_title },
         { itemprop: "description", content: this.article.description },
