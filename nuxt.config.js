@@ -74,11 +74,11 @@ export default {
       { rel: 'alternate', type: 'application/rss+xml', href: '/feed.xml' }
     ],
     script: [
-      {
+      /*{
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
         async: true
-      }
+      }*/
     ]
   },
 
