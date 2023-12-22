@@ -27,12 +27,13 @@
       v-if="article.image"
       :src="article.image"
       :alt="article.image_alt"
+      :title="article.tags.title"
       :copyright="article.image_alt"
       :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
-      sizes='xs:300px sm:500px md:700px lg:1200px'
-      width='1200px'
-      height='628px'
-      fit='outside'
+      sizes="xs:300px sm:500px md:700px lg:1200px"
+      width="1200px"
+      height="628px"
+      fit="crop"
       format="webp"
       :preload="true"
     />

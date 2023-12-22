@@ -18,14 +18,13 @@
                 class="h-40 w-full rounded-lg object-cover"
                 v-if="article.image"
                 :src="article.image"
-                :preload="true"
                 width="200"
                 height="200"
                 format="webp"
                 sizes="xs:16vw sm:32vw md:200px lg:200px"
                 :alt="article.image_alt"
+                :title="article.image_alt"
                 fit="crop"
-                quality="50"
               />
             </NuxtLink>
           </div>

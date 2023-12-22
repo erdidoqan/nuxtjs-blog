@@ -8,7 +8,7 @@
         <div class="py-5 pt-1" v-for="item in items.faq">
           <details class="group" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-              <h4 itemprop="name">{{item.question}}</h4>
+              <div class="text-xl" itemprop="name">{{item.question}}</div>
               <span class="transition group-open:rotate-180">
                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6" /></svg>
               </span>
