@@ -74,13 +74,13 @@
                 v-if="article.author.image"
                 class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                 :src="article.author.image"
-                loading="lazy"
                 :preload="true"
-                width="500"
-                height="500"
-                format="webp"
-                sizes="xs:16vw sm:32vw md:50vw lg:80vw"
-                fit="crop"
+                sizes='xs:300px sm:500px md:700px lg:1200px xl:1920px'
+                width='1920px'
+                height='1080px'
+                fit='outside'
+                format='webp'
+                quality='80'
                 :alt="article.author.full_name +', ' + article.author.job_title"
               />
               <div class="flex flex-col justify-between p-4 leading-normal">
