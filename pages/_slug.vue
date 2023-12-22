@@ -29,12 +29,11 @@
       :alt="article.image_alt"
       :copyright="article.image_alt"
       :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
-      sizes="xs:16vw sm:32vw md:50vw lg:80vw"
-      width="1200"
-      height="820"
+      sizes='xs:300px sm:500px md:700px lg:1200px xl:1920px'
+      width='1920px'
+      height='1080px'
+      fit='outside'
       format="webp"
-      fit="crop"
-      loading="lazy"
       :preload="true"
     />
 
@@ -75,12 +74,11 @@
                 class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                 :src="article.author.image"
                 :preload="true"
-                sizes='xs:300px sm:500px md:700px lg:1200px xl:1920px'
-                width='1920px'
-                height='1080px'
-                fit='outside'
-                format='webp'
-                quality='80'
+                width="500"
+                height="500"
+                format="webp"
+                sizes="100vw sm:50vw md:400px"
+                fit="crop"
                 :alt="article.author.full_name +', ' + article.author.job_title"
               />
               <div class="flex flex-col justify-between p-4 leading-normal">
