@@ -29,9 +29,9 @@
       :alt="article.image_alt"
       :copyright="article.image_alt"
       :imgAttrs="{class:'lg:mx-auto lg:w-4/5 xl:max-w-4xl my-10 lg:rounded-md drop-shadow-sm'}"
-      sizes='xs:300px sm:500px md:700px lg:1200px xl:1920px'
-      width='1920px'
-      height='1080px'
+      sizes='xs:300px sm:500px md:700px lg:1200px'
+      width='1200px'
+      height='628px'
       fit='outside'
       format="webp"
       :preload="true"
