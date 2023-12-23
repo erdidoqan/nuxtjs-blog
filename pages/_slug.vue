@@ -75,10 +75,10 @@
                 class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                 :src="article.author.image"
                 :preload="true"
-                width="500"
-                height="500"
+                sizes="xs:50px sm:100px md:130px lg:200px"
+                width="200px"
+                height="200px"
                 format="webp"
-                sizes="100vw sm:50vw md:400px"
                 fit="crop"
                 :alt="article.author.full_name +', ' + article.author.job_title"
               />

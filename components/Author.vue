@@ -5,10 +5,9 @@
       :src="author.image"
       :alt="author.full_name +', ' + author.job_title"
       :preload="true"
-      loading="lazy"
-      width="150"
-      height="150"
-      sizes="xs:16vw sm:32vw md:50vw lg:80vw"
+      sizes="xs:20px sm:30px md:30px lg:50px"
+      width="50px"
+      height="50px"
       fit="crop"
       format="webp"
     />
