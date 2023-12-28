@@ -22,6 +22,6 @@ export const getDictionary = (locale) => {
   if (locale in translations) {
     _locale = locale
   }
-console.log(_locale)
+
   return translations[_locale]()
 };
