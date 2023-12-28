@@ -4,7 +4,7 @@
       <div class="mx-auto w-full max-w-screen-xl">
         <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
-            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</div>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"> {{ dictionary.companyTitle }} </div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li class="mb-4">
                 <NuxtLink to="/about-us/" class="hover:underline">
@@ -40,7 +40,7 @@
             </ul>
           </div>
           <div>
-            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Trends</div>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ dictionary.footerTrendTitle }}</div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="trend of trends.data" class="mb-4">
                 <NuxtLink
@@ -54,7 +54,7 @@
             </ul>
           </div>
           <div>
-            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Lasest</div>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ dictionary.footerLatestTitle }}</div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="last of lasest.data" class="mb-4">
                 <NuxtLink
@@ -68,7 +68,7 @@
             </ul>
           </div>
           <div>
-            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Suggestions</div>
+            <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ dictionary.footerSuggestion }}</div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="suggestion of suggestions.data" class="mb-4">
                 <NuxtLink
@@ -112,14 +112,14 @@
         </a>
       </div>
       <p class="mt-4 text-xs text-center text-gray-400">
-        © 2023 {{ siteName }}, All rights reserved
+        © 2023 {{ siteName }}, {{ dictionary.footerCopy }}
       </p>
     </div>
   </footer>
 </template>
 
 <script>
-
+import { getDictionary } from "@/plugins/translation"
 
 export default {
   data() {
@@ -127,6 +127,7 @@ export default {
       siteTitle: process.env.SITE_TITLE,
       siteLogo: '/icons/icon.png',
       siteName: process.env.SITE_TITLE,
+      dictionary: getDictionary(process.env.HTML_LANG),
       trends: [],
       lasest: [],
       suggestions: []

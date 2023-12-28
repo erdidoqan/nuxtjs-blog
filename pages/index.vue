@@ -15,8 +15,7 @@
 
 <script>
 import markdownit from 'markdown-it'
-
-
+import { getDictionary } from "@/plugins/translation"
 
 export default {
   async asyncData({$axios}) {
@@ -29,6 +28,7 @@ export default {
   data() {
     return {
       md: markdownit(),
+      dictionary: getDictionary(process.env.HTML_LANG)
     };
   },
   methods: {

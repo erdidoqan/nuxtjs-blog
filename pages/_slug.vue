@@ -43,16 +43,10 @@
             {{ article.readDuration }}
         </span>
     </p>
-    <div class="px-4 mx-auto sm:px-6 xl:max-w-[95%] xl:px-0 mt-10">
+    <div class="px-4 max-w-screen-xl mx-auto sm:px-6 xl:px-0 mt-10">
       <div class="flex">
-        <div class="xl:w-1/5 hidden lg:block">
-          <div class="p-2 relative sticky top-0">
-            <div class="mt-14">
-              <div class="bg-gray-200 text-black h-[45rem] w-full"></div>
-            </div>
-          </div>
-        </div>
-        <div class="xl:w-3/4 sm:w-full">
+
+        <div class="xl:w-3/2 sm:w-full">
 
           <div class="min-w-full p-2 mx-auto">
             <Toc />
@@ -98,8 +92,10 @@
         </div>
       </div>
       <hr>
-      <span class="mt-10 mb-4 text-4xl tracking-tight text-red-400 text-slate-800 font-extrabold">Content You May Be Interested In</span>
-      <Articles :articles="article.relateds" :piece="6" />
+      <div class="mt-10 mb-4">
+        <span class="text-4xl tracking-tight text-red-400 text-slate-800 font-extrabold">Content You May Be Interested In</span>
+        <Articles :articles="article.relateds" :piece="6" />
+      </div>
     </div>
   </div>
 </template>
@@ -112,7 +108,11 @@ export default {
   },
   data() {
     return {
-      md: markdownit(),
+      md: markdownit({
+        html: true,
+        linkify: false,
+        typographer: true,
+      }),
     };
   },
   async asyncData({params, $axios}) {
