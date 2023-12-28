@@ -31,7 +31,8 @@ export default {
   generate: { fallback: true },
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
-    PUBLISH_URL: process.env.PUBLISH_URL
+    PUBLISH_URL: process.env.PUBLISH_URL,
+    HTML_LANG: process.env.HTML_LANG
   },
   head: {
     title: process.env.META_TITLE,
