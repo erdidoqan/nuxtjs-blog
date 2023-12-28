@@ -119,7 +119,7 @@
 </template>
 
 <script>
-import { getDictionary } from "@/plugins/translation"
+import { getDictionary } from "/plugins/translation"
 
 export default {
   data() {
