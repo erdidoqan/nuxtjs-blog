@@ -46,7 +46,7 @@
     <div class="px-4 max-w-screen-xl mx-auto sm:px-6 xl:px-0 mt-10">
       <div class="flex">
 
-        <div class="xl:w-3/2 sm:w-full">
+        <div class="xl:w-2/3 sm:w-full">
 
           <div class="min-w-full p-2 mx-auto">
             <Toc />
@@ -85,8 +85,18 @@
         </div>
         <div class="xl:w-1/3 hidden lg:block">
           <div class="p-2 relative sticky top-0">
-            <div class="mt-14">
-              <div class="bg-gray-200 text-black h-[45rem] w-full"></div>
+            <div class="mt-20 divide-y divide-gray-200">
+
+              <h2 class="mb-2 text-lg font-semibold text-gray-900">Top students:</h2>
+              <ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside pt-3">
+                <li
+                  class="p-1"
+                  v-for="(related, key) in article.relateds"
+                >
+                  <a class="inline-flex items-center font-medium text-blue-600 hover:underline" target="_blank" :href="'/'+related.slug+'/'" :title="related.keyword">{{ related.keyword }}</a>
+                </li>
+              </ol>
+
             </div>
           </div>
         </div>
