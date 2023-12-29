@@ -7,7 +7,7 @@
             <h1 class="text-4xl text-white font-bold tracking-tight text-gray-900 sm:text-6xl"> {{ title }} </h1>
             <p class="mt-4 text-white text-xl text-gray-500">{{ desc }}</p>
 
-            <a v-for="(category, key) in homepage.categories" href="" target="_blank" class="inline-flex items-center h-12 px-5 mr-3 text-lg mt-3 text-blue bg-white transition-colors duration-150 border border-grey-100 rounded-lg focus:shadow-outline hover:bg-pink-700 hover:text-pink-100">{{category.name}}</a>
+            <a v-for="(category, key) in homepage.categories" :href="'/'+category.slug+'/'" target="_blank" class="inline-flex items-center h-12 px-5 mr-3 text-lg mt-3 text-blue bg-white transition-colors duration-150 border border-grey-100 rounded-lg focus:shadow-outline hover:bg-pink-700 hover:text-pink-100">{{category.name}}</a>
 
           </div>
           <div>
