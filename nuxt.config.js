@@ -32,7 +32,9 @@ export default {
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
     PUBLISH_URL: process.env.PUBLISH_URL,
-    HTML_LANG: process.env.HTML_LANG
+    HTML_LANG: process.env.HTML_LANG,
+    META_TITLE: process.env.META_TITLE,
+    META_DESC: process.env.META_DESC
   },
   head: {
     title: process.env.META_TITLE,
