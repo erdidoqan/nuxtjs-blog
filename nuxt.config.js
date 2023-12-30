@@ -4,10 +4,10 @@ const path = require('path');
 import fs from 'fs'
 const https = require('https')
 
-https.get('https://icerikplanla.com'+'/atom/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/feed.xml')));
-https.get('https://icerikplanla.com'+'/feed/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/rss.xml')));
-https.get('https://icerikplanla.com'+'/sitemaps/image/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/sitemap-image.xml')));
-https.get('https://icerikplanla.com'+'/sitemaps/news/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/news_sitemap.xml')));
+https.get(process.env.MAIN_URL+'/atom/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/feed.xml')));
+https.get(process.env.MAIN_URL+'/feed/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/rss.xml')));
+https.get(process.env.MAIN_URL+'/sitemaps/image/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/sitemap-image.xml')));
+https.get(process.env.MAIN_URL+'/sitemaps/news/'+process.env.PUBLISH_URL, resp => resp.pipe(fs.createWriteStream('static/news_sitemap.xml')));
 
 https.get(process.env.META_FAVICON_ICO, resp => resp.pipe(fs.createWriteStream('static/favicon.ico')));
 https.get(process.env.META_FAVICON_PNG, resp => resp.pipe(fs.createWriteStream('static/icons/icon.png')));
@@ -34,6 +34,7 @@ export default {
     PUBLISH_URL: process.env.PUBLISH_URL,
     HTML_LANG: process.env.HTML_LANG,
     META_TITLE: process.env.META_TITLE,
+    MAIN_URL: process.env.MAIN_URL,
     META_DESC: process.env.META_DESC
   },
   head: {
