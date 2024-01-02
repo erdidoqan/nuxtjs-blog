@@ -163,7 +163,7 @@ export default {
                       "@type": "ListItem",
                       "position": index + 1,
                       "item": {
-                        "@id": "https://" + process.env.PUBLISH_URL+breadcrumb.url,
+                        "@id": "https://" + process.env.PUBLISH_URL+breadcrumb.url+'/',
                         "name": breadcrumb.name
                       }
                     }
