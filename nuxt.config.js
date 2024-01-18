@@ -78,11 +78,11 @@ export default {
       { rel: 'alternate', type: 'application/rss+xml', href: '/feed.xml' }
     ],
     script: [
-      {
+      /*{
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'data-ad-client': process.env.GOOGLE_ADSENSE_ID,
         async: true
-      }
+      }*/
     ]
   },
 
@@ -164,11 +164,6 @@ export default {
     }
   },
     sitemap: {
-    defaults: {
-      changefreq: 'daily',
-      priority: 1,
-      lastmod: new Date()
-    },
     hostname: 'https://' + process.env.PUBLISH_URL,
     include: [
       '/category/',
