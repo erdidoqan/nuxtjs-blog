@@ -7,33 +7,38 @@
             <div class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"> {{ dictionary.companyTitle }} </div>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li class="mb-4">
-                <NuxtLink to="/about-us/" class="inline-flex items-center font-medium text-amber-600 hover:underline">
+                <NuxtLink to="/about-us/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
                   About Us
                 </NuxtLink>
               </li>
               <li class="mb-4">
-                <NuxtLink to="/author/" class="inline-flex items-center font-medium text-amber-600 hover:underline">
+                <NuxtLink to="/author/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
                   Authors
+                </NuxtLink>
+              </li>
+              <li class="mb-4">
+                <NuxtLink to="/best/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
+                  Best List
                 </NuxtLink>
               </li>
 
               <li class="mb-4">
-                <NuxtLink to="/category/" class="inline-flex items-center font-medium text-amber-600 hover:underline">
+                <NuxtLink to="/category/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
                   All Categories
                 </NuxtLink>
               </li>
               <li class="mb-4">
-                <NuxtLink to="/terms-and-conditions/" class="inline-flex items-center font-medium text-amber-600 hover:underline">
+                <NuxtLink to="/terms-and-conditions/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
                   Terms and Conditions
                 </NuxtLink>
               </li>
               <li class="mb-4">
-                <NuxtLink to="/privacy-policy/" class="inline-flex items-center font-medium text-amber-600 hover:underline">
+                <NuxtLink to="/privacy-policy/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
                   Privacy Policy
                 </NuxtLink>
               </li>
               <li class="mb-4">
-                <NuxtLink to="/contact-us/" class="inline-flex items-center font-medium text-amber-600 hover:underline">
+                <NuxtLink to="/contact-us/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
                   Contact Us
                 </NuxtLink>
               </li>
@@ -44,7 +49,7 @@
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="trend of trends.data" class="mb-4">
                 <NuxtLink
-                  class="inline-flex items-center font-medium text-amber-600 hover:underline"
+                  class="inline-flex items-center font-medium text-pink-600 hover:underline"
                   :to="'/'+trend.slug+'/'"
                   :title="'Best to ' + trend.name "
                 >
@@ -58,7 +63,7 @@
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="last of lasest.data" class="mb-4">
                 <NuxtLink
-                  class="inline-flex items-center font-medium text-amber-600 hover:underline"
+                  class="inline-flex items-center font-medium text-pink-600 hover:underline"
                   :to="'/'+last.slug+'/'"
                   :title="'Last to ' + last.name "
                 >
@@ -72,7 +77,7 @@
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li v-for="suggestion of suggestions.data" class="mb-4">
                 <NuxtLink
-                  class="inline-flex items-center font-medium text-amber-600 hover:underline"
+                  class="inline-flex items-center font-medium text-pink-600 hover:underline"
                   :to="'/'+suggestion.slug+'/'"
                   :title="'suggestion to ' + suggestion.name "
                 >
@@ -98,7 +103,7 @@
             provider="static"
             quality="100"
           />
-          <span class="h-8 text-amber-700 pl-2 text-2xl">{{ siteTitle }}</span>
+          <span class="h-8 text-pink-700 pl-2 text-2xl">{{ siteTitle }}</span>
         </NuxtLink>
       </nav>
       <div class="flex justify-center mt-6 space-x-6">

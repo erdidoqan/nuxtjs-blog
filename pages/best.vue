@@ -1,13 +1,32 @@
 <template>
   <div>
-    <div class="relative overflow-hidden bg-pink-800">
+    <div class="relative overflow-hidden bg-pink-900">
       <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
         <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div class="sm:max-w-lg">
-            <h1 class="text-4xl text-white font-bold tracking-tight text-gray-900 sm:text-6xl"> {{ title }} </h1>
-            <p class="mt-4 text-white text-xl text-gray-500">{{ desc }}</p>
+            <h1 class="text-4xl text-white font-bold tracking-tight text-gray-900 sm:text-6xl"> Find the Best Makeup Products </h1>
 
-            <a v-for="(category, key) in homepage.categories" :href="'/category/'+category.slug+'/'" target="_blank" class="inline-flex items-center h-12 px-5 mr-3 text-lg mt-3 text-blue bg-white transition-colors duration-150 border border-grey-100 rounded-lg focus:shadow-outline hover:bg-pink-700 hover:text-pink-100">{{category.name}}</a>
+            <ul class="max-w-md space-y-1 mt-5 text-white list-inside text-xl">
+              <li class="flex items-center">
+                <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                </svg>
+                Exploring the exquisite details to unveil the most captivating features, sparing you the need to read the fine print.
+              </li>
+              <li class="flex items-center">
+                <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                </svg>
+                Helping you find and buy for the best makeup products
+              </li>
+              <li class="flex items-center">
+                <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                </svg>
+                Objective news, expert reviews and comparisons
+              </li>
+            </ul>
+
 
           </div>
           <div>
@@ -51,56 +70,48 @@
         </div>
       </div>
     </div>
-    <div class="mt-24">
-      <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
-        <section class="text-gray-600 body-font">
-          <div class="container px-5 py-2 mx-auto">
-            <div class="flex mb-8 -m-4"><h3 class="text-2xl"><strong>Our</strong> Latest</h3></div>
 
-            <div class="flex flex-wrap -m-4">
-              <Articles :articles="homepage.contents" />
-            </div>
-          </div>
-        </section>
-      </div>
+    <div class="max-w-3xl px-4 mt-5 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
+
+      <ul class="text-base leading-21px inline-block lg:flex lg:flex-wrap">
+        <li
+          v-for="(category, key) in best"
+          :key="key"
+          class="p-3">
+          <a :href="'/'+category.slug+'/'" :title="category.title" target="_blank">{{ category.tag_title }}</a>
+        </li>
+      </ul>
     </div>
+
   </div>
 </template>
 
 <script>
-import markdownit from 'markdown-it'
-import { getDictionary } from "@/plugins/translation"
 
 export default {
   async asyncData({$axios}) {
-    const homepage = await $axios.$get(process.env.API_URL + '/accounts/homepage')
+    const best = await $axios.$get(process.env.API_URL + '/search/best')
 
     return {
-      homepage: homepage.data,
+      best: best.data,
     }
   },
   data() {
     return {
       title: process.env.META_TITLE,
-      desc: process.env.META_DESC,
-      md: markdownit(),
-      dictionary: getDictionary(process.env.HTML_LANG),
     };
-  },
-  created() {
-
   },
   methods: {
     imageUrl(id){
-      return this.homepage.images[id].image_url
+      return this.best[id].image
     },
     imageAlt(id){
-      return this.homepage.images[id].name
+      return this.best[id].title
     }
   },
   head() {
     return {
-      title: process.env.META_TITLE + ' - '+process.env.SITE_TITLE,
+      title: 'Find the Best Makeup Products - '+process.env.SITE_TITLE,
       meta: [
         { hid: "description", name: "description", content: process.env.META_DESC},
         { itemprop: "name", content: process.env.META_TITLE },
