@@ -17,7 +17,7 @@
                 </NuxtLink>
               </li>
               <li class="mb-4">
-                <NuxtLink to="/best/" class="inline-flex items-center font-medium text-pink-600 hover:underline">
+                <NuxtLink to="/best/" target="_blank" class="inline-flex items-center font-medium text-pink-600 hover:underline">
                   Best List
                 </NuxtLink>
               </li>

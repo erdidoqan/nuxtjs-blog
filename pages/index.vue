@@ -55,10 +55,40 @@
       <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
         <section class="text-gray-600 body-font">
           <div class="container px-5 py-2 mx-auto">
-            <div class="flex mb-8 -m-4"><h3 class="text-2xl"><strong>Our</strong> Latest</h3></div>
+            <div class="flex mb-8 -m-4"><h2 class="text-3xl"><strong>Featured</strong> Posts</h2></div>
 
             <div class="flex flex-wrap -m-4">
               <Articles :articles="homepage.contents" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="mt-24">
+      <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
+        <section class="text-gray-600 body-font">
+          <div class="container px-5 py-2 mx-auto">
+            <div class="flex mb-8 -m-4"><h2 class="text-3xl"><strong>Our Latest</strong> by Category</h2></div>
+
+            <div class="flex flex-wrap -m-4">
+              <div
+                v-for="(category, key) in homepage.categories"
+                :key="key"
+              >
+                <h3 class="mt-10 mb-4 text-2xl tracking-tight text-red-400 text-slate-800">
+                  <NuxtLink :to="{ name: 'category-slug', params: { slug: category.slug } }">
+                    {{ category.name }}
+                  </NuxtLink>
+                </h3>
+                <ul class="text-base leading-21px inline-block lg:flex lg:flex-wrap">
+                  <li
+                    v-for="(content, key) in category.contents"
+                    :key="key"
+                    class="p-3">
+                    <a :href="'/'+content.slug+'/'" :title="content.title" target="_blank">{{ content.name }}</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
