@@ -23,7 +23,7 @@
       </button>
       <div :class="mobileMenu ? 'block': 'hidden'" class="items-center justify-between w-full md:flex md:w-auto md:order-1">
         <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-3.5 rtl:space-x-reverse">
-
+          <li class="rounded-lg hover:bg-gray-50">About Us</li>
           <li
             class="rounded-lg hover:bg-gray-50"
             v-for="(menu, key) in menus.data"
