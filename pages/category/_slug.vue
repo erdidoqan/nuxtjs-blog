@@ -122,7 +122,7 @@ export default {
         { hid: "description", name: "description", content: this.category.meta_description},
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.category.meta_title },
-
+        { name: "robots", content: "noindex" },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
       script: [{
