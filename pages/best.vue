@@ -4,7 +4,7 @@
       <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
         <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div class="sm:max-w-lg">
-            <h1 class="text-4xl text-white font-bold tracking-tight text-gray-900 sm:text-6xl"> Find the Best Makeup, hair care and beauty </h1>
+            <h1 class="text-4xl text-white font-bold tracking-tight text-gray-900 sm:text-6xl"> Find the Best Quotes, captions and wishes </h1>
 
             <ul class="max-w-md space-y-1 mt-5 text-white list-inside text-xl">
               <li class="flex items-center">
@@ -17,7 +17,7 @@
                 <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                 </svg>
-                Helping you find Makeup, hair care and beauty
+                Helping you find Quotes, captions and wishes
               </li>
               <li class="flex items-center">
                 <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -111,9 +111,9 @@ export default {
   },
   head() {
     return {
-      title: 'Find the Best Makeup, hair care and beauty - '+process.env.SITE_TITLE,
+      title: 'Find the Best Quotes, captions and wishes - '+process.env.SITE_TITLE,
       meta: [
-        { hid: "description", name: "description", content: 'Discover the perfect  Makeup, hair care and beauty to make your loved ones special day even more memorable'},
+        { hid: "description", name: "description", content: 'Discover the perfect  Quotes, captions and wishes to make your loved ones special day even more memorable'},
         { itemprop: "name", content: process.env.META_TITLE },
         { itemprop: "description", content: process.env.META_DESC },
         { itemprop: "image", content: '/icons/icon.png' },
