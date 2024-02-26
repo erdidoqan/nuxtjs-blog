@@ -109,8 +109,8 @@
       <div class="flex justify-center mt-6 space-x-6">
         <a
           target="_blank"
-          href="https://www.withquotes.com/50-adelaide-hall-quotes/">
-          adelaide hall quotes
+          href="https://www.withquotes.com/25-barbara-may-cameron-quotes/">
+          Barbara May Cameron Quotes
         </a>
       </div>
       <p class="mt-4 text-xs text-center text-gray-400">
