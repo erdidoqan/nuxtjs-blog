@@ -109,8 +109,8 @@
       <div class="flex justify-center mt-6 space-x-6">
         <a
           target="_blank"
-          href="https://www.withquotes.com/25-barbara-may-cameron-quotes/">
-          Barbara May Cameron Quotes
+          href="https://www.withquotes.com/30-andrew-tate-quotes/">
+          Andrew Tate Quotes
         </a>
       </div>
       <p class="mt-4 text-xs text-center text-gray-400">
