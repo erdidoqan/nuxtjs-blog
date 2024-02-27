@@ -166,7 +166,6 @@ export default {
     sitemap: {
     hostname: 'https://' + process.env.PUBLISH_URL,
     include: [
-      '/category/',
       '/author/',
       '/about-us/',
       '/contact-us/',
