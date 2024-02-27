@@ -107,11 +107,11 @@
         </NuxtLink>
       </nav>
       <div class="flex justify-center mt-6 space-x-6">
-        <a
+<!--        <a
           target="_blank"
           href="https://www.withquotes.com/30-andrew-tate-quotes/">
           Andrew Tate Quotes
-        </a>
+        </a>-->
       </div>
       <p class="mt-4 text-xs text-center text-gray-400">
         © 2023 {{ siteName }}, {{ dictionary.footerCopy }}
