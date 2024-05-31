@@ -1,13 +1,13 @@
 <template>
   <div class="">
     <div class="bg-gray-200 text-black h-10 text-center w-full"></div>
-<!--    <div class="w-full text-xs m-0 text-center normal-case border-b border-gray-200 p-2">
+    <div class="w-full text-xs m-0 text-center normal-case border-b border-gray-200 p-2">
       <p class="">
         <span class="css-0 eidw0490">
           For over long years, we have diligently conducted independent research and product testing. When you make a purchase through our links, we may earn a commission.
         </span>
       </p>
-    </div>-->
+    </div>
     <div class="px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 mt-10">
       <!-- component -->
       <Breadcrumbs :lists="article.breadcrumbs" />
@@ -47,9 +47,9 @@
 
         <div class="xl:w-2/3 sm:w-full">
 
-<!--          <div class="min-w-full p-2 mx-auto">
+          <div class="min-w-full p-2 mx-auto">
             <Toc />
-          </div>-->
+          </div>
 
           <div class="prose text-xl min-w-full p-2 mx-auto" id="content" v-html="md.render(article.body)"></div>
 
