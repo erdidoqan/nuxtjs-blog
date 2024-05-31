@@ -91,24 +91,27 @@
               </div>
             </div>
           </div>
-          <p>Your ultimate destination for everything dog-related! Whether you're a seasoned dog owner, a prospective pet parent, or simply an enthusiast of our four-legged friends, Paws & Breeds is here to provide you with all the information and resources you need.</p>
 
-          <p>At Paws & Breeds, we cover a wide range of topics to help you understand and care for your dog better. Our extensive breed directory offers detailed profiles of various dog breeds, including their history, characteristics, temperament, and care needs. Whether you're curious about the loyal Labrador Retriever, the playful Pomeranian, or the majestic German Shepherd, you'll find in-depth information to help you make informed decisions.</p>
+          <div class="prose text-xl min-w-full p-2 mx-auto">
+            <p>Your ultimate destination for everything dog-related! Whether you're a seasoned dog owner, a prospective pet parent, or simply an enthusiast of our four-legged friends, Paws & Breeds is here to provide you with all the information and resources you need.</p>
 
-          <p>Beyond breed-specific information, we delve into essential aspects of dog care. From puppy training tips and behavioral guidance to nutritional advice and health care, our articles are designed to support you in every stage of your dog's life. We also provide expert advice on common issues such as grooming, exercise routines, and creating a safe, loving home environment for your pet.</p>
+            <p>At Paws & Breeds, we cover a wide range of topics to help you understand and care for your dog better. Our extensive breed directory offers detailed profiles of various dog breeds, including their history, characteristics, temperament, and care needs. Whether you're curious about the loyal Labrador Retriever, the playful Pomeranian, or the majestic German Shepherd, you'll find in-depth information to help you make informed decisions.</p>
 
-          <p>Our blog features heartwarming stories, expert interviews, and the latest news in the dog world. Join our community to share your experiences, seek advice, and connect with fellow dog lovers. Whether you're looking for tips on adopting a new puppy, training techniques for an older dog, or simply want to stay updated on dog-related topics, Paws & Breeds is your go-to resource.</p>
+            <p>Beyond breed-specific information, we delve into essential aspects of dog care. From puppy training tips and behavioral guidance to nutritional advice and health care, our articles are designed to support you in every stage of your dog's life. We also provide expert advice on common issues such as grooming, exercise routines, and creating a safe, loving home environment for your pet.</p>
 
-          <h2>Explore our site to find:</h2>
-          <ul>
-            <li><strong>Comprehensive Breed Profiles:</strong> Detailed information on various dog breeds to help you choose the right dog for your lifestyle.</li>
-            <li><strong>Training and Behavior Tips:</strong> Practical advice to help you train your dog and address behavioral issues.</li>
-            <li><strong>Health and Nutrition:</strong> Expert guidance on keeping your dog healthy and well-nourished.</li>
-            <li><strong>Grooming and Care:</strong> Tips on grooming, maintaining hygiene, and ensuring your dog looks and feels their best.</li>
-            <li><strong>Community Stories and Insights:</strong> Engaging stories and insights from dog owners and experts around the world.</li>
-          </ul>
+            <p>Our blog features heartwarming stories, expert interviews, and the latest news in the dog world. Join our community to share your experiences, seek advice, and connect with fellow dog lovers. Whether you're looking for tips on adopting a new puppy, training techniques for an older dog, or simply want to stay updated on dog-related topics, Paws & Breeds is your go-to resource.</p>
 
-          <p>At Paws & Breeds, we believe that every dog deserves a loving home and that informed owners make for happier, healthier pets. Join us on this journey to celebrate the joy, loyalty, and companionship that dogs bring into our lives. Visit <strong>Paws & Breeds</strong> today and become part of our vibrant dog-loving community!</p>
+            <h2>Explore our site to find:</h2>
+            <ul>
+              <li><strong>Comprehensive Breed Profiles:</strong> Detailed information on various dog breeds to help you choose the right dog for your lifestyle.</li>
+              <li><strong>Training and Behavior Tips:</strong> Practical advice to help you train your dog and address behavioral issues.</li>
+              <li><strong>Health and Nutrition:</strong> Expert guidance on keeping your dog healthy and well-nourished.</li>
+              <li><strong>Grooming and Care:</strong> Tips on grooming, maintaining hygiene, and ensuring your dog looks and feels their best.</li>
+              <li><strong>Community Stories and Insights:</strong> Engaging stories and insights from dog owners and experts around the world.</li>
+            </ul>
+
+            <p>At Paws & Breeds, we believe that every dog deserves a loving home and that informed owners make for happier, healthier pets. Join us on this journey to celebrate the joy, loyalty, and companionship that dogs bring into our lives. Visit <strong>Paws & Breeds</strong> today and become part of our vibrant dog-loving community!</p>
+          </div>
 
         </section>
       </div>
