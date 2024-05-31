@@ -129,11 +129,11 @@
             <h3>Popular Small Dog Breeds</h3>
             <p>Here are some of the most popular small dog breeds, each with its own unique charm and characteristics:</p>
             <ul>
-              <li><strong>Chihuahua:</strong> Known for their tiny size and big personality, Chihuahuas are loyal and affectionate companions.</li>
+              <li><strong>Chihuahua:</strong> Known for their tiny size and big personality, <a href="/chihuahua-dog-breed-info-facts-pictures-lifespan-traits/">Chihuahuas</a> are loyal and affectionate companions.</li>
               <li><strong>Pomeranian:</strong> These fluffy, energetic dogs are known for their playful nature and striking appearance.</li>
               <li><strong>French Bulldog:</strong> With their distinctive bat ears and charming demeanor, French Bulldogs are great companions for city dwellers.</li>
               <li><strong>Yorkshire Terrier:</strong> Small but spirited, Yorkies are known for their beautiful, silky coats and lively temperament.</li>
-              <li><strong>Shih Tzu:</strong> Friendly and outgoing, Shih Tzus are perfect lap dogs with a history as royal companions.</li>
+              <li><strong>Shih Tzu:</strong> Friendly and outgoing, <a href="/shih-tzu-dog-breed-info-pictures-care-traits-more">Shih Tzus</a> are perfect lap dogs with a history as royal companions.</li>
               <li><strong>Dachshund:</strong> With their long bodies and short legs, Dachshunds are curious and brave little dogs.</li>
             </ul>
 
