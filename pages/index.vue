@@ -58,7 +58,7 @@
             <div class="flex mb-8 -m-4"><h2 class="text-3xl"><strong>Featured</strong> Posts</h2></div>
 
             <div class="flex flex-wrap -m-4">
-              <Articles :articles="dictionary.homepage_detail" />
+              <Articles :articles="homepage.contents" />
             </div>
           </div>
         </section>
@@ -90,7 +90,8 @@
                 </ul>
               </div>
             </div>
-            <p v-html="md.render(article.body)">
+            <p v-html="md.render(dictionary.homepage_detail)">
+
 
             </p>
           </div>
