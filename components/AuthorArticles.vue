@@ -24,9 +24,11 @@
         />
       </NuxtLink>
       <div class="p-5">
-        <NuxtLink :to="{ name: 'slug', params: { slug: content.slug } }">
-          <h5 class="mb-2  font-bold tracking-tight text-gray-900 dark:text-white">{{content.title}}</h5>
-        </NuxtLink>
+          <h3 class="mb-2  font-bold tracking-tight text-gray-900 dark:text-white">
+            <NuxtLink :to="{ name: 'slug', params: { slug: content.slug } }">
+              {{content.title}}
+            </NuxtLink>
+          </h3>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ content.description}}</p>
 
         <NuxtLink

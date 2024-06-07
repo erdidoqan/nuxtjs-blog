@@ -30,7 +30,7 @@
           </div>
           <div>
             <div class="mb-6 mt-3">
-              <p class="font-heading text-base font-medium leading-snug line-clamp-4 text-gray-800 dark:text-gray-100">
+              <h3 class="font-heading text-base font-medium leading-snug line-clamp-4 text-gray-800 dark:text-gray-100">
                 <NuxtLink
                   :to="{ name: 'slug', params: { slug: article.slug } }"
                   :title="article.image_alt"
@@ -38,7 +38,7 @@
                 >
                   {{ article.title }}
                 </NuxtLink>
-              </p>
+              </h3>
             </div>
 
           </div>

@@ -13,9 +13,7 @@
       <h1 class="mb-4 mt-5 text-center text-4xl tracking-tight text-slate-800 font-extrabold">
         {{ category.name }}
       </h1>
-      <p class="max-w-3xl mx-auto text-lg text-slate-700 dark:text-slate-400 p-5">
-        {{ category.description }}
-      </p>
+
     </header>
     <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0 mb-10">
 
@@ -39,17 +37,28 @@
           </div>
         </div>
       </section>
+      <div class="pt-5">
+        <div class="prose text-xl min-w-full p-2 mx-auto" v-html="md.render(category.description)"></div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 
-import category from "@/pages/category/index";
+import markdownit from 'markdown-it'
 
 export default {
+  components:{
+    markdownit
+  },
   data() {
     return {
       title: 0,
+      md: markdownit({
+        html: true,
+        linkify: false,
+        typographer: true,
+      }),
     };
   },
   async asyncData({ $content, params, $axios}) {
@@ -86,6 +95,9 @@ export default {
     }
   },
   methods: {
+    getResults(page) {
+
+    },
     formatDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString("en", options);
@@ -122,7 +134,6 @@ export default {
         { hid: "description", name: "description", content: this.category.meta_description},
         { hid: 'fb:app_id', name: 'fb:app_id', content: '12873892173892' },
         { hid: 'og:title', name: 'og:title', content: this.category.meta_title },
-        { name: "robots", content: "noindex" },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: process.env.META_FAVICON_ICO }],
       script: [{
