@@ -44,10 +44,8 @@ export default {
     },
     meta: [
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' },
       { hid: 'description', name: 'description', content: process.env.META_DESC },
       { hid: 'robots', name: 'robots', content: 'max-image-preview:large' },
-      { name: 'mobile-web-app-capable', content: 'yes' },
 
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: process.env.META_TITLE },
       { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_TITLE },
