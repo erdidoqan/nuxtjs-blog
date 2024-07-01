@@ -16,11 +16,11 @@
                   Authors
                 </NuxtLink>
               </li>
-              <li class="mb-4">
+<!--              <li class="mb-4">
                 <NuxtLink to="/best/" target="_blank" class="inline-flex items-center font-medium text-blue-600 hover:underline">
                   Best List
                 </NuxtLink>
-              </li>
+              </li>-->
 
               <li class="mb-4">
                 <NuxtLink to="/category/" class="inline-flex items-center font-medium text-blue-600 hover:underline">
