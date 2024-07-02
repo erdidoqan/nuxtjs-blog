@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative overflow-hidden bg-green-800">
+    <div class="relative overflow-hidden bg-blue-800">
       <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
         <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div class="sm:max-w-lg">
@@ -91,78 +91,6 @@
               </div>
             </div>
           </div>
-
-          <div class="prose text-xl min-w-full p-2 mx-auto">
-            <h2>The Enigmatic Side of Nature</h2>
-            <p>
-              Birdcins is the perfect platform for those who want to explore the fascinating world of birds. We offer comprehensive information on bird species, habitats, feeding habits, and much more. Are you ready to embark on a journey into nature?
-            </p>
-
-            <h2>Why Birdcins?</h2>
-
-            <ul>
-              <li><strong>Comprehensive Content:</strong> Detailed information on bird species from Turkey and around the world.</li>
-              <li><strong>Training and Behavior Tips:</strong> Practical advice to help you train your birds and address behavioral issues.</li>
-              <li><strong>Latest News:</strong> Up-to-date news on birdwatching, conservation efforts, and new discoveries.</li>
-              <li><strong>Easy Access:</strong> A user-friendly interface filled with blog posts, guides, and visuals.</li>
-              <li><strong>Community Stories and Insights:</strong> Engaging stories and insights from bird owners and experts around the world.</li>
-            </ul>
-
-            <h3>Popular Content</h3>
-
-            <ul>
-              <li><strong>Bird Species:</strong> Information on endemic bird species in Turkey and interesting species worldwide.</li>
-              <li><strong>Birdwatching Guides:</strong> Techniques for birdwatching from beginner to advanced levels.</li>
-              <li><strong>Bird Behaviors:</strong> Insights into intriguing bird behaviors, feeding habits, and breeding seasons.</li>
-              <li><strong>Photo Gallery:</strong> Birds through the lenses of professional and amateur bird photographers.</li>
-            </ul>
-
-
-            <h2>Bird Species Categories</h2>
-            <h3>1. Songbirds (Passerines):</h3>
-            <ul>
-              <li><strong>Characteristics:</strong> Small to medium-sized birds known for their vocal abilities.</li>
-              <li><strong>Examples:</strong> Sparrows, finches, warblers, and robins.</li>
-              <li><strong>Interesting Fact:</strong> Songbirds have a specialized vocal apparatus called the syrinx, which allows them to produce a wide range of sounds.</li>
-            </ul>
-            <h3>2. Birds of Prey (Raptors):</h3>
-            <ul>
-              <li><strong>Characteristics:</strong> Carnivorous birds with keen eyesight and sharp talons.</li>
-              <li><strong>Examples:</strong> Eagles, hawks, falcons, and owls.</li>
-              <li><strong>Interesting Fact:</strong> The peregrine falcon is the fastest bird, reaching speeds over 240 mph during a dive.</li>
-            </ul>
-            <h3>3. Waterfowl:</h3>
-            <ul>
-              <li><strong>Characteristics:</strong> Aquatic birds adapted to living in and around water.</li>
-              <li><strong>Examples:</strong> Ducks, geese, swans, and pelicans.</li>
-              <li><strong>Interesting Fact:</strong> Many waterfowl species are migratory, traveling thousands of miles between breeding and wintering grounds.</li>
-            </ul>
-            <h3>4. Seabirds:</h3>
-            <ul>
-              <li><strong>Characteristics:</strong> Birds that spend most of their lives at sea, coming to land mainly to breed.</li>
-              <li><strong>Examples:</strong> Albatrosses, gulls, puffins, and penguins.</li>
-              <li><strong>Interesting Fact:</strong> The albatross has the largest wingspan of any bird, reaching up to 12 feet.</li>
-            </ul>
-            <h3>5. Parrots (Psittacines):</h3>
-            <ul>
-              <li><strong>Characteristics:</strong> Brightly colored birds known for their intelligence and ability to mimic sounds.</li>
-              <li><strong>Examples:</strong> Macaws, parakeets, cockatoos, and lovebirds.</li>
-              <li><strong>Interesting Fact:</strong> The African grey parrot is famous for its remarkable ability to mimic human speech.</li>
-            </ul>
-            <h3>6. Flightless Birds:</h3>
-            <ul>
-              <li><strong>Characteristics:</strong> Birds that have evolved to live without the ability to fly.</li>
-              <li><strong>Examples:</strong> Ostriches, emus, kiwis, and penguins.</li>
-              <li><strong>Interesting Fact:</strong> The ostrich is the largest and fastest-running bird, capable of sprinting up to 45 mph.</li>
-            </ul>
-
-              <h2>Conservation Status</h2>
-              <p>Many bird species are facing threats from habitat loss, climate change, and human activities. Organizations worldwide are working tirelessly to protect these species and their habitats. Notable efforts include breeding programs, habitat restoration, and public awareness campaigns. At Birdcins, we highlight these efforts and provide information on how you can contribute to bird conservation.</p>
-
-              <h2>Join the Birdwatching Community</h2>
-              <p>Whether you're a seasoned birdwatcher or a curious beginner, Birdcins is here to guide you. Explore our in-depth articles, birdwatching tips, and photo galleries to enhance your knowledge and appreciation of these incredible creatures. Join our community and share your sightings and experiences with fellow bird enthusiasts!</p>
-          </div>
-
         </section>
       </div>
     </div>
