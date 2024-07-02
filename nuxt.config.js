@@ -29,9 +29,6 @@ https.get(process.env.META_FAVICON_PNG + '?w=180&h=180&fit=crop', resp => resp.p
 export default {
   target: 'static',
   generate: { fallback: true },
-  app: {
-    baseURL: 'https://www.birdcins.com/'
-  },
   env: {
     SITE_TITLE: process.env.SITE_TITLE,
     PUBLISH_URL: process.env.PUBLISH_URL,
@@ -90,7 +87,8 @@ export default {
 
   router: {
     trailingSlash: true,
-    linkExactActiveClass: 'text-pink-700'
+    linkExactActiveClass: 'text-pink-700',
+    mode: "hash"
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.css"],
@@ -205,7 +203,13 @@ export default {
     }
   },
   build: {
-
+    extend(config, { isDev, isClient }) {
+      if (!isDev) {
+        // relative links, please.
+        config.output.publicPath = "./_asd/";
+      }
+      return config;
+    },
     indicator: false,
     terser: true,
     preset: {
