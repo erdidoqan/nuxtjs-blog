@@ -89,7 +89,7 @@ export default {
   router: {
     trailingSlash: true,
     linkExactActiveClass: 'text-pink-700',
-    base: '/app/'
+    base: 'https://www.birdcins.com/'
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.css"],
