@@ -118,6 +118,8 @@
               Discover the array of <strong>dog breeds from the Netherlands</strong>. Renowned for their qualities and rich history breeds like the Spaniel and Stabyhoun are valued for their loyalty and intelligence. Delve into our profiles to gain insights into their care requirements and determine if they would be a fit for your household.
             </p>
 
+            <p>Delve into the world of <strong>Harlems dog breeds</strong>, each embodying the culture and history of the area. From loyal companions to working dogs Harlem boasts a diverse range of breeds that add to the colorful tapestry of canine variety. Uncover their captivating tales. Find out if one of these breeds aligns, with your preferences.</p>
+
             <h4>Join Our Dog-Loving Community</h4>
             <p>
               Come join our community of dog lovers at Pavbreeds where we believe that every canine deserves a home. Our goal is to provide you with information, expert guidance and a supportive space where you can connect with minded individuals, share experiences and glean knowledge, from fellow dog enthusiasts.
