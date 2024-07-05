@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="px-4 py-24 mx-auto overflow-hidden mt-20 sm:px-6 lg:px-8 bg-amber-100 rounded-t-xl">
+    <div class="px-4 py-24 mx-auto overflow-hidden mt-20 sm:px-6 lg:px-8 bg-blue-100 rounded-t-xl">
       <div class="mx-auto w-full max-w-screen-xl">
         <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
@@ -16,11 +16,9 @@
                   Authors
                 </NuxtLink>
               </li>
-<!--              <li class="mb-4">
-                <NuxtLink to="/best/" target="_blank" class="inline-flex items-center font-medium text-blue-600 hover:underline">
-                  Best List
-                </NuxtLink>
-              </li>-->
+              <li class="mb-4">
+                <a href="https://www.pavbreed.com/22-gorgeous-maltese-mixes-with-pictures/">Maltese Mixes</a>
+              </li>
 
               <li class="mb-4">
                 <NuxtLink to="/category/" class="inline-flex items-center font-medium text-blue-600 hover:underline">

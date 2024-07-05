@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative overflow-hidden bg-amber-800">
+    <div class="relative overflow-hidden bg-blue-800">
       <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
         <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div class="sm:max-w-lg">
@@ -92,7 +92,7 @@
             </div>
           </div>
 
-          <div class="prose text-xl min-w-full p-2 mx-auto">
+<!--          <div class="prose text-xl min-w-full p-2 mx-auto">
             <h2>Welcome, to Pavbreeds; Your Complete Guide to Dog Breeds</h2>
             <p>
 
@@ -125,7 +125,7 @@
               Come join our community of dog lovers at Pavbreeds where we believe that every canine deserves a home. Our goal is to provide you with information, expert guidance and a supportive space where you can connect with minded individuals, share experiences and glean knowledge, from fellow dog enthusiasts.
               If you're new, to owning a dog or have years of experience with canines Pavbreeds is the place for you. We offer resources and a friendly environment to assist you in finding the ideal dog breed. Begin your exploration with us now. Uncover the furry companion, for you!
             </p>
-          </div>
+          </div>-->
 
         </section>
       </div>
