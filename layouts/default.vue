@@ -65,12 +65,21 @@ export default {
     },
     websiteJsonld() {
       return {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": process.env.SITE_TITLE,
-        "url": 'https://' + process.env.PUBLISH_URL,
-        "logo": 'https://' + process.env.PUBLISH_URL + '/icons/icon.png',
-      }
+          "@context": "https://schema.org/",
+          "@type": "WebSite",
+          "@id": 'https://' + process.env.PUBLISH_URL + '/#website',
+          "name": process.env.SITE_TITLE,
+          "url": 'https://' + process.env.PUBLISH_URL,
+          "inLanguage": "en-US",
+          "publisher": {
+            "@id": 'https://' + process.env.PUBLISH_URL + '/#organization'
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
     },
   },
   head() {

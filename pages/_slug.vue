@@ -206,7 +206,7 @@ export default {
               "name": process.env.SITE_TITLE,
               "type": "Thing",
               "sameAs": [
-                "http://www.facebook.com/anniversaryclick",
+                "https://www.facebook.com/digitexa",
               ]
             }
           },
@@ -221,6 +221,13 @@ export default {
           "width": 1200,
           "height": 628,
           "caption": this.article.image_alt
+        },
+        {
+          "@context": "https://schema.org/",
+          "@type": "Person",
+          "name": this.article.author.full_name,
+          "url": 'https://'+process.env.PUBLISH_URL + '/author/' + this.article.author.slug,
+          "image": this.article.author.image
         },
         {
           "@type": "WebPage",
