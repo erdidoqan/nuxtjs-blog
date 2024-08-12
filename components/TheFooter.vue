@@ -17,7 +17,7 @@
                 </NuxtLink>
               </li>
               <li class="mb-4">
-                <a href="https://www.pavbreed.com/22-gorgeous-maltese-mixes-with-pictures/">Maltese Mixes</a>
+                <a href="https://www.shihtzumix.com/shih-chi-chihuahua-shih-tzu-mix/">chihuahua shih tzu mix</a>
               </li>
 
               <li class="mb-4">
