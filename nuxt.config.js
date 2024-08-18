@@ -54,9 +54,9 @@ export default {
       { name: 'google-adsense-account', content: process.env.GOOGLE_ADSENSE_ID }
     ],
     link: [
-      { rel: 'shortcut icon', href: '/favicon.ico' },
-      { rel: 'icon', href: '/icons/icon.png' },
-      { rel: 'icon',type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'shortcut icon', href: 'https://' + process.env.PUBLISH_URL + '/favicon.ico' },
+      { rel: 'icon', href: 'https://' + process.env.PUBLISH_URL + '/icons/icon.png' },
+      { rel: 'icon',type: 'image/x-icon', href: 'https://' + process.env.PUBLISH_URL + '/favicon.ico' },
       { rel: 'icon', sizes: '16x16 32x32 64x64', href: '/icons/icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/icons/icon196.png' },
       { rel: 'icon', type: 'image/png', sizes: '160x160', href: '/icons/icon160.png' },
@@ -87,7 +87,7 @@ export default {
 
   router: {
     trailingSlash: true,
-    linkExactActiveClass: 'text-pink-700'
+    linkExactActiveClass: 'text-' + process.env.MAIN_COLOR + '-700'
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.css"],

@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="px-4 py-24 mx-auto overflow-hidden mt-20 sm:px-6 lg:px-8 bg-blue-100 rounded-t-xl">
+    <div class="px-4 py-24 mx-auto overflow-hidden mt-20 sm:px-6 lg:px-8 rounded-t-xl" :class="color">
       <div class="mx-auto w-full max-w-screen-xl">
         <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
@@ -128,6 +128,7 @@ export default {
       siteLogo: '/icons/icon.png',
       siteName: process.env.SITE_TITLE,
       dictionary: getDictionary(process.env.HTML_LANG),
+      color: 'bg-' + process.env.MAIN_COLOR + '-800',
       trends: [],
       lasest: [],
       suggestions: []
