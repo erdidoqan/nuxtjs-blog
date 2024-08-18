@@ -151,7 +151,7 @@ export default {
     return {
       title: process.env.META_TITLE,
       desc: process.env.META_DESC,
-      color: 'bg-' + process.env.MAIN_COLOR + '-800',
+      color: 'bg-amber-800',
       md: markdownit(),
       dictionary: getDictionary(process.env.HTML_LANG),
     };
