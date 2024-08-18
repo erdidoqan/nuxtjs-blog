@@ -128,7 +128,7 @@ export default {
       siteLogo: '/icons/icon.png',
       siteName: process.env.SITE_TITLE,
       dictionary: getDictionary(process.env.HTML_LANG),
-      color: 'bg-' + process.env.MAIN_COLOR + '-800',
+      color: 'bg-amber-100',
       trends: [],
       lasest: [],
       suggestions: []
