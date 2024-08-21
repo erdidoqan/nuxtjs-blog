@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="relative overflow-hidden"
-         :class="color"
+         :class="mainColor"
     >
       <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
         <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
@@ -151,7 +151,7 @@ export default {
     return {
       title: process.env.META_TITLE,
       desc: process.env.META_DESC,
-      color: 'bg-amber-800',
+      mainColor: process.env.MAIN_COLOR,
       md: markdownit(),
       dictionary: getDictionary(process.env.HTML_LANG),
     };

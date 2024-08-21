@@ -88,7 +88,7 @@ export default {
 
   router: {
     trailingSlash: true,
-    linkExactActiveClass: 'text-' + process.env.MAIN_COLOR + '-700'
+    linkExactActiveClass: 'text-blue-700'
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.css"],
