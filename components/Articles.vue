@@ -11,8 +11,8 @@
           <div class="relative">
             <NuxtLink
               :to="{ name: 'slug', params: { slug: article.slug } }"
-              :title="article.image_alt"
-              :aria-label="'Read More ' +article.image_alt"
+              :title="article.title"
+              :aria-label="'Read More ' +article.title"
             >
               <nuxt-img
                 class="h-40 w-full rounded-lg object-cover"
@@ -22,8 +22,8 @@
                 height="200"
                 format="webp"
                 sizes="xs:16vw sm:32vw md:200px lg:200px"
-                :alt="article.image_alt"
-                :title="article.image_alt"
+                :alt="article.title"
+                :title="article.title"
                 fit="crop"
               />
             </NuxtLink>
@@ -33,8 +33,8 @@
               <h3 class="font-heading text-base font-medium leading-snug line-clamp-4 text-gray-800 dark:text-gray-100">
                 <NuxtLink
                   :to="{ name: 'slug', params: { slug: article.slug } }"
-                  :title="article.image_alt"
-                  :aria-label="'Read More ' +article.image_alt"
+                  :title="article.title"
+                  :aria-label="'Read More ' +article.title"
                 >
                   {{ article.title }}
                 </NuxtLink>

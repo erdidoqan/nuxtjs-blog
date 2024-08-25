@@ -88,7 +88,7 @@
           <div class="p-2 relative sticky top-0">
             <div class="mt-20 divide-y divide-gray-200">
 
-              <h2 class="mb-2 text-lg font-semibold text-gray-900">Top students:</h2>
+              <h2 class="mb-2 text-lg font-semibold text-gray-900">Lasest Articles:</h2>
               <ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside pt-3">
                 <li
                   class="p-1"
