@@ -16,9 +16,9 @@
                   Authors
                 </NuxtLink>
               </li>
-<!--              <li class="mb-4">
-                <a href="https://www.shihtzumix.com/shih-chi-chihuahua-shih-tzu-mix/" target="_blank">chihuahua shih tzu mix</a>
-              </li>-->
+              <li class="mb-4">
+                <a href="https://www.digitexa.com" target="_blank">yazılım şirketi</a>
+              </li>
 
               <li class="mb-4">
                 <NuxtLink to="/category/" class="inline-flex items-center font-medium text-blue-600 hover:underline">
